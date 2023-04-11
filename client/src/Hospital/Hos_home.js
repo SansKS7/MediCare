@@ -5,8 +5,8 @@ import Hos_register from './Hos_register';
 function Hos_home () {
   return (
     <>
-    <Hos_register/>
-   {  /*<Hos_login/> }*/} 
+    {/* <Hos_register/> */}
+   <Hos_login/>  
     </>
   )
 }

@@ -5,7 +5,8 @@ import Dr_register from './Dr_register';
 function Dr_home () {
   return (
     <>
-    <Dr_register/>
+    {/* <Dr_register/> */}
+    <Dr_login/>
     </>
   )
 }

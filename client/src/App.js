@@ -6,14 +6,14 @@ import Hos_login from './Hospital/Hos_login';
 function App() {
   return (
    <>
-   <Patient_home/>
-            {/* <Dr_home /> */}
+   {/* <Patient_home/> */}
+            
 
-      { /* 
+      
       <Dr_home/>
 
-         <Hos_home />
-        */}
+         {/* <Hos_home /> */}
+        
 
    </>
       

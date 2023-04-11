@@ -19,13 +19,15 @@ function Dr_login()     {
     <div className='container'>
      <form className='login'>
   <fieldset >
-      <b className='my-2'> <center><legend>Doctor's Login</legend> </center> </b>
+      <b className='my-2'> <center><legend>Doctor Login</legend> </center> </b>
     <div class="mb-3">
-      <input type="text" id="d_id"  name="d_id"  class="form-control" placeholder="Enter Doctor ID" onChange={handleEvent}/>
+    <label for="disabledTextInput" class="form-label">Enter Doctor_ID</label>
+      <input type="text" id="d_id"  name="d_id"  class="form-control"  onChange={handleEvent}/>
    </div>
    
    <div class="mb-3">
-      <input type="password" id="password" name="password" class="form-control" placeholder=" Enter Password"/>
+   <label for="disabledTextInput" class="form-label">Enter Password</label>
+      <input type="password" id="password" name="password" class="form-control"/>
    </div>
     <button type="submit" class="btn btn-primary my-2 ">Login</button>
    

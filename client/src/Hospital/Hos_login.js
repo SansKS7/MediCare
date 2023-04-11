@@ -26,11 +26,13 @@ function Hos_login()     {
   <fieldset >
       <b className='my-2'> <center><legend> Login</legend> </center> </b>
     <div className="mb-3">
-      <input type="text" id="h_id"  name="h_id"  class="form-control" placeholder="Enter Hospital ID" onChange={handleEvent}/>
+    <label for="disabledTextInput" class="form-label">Enter Hospital-ID</label>
+      <input type="text" id="h_id"  name="h_id"  class="form-control textbox"  onChange={handleEvent}/>
    </div>
    
    <div class="mb-3">
-      <input type="password" id="password" name="password" class="form-control" placeholder=" Enter Password" onChange={handleEvent}/>
+   <label for="disabledTextInput" class="form-label">Enter Password</label>
+      <input type="password" id="password" name="password" class="form-control textbox" onChange={handleEvent}/>
    </div>
     <button type="submit" class="btn btn-primary my-2 ">Login</button>
    

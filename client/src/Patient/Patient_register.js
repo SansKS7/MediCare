@@ -28,7 +28,7 @@ function Patient_register() {
               <b className="my-2">
                 {" "}
                 <center>
-                  <legend>Patient's Register</legend>{" "}
+                  <legend>Patient Register</legend>{" "}
                 </center>{" "}
               </b>
               <div className="displayFlex-2">
@@ -38,8 +38,7 @@ function Patient_register() {
                     type="text"
                     id="p_id"
                     name="p_id"
-                    class="form-control textbox"
-                   
+                    class="form-control textbox"                  
                   />
                 </div>
                 </div>

@@ -5,8 +5,8 @@ import Patient_register from "./Patient_register";
 function Patient_home() {
   return (
     <>
-      <Patient_register />
-      {/* <Patient_login/> */}
+      {/* <Patient_register /> */}
+      <Patient_login/>
       
     </>
   );

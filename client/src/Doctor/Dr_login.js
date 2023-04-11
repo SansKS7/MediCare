@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-function Hos_login()     {
-
+import React ,{useState} from 'react'
+function Dr_login()     {
   const[ formData ,setForm]=useState(
     {
       _id:null,
-      h_id:"",
+      d_id:"",
       password:"",
     }
 )
@@ -12,25 +11,21 @@ function Hos_login()     {
   const handleEvent = (e) => {
     setForm({...formData, [e.target.name]: e.target.value })
   }
-
+ 
   return (
-
-<>
-{
-  console.log(formData)
-}
-  
+    <>
+    {console.log(formData)}
     <div id='hospital_login'>
     <div className='container'>
      <form className='login'>
   <fieldset >
-      <b className='my-2'> <center><legend> Login</legend> </center> </b>
-    <div className="mb-3">
-      <input type="text" id="h_id"  name="h_id"  class="form-control" placeholder="Enter Hospital ID" onChange={handleEvent}/>
+      <b className='my-2'> <center><legend>Doctor's Login</legend> </center> </b>
+    <div class="mb-3">
+      <input type="text" id="d_id"  name="d_id"  class="form-control" placeholder="Enter Doctor ID" onChange={handleEvent}/>
    </div>
    
    <div class="mb-3">
-      <input type="password" id="password" name="password" class="form-control" placeholder=" Enter Password" onChange={handleEvent}/>
+      <input type="password" id="password" name="password" class="form-control" placeholder=" Enter Password"/>
    </div>
     <button type="submit" class="btn btn-primary my-2 ">Login</button>
    
@@ -42,10 +37,8 @@ function Hos_login()     {
       
     </div>
     </div>
-
-
-</>
+    </>
   )
 }
 
-export default Hos_login
+export default Dr_login

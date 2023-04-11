@@ -13,7 +13,6 @@
 .my-2{
     width: 53vh;
 }
-
 #hospital_login .login{
     padding: 30px;
     margin-left: 27%;
@@ -25,4 +24,27 @@
     border-radius: 2%;
 }
 
+/* =================================================================Hospital Register =================*/
 
+#hospital_register .register{
+    padding: 30px;
+    margin-left: 27%;
+    margin-top: 10%;
+    height: 80vh;
+    width: 60vh;
+    box-shadow: 0 0 15px 15px gray;
+
+    border-radius: 2%;
+}
+
+
+/* ############################### Doctor Register ####################### */
+#doctor_register .register{
+    padding: 30px;
+    margin-left: 27%;
+    height: 100vh;
+    width: 60vh;
+    box-shadow: 0 0 15px 15px gray;
+
+    border-radius: 2%;
+}

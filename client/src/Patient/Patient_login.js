@@ -23,13 +23,15 @@ function Patient_login()     {
     <div className='container'>
      <form className='login'>
   <fieldset >
-      <b className='my-2'> <center><legend>Patient's Login</legend> </center> </b>
+      <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
     <div class="mb-3">
-      <input type="text" id="p_id"  name="p_id"  class="form-control" placeholder="Enter Patient ID" onChange={handleEvent}/>
+    <label for="disabledTextInput" class="form-label">Enter Patient-ID</label>
+      <input type="text" id="p_id"  name="p_id"  class="form-control"  onChange={handleEvent}/>
    </div>
-   
+  
    <div class="mb-3">
-      <input type="password" id="password" name="password" class="form-control" placeholder=" Enter Password" onChange={handleEvent}/>
+   <label for="disabledTextInput" class="form-label">Password</label>
+      <input type="password" id="password" name="password" class="form-control" onChange={handleEvent}/>
    </div>
     <button type="submit" class="btn btn-primary my-2 ">Login</button>
    

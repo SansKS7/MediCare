@@ -6,7 +6,8 @@ import Hos_login from './Hospital/Hos_login';
 function App() {
   return (
    <>
-            <Dr_home />
+   <Patient_home/>
+            {/* <Dr_home /> */}
 
       { /* 
       <Dr_home/>

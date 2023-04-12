@@ -19,6 +19,82 @@ function Patient_register() {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
 
+
+  
+  function isfirstName(val) {
+    //console.log(val);
+     var reg=/^[a-zA-Z]+$/;
+     if(reg.test(val))
+     return true;
+     return false;
+  }
+
+ 
+
+  function isAddress(val){
+   console.log(val);
+   var reg=/^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+  // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+   if(reg.test(val))
+   return true;
+   return false;
+  }
+
+  function isPhno(val)
+  {
+   var phoneNo = /^\d{10,10}$/;
+   if(phoneNo.test(val))
+   return true;
+   return false;
+  }
+  function isAge(val)
+  {
+   var phoneNo = /^\d{2}$/;
+   if(phoneNo.test(val))
+   return true;
+   return false;
+  }
+  
+function isPassword(val) {
+   console.log(val)
+   
+   var regex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+   if(!regex.test(val)){
+     return false;
+   }
+   return true;
+ }
+
+ function isRePassword(pass,repass) 
+   {
+      if(pass===repass)return true;
+      return false;
+   }
+function onFormSubmit(e)
+{
+   e.preventDefault();
+   //console.log(formData)
+   var fname=isfirstName(formData.firstName);
+   var lname=isfirstName(formData.lastName);
+   var phone=isPhno(formData.phoneNo);
+   var address=isAddress(formData.address);
+   var age=isAge(formData.age);
+   var password=isPassword(formData.password);
+   var repassword=isRePassword(formData.password,formData.repassword);
+   if(fname&&lname&&age&&phone&&address&&password&&repassword)
+   {
+      alert("Login Successful")
+   }
+   else{
+      alert("Login Unsuccessful")
+      
+   }
+   
+  
+}
+
+
   return (
     <>
       {console.log(formData)}
@@ -34,13 +110,13 @@ function Patient_register() {
                 </center>{" "}
               </b>
               <div className="displayFlex-2">
-                <div class="mb-3">
+                <div className="mb-3">
                 <label for="disabledTextInput" class="form-label">Patient-ID</label>
                   <input
                     type="text"
                     id="p_id"
                     name="p_id"
-                    class="form-control textbox"                  
+                    className="form-control textbox"                  
                   />
                 </div>
                 </div>
@@ -48,47 +124,47 @@ function Patient_register() {
 
 
                 <div className="displayFlex">
-                <div class="mb-3">
+                <div className="mb-3">
                 <label for="disabledTextInput" class="form-label">Enter First Name</label>
                   <input
                     type="text"
                     id="firstName"
                     name="firstName"
-                    class="form-control textbox"
+                    className="form-control textbox"
+                    onChange={handleEvent}
                    
                   />
                 </div>
               
-              <div class="mb-3">
+              <div className="mb-3">
               <label for="disabledTextInput" class="form-label">Enter Last Name</label>
                 <input
                   type="text"
                   id="lastName"
                   name="lastName"
-                  class="form-control textbox"
-                  
+                  className="form-control textbox"
                   onChange={handleEvent}
                 />
               </div>
               </div>
               <div className="displayFlex">
-              <div class="mb-3">
+              <div className="mb-3">
               <label for="disabledTextInput" class="form-label">Enter Age</label>
                 <input
                   type="text"
                   id="age"
                   name="age"
-                  class="form-control textbox"
+                  className="form-control textbox"
                  
                   onChange={handleEvent}
                 />
               </div>
 
-              <div class="mb-3">
+              <div className="mb-3">
               <label for="disabledTextInput" class="form-label">Enter Phone No</label>
                 <input
                   type="text"
-                  class="form-control textbox"
+                  className="form-control textbox"
                  
                   id="phoneNo"
                   name="phoneNo"
@@ -96,11 +172,11 @@ function Patient_register() {
                 />
               </div>
               </div>
-              <div class="mb-3">
+              <div className="mb-3">
               <label for="disabledTextInput" class="form-label">Enter Address</label>
                 <input
                   type="text"
-                  class="form-control textbox"
+                  className="form-control textbox"
                   
                   id="address"
                   name="address"
@@ -132,7 +208,7 @@ function Patient_register() {
                 />
               </div>
               
-              <button type="submit" class=" displayFlex-2  textalign-center btn btn-primary my-2 ">
+              <button type="submit" class=" displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit} >
                Register 
               </button>
 

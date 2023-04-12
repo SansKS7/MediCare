@@ -26,6 +26,92 @@ function Dr_register() {
   }
 
 
+  function isfirstName(val) {
+    //console.log(val);
+     var reg=/^[a-zA-Z]+$/;
+     if(reg.test(val))
+     return true;
+     return false;
+  }
+
+  function isRating(val)
+  {
+    var rate = /^\d{1,4}$/;
+    if(rate.test(val))
+    return true;
+    return false;
+
+  }
+
+  function isAddress(val){
+   console.log(val);
+   var reg=/^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+  // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+   if(reg.test(val))
+   return true;
+   return false;
+  }
+
+  function isPhno(val)
+  {
+   var phoneNo = /^\d{10,10}$/;
+   if(phoneNo.test(val))
+   return true;
+   return false;
+  }
+
+  function isMail(val){
+   console.log(val);
+   var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   if(mail.test(val))
+   return true;
+   return false;
+  }
+
+  
+function isPassword(val) {
+   console.log(val)
+   
+   var regex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+   if(!regex.test(val)){
+     return false;
+   }
+   return true;
+ }
+
+ function isRePassword(pass,repass) 
+   {
+      if(pass===repass)return true;
+      return false;
+   }
+function onFormSubmit(e)
+{
+   e.preventDefault();
+   //console.log(formData)
+
+   var hname=isfirstName(formData.hospitalName)
+   var fname=isfirstName(formData.name);
+   var speciality=isfirstName(formData.speciality);
+   var mail=isMail(formData.mail);
+   var phone=isPhno(formData.phoneNo);
+   var address=isAddress(formData.address);
+   var password=isPassword(formData.password);
+   var repassword=isRePassword(formData.password,formData.repassword);
+   var exp=isRating(formData.experience);
+   var charges=isRating(formData.charges);
+   var qualification=isfirstName(formData.qualification);
+   if(fname&&speciality&&mail&&phone&&address&&exp&&password&&repassword&&charges&&qualification&&hname)
+   {
+      alert("Login Successful")
+   }
+   else{
+      alert("Login Unsuccessful")
+      
+   }
+   
+  
+}
   return (
     <>
       {console.log(formData)}
@@ -211,7 +297,7 @@ function Dr_register() {
                   name="qualification"
                 />
               </div>
-              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 ">
+              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit}>
                 Register
               </button>
 

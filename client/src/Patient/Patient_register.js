@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom"
 
 function Patient_register() {
+  const navigate=useNavigate()
   const [formData, setForm] = useState({
     _id: null,
     p_id: "",
@@ -137,7 +139,7 @@ function Patient_register() {
               <center>
                 <b> OR</b>{" "}
               </center>
-              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 ">
+              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={()=>navigate("/Patient_login")}>
                 Login
               </button>
             </fieldset>

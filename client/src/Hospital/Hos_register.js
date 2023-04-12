@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom"
 function Hos_register() {
+   const navigate=useNavigate()
 
    const [formData, setForm] = useState({
       _id: null,
@@ -102,7 +104,8 @@ function Hos_register() {
 
                      <center> <b> OR</b> </center>
 
-                     <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2  ">Login</button>
+                     <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2  "
+                     onClick={()=>navigate("/Hos_login")}>Login</button>
 
                   </fieldset>
                </form>

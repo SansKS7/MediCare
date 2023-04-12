@@ -1,5 +1,8 @@
 import React ,{useState} from 'react'
+import { useNavigate } from "react-router-dom"
 function Patient_login()     {
+
+  const navigate=useNavigate()
 
   const[ formData ,setForm]=useState(
     {
@@ -36,14 +39,14 @@ function Patient_login()     {
     <button type="submit" class="btn btn-primary my-2 ">Login</button>
    
    <center> <b> OR</b> </center>
-   <button type="submit" class="btn btn-primary my-2 ">Register</button>
+   <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Patient_register")}>Register</button>
     
   </fieldset>
 </form>  
       
     </div>
     </div>
-
+ 
 </>
   
   )

@@ -19,7 +19,7 @@ export default function () {
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><Link class="nav-link scrollto active" to="#hero">Home</Link></li>
+                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                         <li><a class="nav-link scrollto" href="#about">About</a></li>
                         <li><Link class="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
                         <li><Link class="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
@@ -27,7 +27,7 @@ export default function () {
                         <li><Link class="nav-link scrollto" to="#contact">Contact</Link></li>
                         <li><Link class="getstarted scrollto" to="#about">Book Appointment</Link></li>
                     </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <i class="bi bi-list mobile-nav-toggle"> </i>
                 </nav>
 
             </div>

@@ -21,18 +21,20 @@ import Hos_register from "./Hospital/Hos_register";
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+    
+      <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Dr_home/>} />
+          <Route exact path="/" element={<Home/>} />
           <Route path="/patient_login" element={<Patient_login />} />
           <Route path="/patient_register" element={<Patient_register />} />
+          <Route path="/patient_home" element={<Patient_home/>}/>
+          
           <Route path="/dr_login" element={<Dr_login/>} />
           <Route path="/dr_register" element={<Dr_register/>}/>
           <Route path="/hos_login" element={<Hos_login/>}/>
           <Route path="/hos_register" element={<Hos_register/>}/>
         </Routes>
-      </BrowserRouter> */}
-      <Home/>
+      </BrowserRouter>
     </>
   );
 }

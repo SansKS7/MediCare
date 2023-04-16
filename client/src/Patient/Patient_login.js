@@ -17,6 +17,11 @@ function Patient_login()     {
   }
 
 
+  function handleSubmit(e)
+  {
+    e.preventDefault()
+    console.log(formData);
+  }
   return (
 <>
     {
@@ -24,7 +29,7 @@ function Patient_login()     {
     }
     <div id='hospital_login'>
     <div className='container'>
-     <form className='login'>
+     <form className='login' onSubmit={handleSubmit}>
   <fieldset >
       <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
     <div class="mb-3">
@@ -36,7 +41,7 @@ function Patient_login()     {
    <label for="disabledTextInput" class="form-label">Password</label>
       <input type="password" id="password" name="password" class="form-control" onChange={handleEvent}/>
    </div>
-    <button type="submit" class="btn btn-primary my-2 ">Login</button>
+    <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Patient_home")}>Login</button>
    
    <center> <b> OR</b> </center>
    <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Patient_register")}>Register</button>

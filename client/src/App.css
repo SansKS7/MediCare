@@ -192,6 +192,8 @@ height: 30px !important;
   margin-left: 30px;
   border-radius: 50px;
   color: #fff;
+  text-decoration: none;
+  
 }
 
 .navbar .getstarted:hover,

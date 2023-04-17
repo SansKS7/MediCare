@@ -8,27 +8,38 @@ export default function () {
     const navigate=useNavigate()
 
     return (
-        <header id="header" class="fixed-top d-flex align-items-center">
-            <div class="container d-flex align-items-center justify-content-between">
+        <header id="header" className="fixed-top d-flex align-items-center">
+            <div className="container d-flex align-items-center justify-content-between">
 
-                <div class="logo">
+                <div className="logo">
                     <h1><Link to="index.html">MediCare</Link></h1>
 
-                    <Link to="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"/></Link>
+                    <Link to="index.html"><img src="assets/img/logo.png" alt="" className="img-fluid"/></Link>
                 </div>
               
   
-                <nav id="navbar" class="navbar">
+                <nav id="navbar" className="navbar">
                     <ul>
-                        <li><Link class="nav-link scrollto active" to="/Home">Home</Link></li>
-                        <li><a class="nav-link scrollto" href="#about">About</a></li>
-                        <li><Link class="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
-                        <li><Link class="nav-link scrollto " to="/Doctors">Doctor</Link></li>
-                        <li><Link class="nav-link scrollto" to="/Hospitals">Hospital</Link> </li>
-                        <li><Link class="nav-link scrollto active" to="/Contact">Contact</Link></li>
-                        <li><Link class="getstarted scrollto" to="#about">Book Appointment</Link></li>
+                        <li><Link className="nav-link scrollto active" to="/Home">Home</Link></li>
+                        <li><a className="nav-link scrollto" href="#about">About</a></li>
+                        
+                        <li><Link className="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
+                        <li><Link className="nav-link scrollto" to="/Hospitals">Hospital</Link> </li> 
+            <ul>
+              <li className="dropdown underline"><a href="#"><span>Login/Register</span> <i className="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><Link className="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
+                  <li><Link className="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
+                  <li><Link className="nav-link scrollto" to="/Hos_Login">Hospital</Link> </li>
+                </ul>
+              </li>
+              
+            </ul>
+          
+                        <li><Link className="nav-link scrollto active" to="/Contact">Contact</Link></li>
+                        <li><Link className="getstarted scrollto" to="#about">Book Appointment</Link></li>
                     </ul>
-                    <i class="bi bi-list mobile-nav-toggle"> </i>
+                    <i className="bi bi-list mobile-nav-toggle"> </i>
                     
                 </nav>
 

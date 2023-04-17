@@ -8,6 +8,7 @@ function Hos_home () {
     <>
     <Hos_header/>
     <Dr_register/>
+    <h1>Welcome</h1>
    {/* <Hos_login/>   */}
     </>
   )

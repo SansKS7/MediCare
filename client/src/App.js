@@ -27,29 +27,33 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/dr_register" element={<Dr_register />} />
-          <Route exact path="/dr_update" element={<Dr_update />} />
-
-git stats
-          <Route exact path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/Contact" element={<Contact />} />
-
-          <Route path="/patient_login" element={<Patient_login />} />
+          {/* <Route exact path="/" element={<Hos_Home/>} />
+          <Route exact path="/dr_register" element={<Dr_register/>} />
+          <Route exact path="/dr_update" element={<Dr_update/>} /> 
+      */}
+      
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/Home" element={<Home/>}/>
+          <Route path="/Contact" element={<Contact/>}/> 
+        
+          
+          <Route path="/login" element={<Dr_login/>}/>
+          <Route path="/login" element={<Hos_login/>}/> 
+          
+           <Route path="/patient_login" element={<Patient_login />} />
           <Route path="/patient_register" element={<Patient_register />} />
-          <Route path="/patient_home" element={<Patient_home />} />
-          <Route path="/hospitals" element={<Hospitals />} />
-          <Route path="/doctors" element={<Doctors />} />
-
-          {/* <Route path="/dr_login" element={<Dr_login/>} />
+          <Route path="/patient_home" element={<Patient_home/>}/>
+          <Route path="/hospitals" element={<Hospitals/>}/>
+          <Route path="/doctors" element={<Doctors/>}/> 
+          
+          <Route path="/dr_login" element={<Dr_login/>} />
           <Route path="/dr_register" element={<Dr_register/>}/>
           <Route path="/hos_login" element={<Hos_login/>}/>
-          <Route path="/hos_register" element={<Hos_register/>}/> */}
+          <Route path="/hos_register" element={<Hos_register/>}/>
         </Routes>
       </BrowserRouter>
-
-
+      {/* <Dr_home/> */}
+ 
     </>
   );
 }

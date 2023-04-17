@@ -24,7 +24,7 @@ export default function () {
                         <li><Link class="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
                         <li><Link class="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
                         <li><Link class="nav-link scrollto" to="/Hos_login">Hospital</Link> </li>
-                        <li><Link class="nav-link scrollto" to="#contact">Contact</Link></li>
+                        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                         <li><Link class="getstarted scrollto" to="#about">Book Appointment</Link></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"> </i>

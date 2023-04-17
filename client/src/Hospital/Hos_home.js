@@ -1,11 +1,13 @@
 import React from 'react';
 import Hos_login from "./Hos_login";
-import Hos_register from './Hos_register';
+import Dr_register from "../Doctor/Dr_register";
+import Hos_header from "./Hos_header";
 
 function Hos_home () {
   return (
     <>
-    <Hos_register/>
+    <Hos_header/>
+    <Dr_register/>
    {/* <Hos_login/>   */}
     </>
   )

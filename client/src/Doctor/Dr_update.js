@@ -121,7 +121,7 @@ function Dr_register() {
                 <b className="my-3">
                   {" "}
                   <center>
-                    <legend> Register Doctor Here.</legend>{" "}
+                    <legend> Update Doctor Here.</legend>{" "}
                   </center>{" "}
                 </b>
 
@@ -296,7 +296,7 @@ function Dr_register() {
                   />
                 </div>
                 <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit}>
-                  Register
+                  Update
                 </button>
 
                 {/* <center>

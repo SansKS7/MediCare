@@ -3,6 +3,7 @@ import Hos_home from "./Hospital/Hos_home";
 import Dr_home from "./Doctor/Dr_home";
 import Patient_home from "./Patient/Patient_home";
 import Hos_login from "./Hospital/Hos_login";
+import Dr_update from "./Doctor/Dr_update";
 import Dr_register from "./Doctor/Dr_register";
 import Patient_login from "./Patient/Patient_login.js";
 import Patient_register from "./Patient/Patient_register.js";
@@ -21,9 +22,11 @@ import Hos_register from "./Hospital/Hos_register";
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Dr_home/>} />
+          <Route exact path="/" element={<Hos_home/>} />
+          <Route exact path="/dr_register" element={<Dr_register/>} />
+          <Route exact path="/dr_update" element={<Dr_update/>} />
           <Route path="/patient_login" element={<Patient_login />} />
           <Route path="/patient_register" element={<Patient_register />} />
           <Route path="/dr_login" element={<Dr_login/>} />
@@ -31,8 +34,8 @@ function App() {
           <Route path="/hos_login" element={<Hos_login/>}/>
           <Route path="/hos_register" element={<Hos_register/>}/>
         </Routes>
-      </BrowserRouter> */}
-      <Home/>
+      </BrowserRouter>
+      {/* <Dr_home/> */}
     </>
   );
 }

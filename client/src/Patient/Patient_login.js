@@ -51,7 +51,7 @@ function Patient_login() {
               </fieldset>
             </form>
             <div className="hero-section-2 col-lg-6 order-1 order-lg-2 hero-img">
-              <img src={require('../assets/img/doctor.png')} className="img1 img-fluid animated" alt="" />
+              <img src={require('../assets/img/patient1.png')} className="img1 img-fluid animated" alt="" />
             </div>
           </div>
         </div>

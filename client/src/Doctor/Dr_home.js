@@ -6,9 +6,10 @@ import Dr_header from './Dr_header';
 function Dr_home () {
   return (
     <>
-    <Dr_header/>
-    <Dr_register/>
-    {/* <Dr_login/> */}
+    <h1>Dr_home</h1>
+    {/* <Dr_login/>
+    Dr_header/>
+    <Dr_register/> */}
     </>
   )
 }

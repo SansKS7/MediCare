@@ -6,10 +6,11 @@ import Hos_header from "./Hos_header";
 function Hos_home () {
   return (
     <>
-    <Hos_header/>
-    <Dr_register/>
+   
     <h1>Welcome</h1>
-   {/* <Hos_login/>   */}
+   {/* <Hos_login/>  
+    <Hos_header/>
+    <Dr_register/> */}
     </>
   )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 
 function Doctors() {
   return (
@@ -8,7 +9,7 @@ function Doctors() {
       <div className="row">
       <Card
         img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
-        title="Jahangir Hospital"
+        title="Doctors Name"
         spe="Speciality:"
         speciality="MultiSpecialist"
         contact="Contact:"
@@ -19,7 +20,7 @@ function Doctors() {
       
       <Card
         img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
-        title="Jahangir Hospital"
+        title="Doctors Name"
         spe="Speciality:"
         speciality="MultiSpecialist"
         contact="Contact:"
@@ -30,7 +31,7 @@ function Doctors() {
       
       <Card
         img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
-        title="Jahangir Hospital"
+        title="Doctors Name"
         spe="Speciality:"
         speciality="MultiSpecialist"
         contact="Contact:"
@@ -72,9 +73,9 @@ function Card(props){
                   </tbody>
                 </table>
               </p>
-              <a href="#" class="btn btn-primary hospitalbtn-card">
-                View Doctors
-              </a>
+              <Link to="/Patient_login" class="btn btn-primary hospitalbtn-card">
+                View more
+              </Link>
             </div>
           </div>
         </div>

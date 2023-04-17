@@ -6,16 +6,29 @@ function Hospitals() {
   return (
     <>
     <Header/>   
-    <div className="searchbar_pos">
-    <form class=" searchbar d-flex hospital__searchbar navbar navbar-expand" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-  </div>
+   
    
     
       <div className="row">
       <Card
+        img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
+        title="Jahangir Hospital"
+        spe="Speciality:"
+        speciality="MultiSpecialist"
+        add="Description"
+        address="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad ipsa explicabo quo! Molestias delectus cupiditate magni tenetur ipsum quod"
+    />
+
+<Card
+        img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
+        title="Jahangir Hospital"
+        spe="Speciality:"
+        speciality="MultiSpecialist"
+        add="Description"
+        address="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad ipsa explicabo quo! Molestias delectus cupiditate magni tenetur ipsum quod"
+    />
+
+<Card
         img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
         title="Jahangir Hospital"
         spe="Speciality:"
@@ -54,7 +67,7 @@ function Card(props){
                 </table>
               </p>
               <Link to="/Patient_login" class="btn btn-primary hospitalbtn-card">
-                View Doctors
+                View More
               </Link>
             </div>
           </div>

@@ -23,7 +23,7 @@ export default function () {
                         <li><Link className="nav-link scrollto active" to="/Home">Home</Link></li>
                         <li><a className="nav-link scrollto" href="#about">About</a></li>
                         
-                        <li><Link className="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
+                        <li><Link className="nav-link scrollto " to="/Doctors">Doctor</Link></li>
                         <li><Link className="nav-link scrollto" to="/Hospitals">Hospital</Link> </li> 
             <ul>
               <li className="dropdown underline"><a href="#"><span>Login/Register</span> <i className="bi bi-chevron-right"></i></a>

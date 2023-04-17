@@ -17,6 +17,7 @@ function Home () {
     <Testmonials/>
     <Frequent_question/>
     <Contact/>
+    
     </>
   )
 }

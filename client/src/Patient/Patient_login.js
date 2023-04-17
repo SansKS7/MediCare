@@ -1,5 +1,6 @@
 import React ,{useState} from 'react'
 import { useNavigate } from "react-router-dom"
+import Header from '../Home/Header'
 function Patient_login()     {
 
   const navigate=useNavigate()
@@ -24,6 +25,7 @@ function Patient_login()     {
   }
   return (
 <>
+    <Header/>
     {
       console.log(formData)
     }

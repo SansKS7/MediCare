@@ -1001,3 +1001,48 @@ section {
 #footer .footer-links a:hover {
   color: #3498db;
 }
+
+/* 
+################################ Hospital ######################## */
+
+
+.hospitalcard{
+  padding: 1rem;
+  text-align: justify;
+  justify-content: center;
+  margin-top: 15rem;
+  margin-left: 2rem;
+  width:28rem;
+  border-radius: 1.5rem;
+  border-color: #888;
+}
+.hospitalbtn-card{
+
+  align-items: center;
+  width:100%;
+  
+}
+
+.searchbar_pos{
+  align-items: center;
+  margin-left: 25%;
+}
+
+.hospital__searchbar{
+  overflow: hidden !important;
+  margin-top: 10rem;
+  position: fixed;
+ 
+
+  width: 50%;
+}
+
+.card__address{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+}
+.search__container{
+    text-align: center;
+}

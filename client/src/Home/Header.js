@@ -16,18 +16,20 @@ export default function () {
 
                     <Link to="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"/></Link>
                 </div>
-
+              
+  
                 <nav id="navbar" class="navbar">
                     <ul>
-                        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                        <li><Link class="nav-link scrollto active" to="/Home">Home</Link></li>
                         <li><a class="nav-link scrollto" href="#about">About</a></li>
                         <li><Link class="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
-                        <li><Link class="nav-link scrollto " to="/Dr_login">Doctor</Link></li>
-                        <li><Link class="nav-link scrollto" to="/Hos_login">Hospital</Link> </li>
-                        <li><Link class="nav-link scrollto" to="#contact">Contact</Link></li>
+                        <li><Link class="nav-link scrollto " to="/Doctors">Doctor</Link></li>
+                        <li><Link class="nav-link scrollto" to="/Hospitals">Hospital</Link> </li>
+                        <li><Link class="nav-link scrollto active" to="/Contact">Contact</Link></li>
                         <li><Link class="getstarted scrollto" to="#about">Book Appointment</Link></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"> </i>
+                    
                 </nav>
 
             </div>

@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-import Header from '../Home/Header'
+import Header from '../Home/Header';
+import { useStateValue } from "../Context/StateProvider";
+import { actionTypes } from "../Context/reducer";
+
 function Patient_login() {
 
   const navigate = useNavigate()
-
+  const [ {PatientUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -20,14 +23,31 @@ function Patient_login() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    if(formData.p_id === "P101" && formData.password === "123")
+    {
+      dispatchUser({
+        type: actionTypes.SET_PATIENT,
+        PatientUser: formData.p_id,
+      });
+      navigate("/patient_home");
+    }
+    else
+    {
+      alert("Invalid Id/Password");
+    }
     console.log(formData);
   }
+
+  useEffect(()=>{
+    if(PatientUser !== null)
+    {
+      navigate("/patient_home")
+    }
+  })
+
   return (
     <>
       <Header />
-      {
-        console.log(formData)
-      }
       <div className='main-container'>
         <div id='patient_login'>
           <div className='container'>
@@ -43,7 +63,7 @@ function Patient_login() {
                   <label for="disabledTextInput" class="form-label">Password</label>
                   <input type="password" id="password" name="password" class="form-control" onChange={handleEvent} />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 " onClick={() => navigate("/Patient_home")}>Login</button>
+                <button type="submit" class="btn btn-primary my-2 ">Login</button>
 
                 <center> <b> OR</b> </center>
                 <button type="submit" class="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>

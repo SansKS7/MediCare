@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Patient_register from "./Patient_register";
 import { useNavigate } from "react-router-dom";
-
+import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
 
 
 function Patient_home() {
-  const navigate=useNavigate()
+  const [ {PatientUser} , dispatchUser] = useStateValue();
+  const navigate=useNavigate();
+
+  function logoutUser()
+  {
+      window.localStorage.clear();
+      window.location.reload();
+  }
+
+
+  useEffect(()=>{
+    if(PatientUser === null || PatientUser === "null")
+    {
+      navigate("/patient_login")
+    }
+  })
   return (
     <>
       
@@ -14,7 +29,7 @@ function Patient_home() {
 
       <h1>Patient Home</h1>
       
-      <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Home")}>Logout</button>
+      <button type="submit" class="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
 
       <div class="card mb-3">
   <div class="row g-0">

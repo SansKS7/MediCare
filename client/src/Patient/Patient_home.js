@@ -3,7 +3,14 @@ import Patient_register from "./Patient_register";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
-
+import HeaderP from '../Home/HeaderP'
+import Home from '../Home/Home'
+import About from '../Home/About'
+import Hero from '../Home/Hero'
+import Count from '../Home/Count'
+import Testimonials from '../Home/Testmonials'
+import Frequent_question from '../Home/Frequent_question'
+import Contact from '../Home/Contact'
 
 function Patient_home() {
   const [ {PatientUser} , dispatchUser] = useStateValue();
@@ -27,24 +34,18 @@ function Patient_home() {
       
       
 
-      <h1>Patient Home</h1>
       
-      <button type="submit" class="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
+      
 
-      <div class="card mb-3">
-  <div class="row g-0">
-    <div class="col-md-4">
-    <img src={require('../assets/img/user.png')} className="img-fluid animated" alt="" />
+      <HeaderP/>
+    <div className='patient__dash'>
+    <Hero/>
+    <About/>
+    <Count/>
+    <Frequent_question/>
+    <Contact/>
+    
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div>
     
 
 

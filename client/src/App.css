@@ -1125,3 +1125,100 @@ section-title h2 {
 .search__container{
     text-align: center;
 }
+
+/* 
+############################### Patient Hospoital########################## */
+
+.search__bar__dr{
+  position: fixed;
+  z-index: 1200;
+  overflow: hidden;
+  margin-top: 7rem;
+  width: 58%;
+  margin-left: 20%;
+}
+
+.hospital__display{
+  display: flex;
+}
+.hospital__hospital__card{
+  margin-top: 4rem;
+
+}
+.hospital__doctor__card{
+  margin-top: 13rem;
+  margin-left: 5rem;
+}
+
+
+/* 
+############################### Patient Hospoital########################## */
+.search__back__PH{
+  margin-top: 4rem;
+  position:fixed;
+  z-index: 1200;
+  background-color:white;
+  height: 10%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hospital__display{
+  display: flex;
+}
+.hospital__hospital__card{
+  margin-top: 4rem;
+
+}
+.hospital__doctor__card{
+  margin-top: 13rem;
+  margin-left: 5rem;
+}
+
+/* 
+############################ Patient Home######################### */
+/* 
+#######################Doctor Home######################## */
+
+.doctorcard{
+  padding: 1rem;
+  text-align: justify;
+  justify-content: center;
+  margin-top: 13rem;
+  margin-left: 2rem;
+  width:28rem;
+  height: 75%;
+  border-radius: 1.5rem;
+  border-color: #888;
+}
+
+.doctor__card__imgblock{
+  width:90%;
+  height:25%;
+  margin:  1rem 1rem;
+  align-items: center;
+}
+
+.search__back{
+  margin-top: 6rem;
+  position:fixed;
+  z-index: 1200;
+  background-color:white;
+  height: 10%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.search__bar__dr{
+  position: fixed;
+  z-index: 1200;
+  overflow: hidden;
+  margin-top: 7rem;
+  width: 58%;
+  margin-left: 20%;
+}
+
+.doctor__btn{
+  align-items: center;
+  background-color: #3498db;
+}

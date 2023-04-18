@@ -11,6 +11,8 @@ import Patient_login from "./Patient/Patient_login.js";
 import Patient_register from "./Patient/Patient_register.js";
 import Home from "./Home/Home.js";
 import Contact from "./Home/Contact";
+import HospitalP from "./Patient/HospitalP";
+import DoctorsP from "./Patient/DoctorsP";
 
 import {
   BrowserRouter as Router,
@@ -53,6 +55,8 @@ function App() {
           <Route path="/hos_home" element={<Hos_home/>}/>
           <Route path="/dr_home" element={<Dr_home/>}/>
           <Route path="/dr_update" element={<Dr_update/>}/>
+          <Route path="HospitalP" element={<HospitalP/>}/>
+          <Route path="DoctorsP" element={<DoctorsP/>}/>
 
         </Routes>
       </BrowserRouter>

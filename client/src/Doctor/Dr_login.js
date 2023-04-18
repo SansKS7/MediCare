@@ -36,7 +36,7 @@ function Dr_login() {
                   <label for="disabledTextInput" class="form-label">Enter Password</label>
                   <input type="password" id="password" name="password" class="form-control" />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Patient_home")}>Login</button>
+                <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Dr_home")}>Login</button>
 
                 {/* <center> <b> OR</b> </center>
    <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/dr_register")}>Register</button> */}

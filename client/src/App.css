@@ -8,7 +8,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 /* ############################### Hospital Login ####################### */
+element.style {
+  overflow-x: hidden;
+}
 .my-2 {
   width: 53vh;
 }
@@ -40,7 +44,9 @@
 
 
 /* ==========================================Hospital Register =================*/
-
+element.style {
+  overflow-x: hidden;
+}
 #hospital_register .register {
   padding: 30px;
   margin-left: 27%;
@@ -77,6 +83,9 @@ height: 30px !important;
 
 
 /* ############################### Doctor Register ####################### */
+element.style {
+  overflow-x: hidden;
+}
 #doctor_register .register {
   padding: 30px;
   float: right;
@@ -121,6 +130,9 @@ height: 30px !important;
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+element.style {
+  overflow-x: hidden;
+}
 #header {
   z-index: 997;
   transition: all 0.5s;
@@ -405,6 +417,7 @@ height: 30px !important;
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 #hero {
   width: 100%;
   height: 70vh;
@@ -470,6 +483,9 @@ height: 30px !important;
     width: 50%;
   }
 }
+element.style {
+  overflow-x: hidden;
+}
 
 @media (max-width: 768px) {
   #hero {
@@ -511,6 +527,9 @@ height: 30px !important;
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
+element.style {
+  overflow-x: hidden;
+}
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -598,6 +617,9 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+element.style {
+  overflow-x: hidden;
+}
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;

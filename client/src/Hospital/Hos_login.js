@@ -40,7 +40,7 @@ function Hos_login() {
                 <label for="disabledTextInput" class="form-label">Enter Password</label>
                 <input type="password" id="password" name="password" class="form-control textbox" onChange={handleEvent} />
               </div>
-              <button type="submit" class="btn btn-primary my-2" onClick={() => navigate("/patient_home")}>Login</button>
+              <button type="submit" class="btn btn-primary my-2" onClick={() => navigate("/Hos_home")}>Login</button>
 
               {/* <center> <b> OR</b> </center>
    <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>

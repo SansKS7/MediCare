@@ -50,6 +50,10 @@ function App() {
           <Route path="/dr_register" element={<Dr_register/>}/>
           <Route path="/hos_login" element={<Hos_login/>}/>
           <Route path="/hos_register" element={<Hos_register/>}/>
+          <Route path="/hos_home" element={<Hos_home/>}/>
+          <Route path="/dr_home" element={<Dr_home/>}/>
+          <Route path="/dr_update" element={<Dr_update/>}/>
+
         </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

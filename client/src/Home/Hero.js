@@ -8,7 +8,7 @@ export default function () {
                         <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
 
                             <h1 data-aos="fade-up">MediCare</h1>
-                            <h2 data-aos="fade-up" data-aos-delay="400">Care A Billion</h2>
+                            <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
                             <div data-aos="fade-up" data-aos-delay="800">
                                 <a href="#about" className="btn-get-started scrollto">Book Appointment</a>
                             </div>

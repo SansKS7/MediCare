@@ -1222,3 +1222,13 @@ section-title h2 {
   align-items: center;
   background-color: #3498db;
 }
+
+/* 
+#####################################Hospital tab########################### */
+.doctor__card__imgblock1{
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  height: 80%;
+  /* border: 2px solid black; */
+}

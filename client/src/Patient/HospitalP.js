@@ -29,7 +29,6 @@ function HospitalP() {
             img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
             hname="Hospital Name"
             name="Jehangir Hospital"
-            drname="Dr. Madhuri Thakare "
             spe="Speciality"
             speciality="Eye Care"
             mail="Mail"
@@ -48,85 +47,60 @@ function HospitalP() {
         </div>
 
         <div className="hospital__doctor__card">
-        <div class="card mb-3">
+          <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
+              <div class="col-md-4 patient__hospital__dr__">
+                <img
+                  src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
+                  class="img-fluid rounded-start doctor__card__imgblock1"
+                  alt="..."
+                />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">Dr. Aditi Kumar</h5>
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Speaciality</th>
+                          <td>Eye Care</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Qualification</th>
+                          <td>MBBS MS</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Mobile</th>
+                          <td>1234567890</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Experience</th>
+                          <td>4 Years</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Charges</th>
+                          <td>500.00</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Mail</th>
+                          <td>aditikumar@gmail.com</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Address</th>
+                          <td className="card__address">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. ! Illum, voluptate reprehenderit.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div><div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-body-secondary">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div><div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-body-secondary">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div><div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-body-secondary">
-                      Last updated 3 mins ago
+                      <button>Book Appointment </button>
                     </small>
                   </p>
                 </div>
@@ -135,49 +109,64 @@ function HospitalP() {
           </div>
           <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
+              <div class="col-md-4 patient__hospital__dr__">
+                <img
+                  src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
+                  className="img-fluid rounded-start card-img-top doctor__card__imgblock1"
+                  alt="..."
+                />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">Dr. Aditi Kumar</h5>
                   <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Speaciality</th>
+                          <td>Eye Care</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Qualification</th>
+                          <td>MBBS MS</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Mobile</th>
+                          <td>1234567890</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Experience</th>
+                          <td>4 Years</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Charges</th>
+                          <td>500.00</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Mail</th>
+                          <td>aditikumar@gmail.com</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Address</th>
+                          <td className="card__address">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing
+                            elit. ! Illum, voluptate reprehenderit.
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                      Last updated 3 mins ago
+                      <button>Book Appointment </button>
                     </small>
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <p class="card-text">
-                    <small class="text-body-secondary">
-                      Last updated 3 mins ago
-                    </small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </div>
     </>
@@ -247,9 +236,15 @@ function Card1(props) {
             </p>
           </div>
         </div>
+
+        <div class="card doctorcard">
+        </div>
+
+
       </div>
     </>
   );
 }
+
 
 export default HospitalP;

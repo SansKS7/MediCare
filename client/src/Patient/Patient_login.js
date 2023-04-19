@@ -56,7 +56,7 @@ function Patient_login() {
                 <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
                 <div class="mb-3">
                   <label for="disabledTextInput" class="form-label">Enter Patient-ID</label>
-                  <input type="text" id="p_id" name="p_id" class="form-control" onChange={handleEvent} />
+                  <input type="text" id="p_id" name="p_id"   class="form-control" onChange={handleEvent} />
                 </div>
 
                 <div class="mb-3">

@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { useNavigate } from "react-router-dom"
-import Header from '../Home/Header'
-import Dr_home from './Dr_home'
+import Dr_header from './Dr_header';
+import { useStateValue } from '../Context/StateProvider'
+import { actionTypes } from "../Context/reducer";
+
 function Dr_login() {
 
   const navigate = useNavigate()
+  const [ {DoctorUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -16,15 +19,36 @@ function Dr_login() {
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value })
   }
-
+    function handleSubmit(e){
+      e.preventDefault()
+      if(formData.d_id === "D101" && formData.password === "123")
+      {
+        dispatchUser({
+          type: actionTypes.SET_DOCTOR,
+          PatientUser: formData.d_id,
+        });
+        navigate("/Dr_home");
+      }
+      else
+      {
+        alert("Invalid Id/Password");
+      }
+      console.log(formData);
+    }
+    
+  useEffect(()=>{
+    if(DoctorUser !== null)
+    {
+      navigate("/Dr_home")
+    }
+  })
   return (
     <>
-      <Header />
-      {console.log(formData)}
+      <Dr_header />
       <div className="main-container">
         <div id='hospital_login'>
           <div className='container'>
-            <form className='login'>
+            <form className='login' onSubmit={handleSubmit}>
               <fieldset >
                 <b className='my-2'> <center><legend>Doctor Login</legend> </center> </b>
                 <div class="mb-3">
@@ -34,12 +58,12 @@ function Dr_login() {
 
                 <div class="mb-3">
                   <label for="disabledTextInput" class="form-label">Enter Password</label>
-                  <input type="password" id="password" name="password" class="form-control" />
+                  <input type="password" id="password" name="password"  onChange={handleEvent} class="form-control" />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Dr_home")}>Login</button>
+                <button type="submit" class="btn btn-primary my-2 " >Login</button>
 
-                {/* <center> <b> OR</b> </center>
-   <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/dr_register")}>Register</button> */}
+                <center> <b> OR</b> </center>
+                <button type="submit" class="btn btn-primary my-2 ">Register</button>
 
               </fieldset>
             </form>

@@ -41,7 +41,7 @@ export default function () {
                         <li><Link class="nav-link scrollto " to="/DoctorsP">Doctor</Link></li>
                         <li><Link class="nav-link scrollto" to="/Patient_profile">Profile</Link> </li>
                         <li><Link class="nav-link scrollto active" to="/Contact">View Appointment</Link></li>
-                        <li><button type="submit" class="getstarted scrollto underline" onClick={logoutUser}>Logout</button></li>
+                        <li><button type="submit" className="getstarted scrollto" onClick={logoutUser}>Logout</button></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"> </i>
                     

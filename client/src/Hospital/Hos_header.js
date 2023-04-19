@@ -1,9 +1,27 @@
-import React from 'react'
+import React ,{ useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import { useStateValue } from "../Context/StateProvider";
 
 export default function () {
-    const navigate = useNavigate()
+    const [ {HospitalUser} , dispatchUser] = useStateValue();
+  const navigate=useNavigate()
+
+    
+  function logoutUser()
+  {
+      window.localStorage.clear();
+      window.location.reload();
+  }
+
+
+  useEffect(()=>{
+    if(HospitalUser === null || HospitalUser === "null")
+    {
+      navigate("/Hos_login")
+    }
+  })
+  
     return (
         <header id="header" class="fixed-top d-flex align-items-center">
             <div class="container d-flex align-items-center justify-content-between">
@@ -16,9 +34,9 @@ export default function () {
                         <li><Link to={"/Dr_register"} className='underline'>Add New Doctor</Link></li>
                         <li><Link to={"/Dr_update"} className='underline'>Update Doctor Info</Link></li>
                         <li><a class="nav-link scrollto" href="#services">Delete Existing Doctor </a></li>
-                        <li><Link to={"/Home"} className='underline'>Logout</Link></li>
+                        <li><button type="submit" class="getstarted scrollto" onClick={logoutUser}>Logout</button></li>
                     
-                        {/* <button type="submit" class="btn btn-primary my-1 " onClick={()=>navigate("/Home")}>Logout</button> */}
+                        {/*  */}
                         
 
 
@@ -28,6 +46,7 @@ export default function () {
 
             </div>
         </header>
+        
     )
 }
 

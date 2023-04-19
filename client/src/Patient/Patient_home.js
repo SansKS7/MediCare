@@ -3,6 +3,7 @@ import Patient_register from "./Patient_register";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
+
 import HeaderP from '../Home/HeaderP'
 import Home from '../Home/Home'
 import About from '../Home/About'
@@ -35,7 +36,7 @@ function Patient_home() {
       
 
       
-      
+      <button type="submit" class="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
 
       <HeaderP/>
     <div className='patient__dash'>

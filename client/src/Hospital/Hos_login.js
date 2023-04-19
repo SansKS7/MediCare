@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Header from '../Home/Header'
-import Hos_home from './Hos_home'
+import { useStateValue } from '../Context/StateProvider';
+import { actionTypes } from '../Context/reducer';
+
 function Hos_login() {
 
-  const navigate = useNavigate();
-
+  const navigate = useNavigate()
+  const [ {HospitalUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -18,6 +20,32 @@ function Hos_login() {
     setForm({ ...formData, [e.target.name]: e.target.value })
   }
 
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    if(formData.h_id === "H101" && formData.password === "123")
+    {
+      dispatchUser({
+        type: actionTypes.SET_HOSPITAL,
+        HospitalUser: formData.h_id,
+      });
+      navigate("/Hos_home");
+    }
+    else
+    {
+      alert("Invalid Id/Password");
+    }
+    console.log(formData);
+  }
+
+  useEffect(()=>{
+    if(HospitalUser !== null)
+    {
+      navigate("/Hos_home")
+    }
+  })
+
+
   return (
 
     <>
@@ -28,7 +56,7 @@ function Hos_login() {
     <div className='main-container'>
       <div id='hospital_login'>
         <div className='container'>
-          <form className='login'>
+          <form className='login' onSubmit={handleSubmit}>
             <fieldset >
               <b className='my-2'> <center><legend>Hospital Login</legend> </center> </b>
               <div className="mb-3">
@@ -40,7 +68,7 @@ function Hos_login() {
                 <label for="disabledTextInput" class="form-label">Enter Password</label>
                 <input type="password" id="password" name="password" class="form-control textbox" onChange={handleEvent} />
               </div>
-              <button type="submit" class="btn btn-primary my-2" onClick={() => navigate("/Hos_home")}>Login</button>
+              <button type="submit" class="btn btn-primary my-2">Login</button>
 
               {/* <center> <b> OR</b> </center>
    <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>

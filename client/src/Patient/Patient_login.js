@@ -6,7 +6,9 @@ import { actionTypes } from "../Context/reducer";
 
 function Patient_login() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
+  const URL = "/api/patientLogin/";
   const [ {PatientUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {
@@ -16,26 +18,61 @@ function Patient_login() {
     }
   )
 
+  async function uploadingData(url, data) {
+    try {
+     
+      const respones = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        
+        //Login Success
+        console.log("Success");
+        dispatchUser({
+              type: actionTypes.SET_PATIENT,
+              PatientUser: formData.p_id,
+            });
+            navigate("/patient_home");
+
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+      
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
+
+
+
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value })
   }
 
 
   function handleSubmit(e) {
-    e.preventDefault()
-    if(formData.p_id === "P101" && formData.password === "123")
-    {
-      dispatchUser({
-        type: actionTypes.SET_PATIENT,
-        PatientUser: formData.p_id,
-      });
-      navigate("/patient_home");
-    }
-    else
-    {
-      alert("Invalid Id/Password");
-    }
-    console.log(formData);
+    e.preventDefault();
+    uploadingData(URL,formData);
+    // if(formData.p_id === "P101" && formData.password === "123")
+    // {
+    //   dispatchUser({
+    //     type: actionTypes.SET_PATIENT,
+    //     PatientUser: formData.p_id,
+    //   });
+    //   navigate("/patient_home");
+    // }
+    // else
+    // {
+    //   alert("Invalid Id/Password");
+    // }
+    // console.log(formData);
   }
 
   useEffect(()=>{

@@ -4,6 +4,7 @@ import Dr_register from './Dr_register';
 import Dr_header from './Dr_header';
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
+import Appointment from './Appointment';
 
 
 function Dr_home () {
@@ -26,12 +27,7 @@ function Dr_home () {
   return (
     <>
     <Dr_header/>
-    <h1>Welcome Doctor</h1>
-
-    
-    {/* <Dr_login/>
-    Dr_header/>
-    <Dr_register/> */}
+    <Appointment/>
     </>
   )
 }

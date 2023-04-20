@@ -1,7 +1,12 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import HeaderP from "../Home/HeaderP";
+import { useStateValue } from "../Context/StateProvider";
+import { useNavigate } from "react-router-dom";
 
 function HospitalP() {
+
+const navigate = useNavigate()
+
   return (
     <>
       <div>HospitalP</div>
@@ -226,13 +231,14 @@ function Card1(props) {
                 </tbody>
               </table>
             </p>
+           
             <p className="text-center">
-              <button
+              {/* <button
                 class="btn btn-primary doctor__btn text-center"
-                type="submit"
+                type="submit" onClick={ () => navigate("/Book_Appointment")}
               >
                 Book Appointment
-              </button>
+              </button> */}
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState ,useEffect} from 'react'
 import { useNavigate } from "react-router-dom"
-import Dr_header from './Dr_header';
+import Header from '../Home/Header';
 import { useStateValue } from '../Context/StateProvider'
 import { actionTypes } from "../Context/reducer";
 
@@ -44,7 +44,7 @@ function Dr_login() {
   })
   return (
     <>
-      <Dr_header />
+      <Header/>
       <div className="main-container">
         <div id='hospital_login'>
           <div className='container'>
@@ -62,8 +62,8 @@ function Dr_login() {
                 </div>
                 <button type="submit" class="btn btn-primary my-2 " >Login</button>
 
-                <center> <b> OR</b> </center>
-                <button type="submit" class="btn btn-primary my-2 ">Register</button>
+                {/* <center> <b> OR</b> </center>
+                <button type="submit" class="btn btn-primary my-2 ">Register</button> */}
 
               </fieldset>
             </form>

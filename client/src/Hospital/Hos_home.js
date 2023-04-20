@@ -31,6 +31,7 @@ function Hos_home () {
 <button type="submit" class="btn btn-primary my-2 " onClick={()=>navigate("/Home")}>Logout</button> */}
 
     <Hos_header/>
+    <Dr_register/>
 
 
    {/* <Hos_login/>  

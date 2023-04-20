@@ -13,6 +13,16 @@ import Home from "./Home/Home.js";
 import Contact from "./Home/Contact";
 import HospitalP from "./Patient/HospitalP";
 import DoctorsP from "./Patient/DoctorsP";
+import Dr_login from "./Doctor/Dr_login";
+import Hos_register from "./Hospital/Hos_register";
+import Dr_schedule from "./Doctor/Dr_Schedule";
+import Patient_Details from "./Hospital/Patient_Details";
+import Appointment from "./Doctor/Appointment";
+import C_appointment from "./Doctor/C_appointment";
+import P_appointment from "./Doctor/P_appointment";
+import R_appointment from "./Doctor/R_appointment";
+import Dr_Delete from "./Doctor/Dr_Delete";
+
 
 import {
   BrowserRouter as Router,
@@ -22,8 +32,9 @@ import {
   BrowserRouter,
   MemoryRouter,
 } from "react-router-dom";
-import Dr_login from "./Doctor/Dr_login";
-import Hos_register from "./Hospital/Hos_register";
+
+
+
 function App() {
   return (
     <>
@@ -40,14 +51,12 @@ function App() {
         
           
           <Route path="/login" element={<Dr_login/>}/>
-          <Route path="/login" element={<Hos_login/>}/> 
-          
-           <Route path="/patient_login" element={<Patient_login />} />
+          <Route path="/login" element={<Hos_login/>}/>  
+          <Route path="/patient_login" element={<Patient_login />} />
           <Route path="/patient_register" element={<Patient_register />} />
           <Route path="/patient_home" element={<Patient_home/>}/>
           <Route path="/hospitals" element={<Hospitals/>}/>
-          <Route path="/doctors" element={<Doctors/>}/> 
-          
+          <Route path="/doctors" element={<Doctors/>}/>         
           <Route path="/dr_login" element={<Dr_login/>} />
           <Route path="/dr_register" element={<Dr_register/>}/>
           <Route path="/hos_login" element={<Hos_login/>}/>
@@ -57,8 +66,16 @@ function App() {
           <Route path="/dr_update" element={<Dr_update/>}/>
           <Route path="HospitalP" element={<HospitalP/>}/>
           <Route path="DoctorsP" element={<DoctorsP/>}/>
-
-        </Routes>
+          <Route path="/Dr_schedule" element={<Dr_schedule/>}/>
+          <Route path="/Patient_Details" element={<Patient_Details/>}/>
+          <Route path="/Appointment" element={<Appointment/>}/>
+          <Route path="/C_Appointment" element={<C_appointment/>}/>
+          <Route path="/P_Appointment" element={<P_appointment/>}/>
+          <Route path="/R_Appointment" element={<R_appointment/>}/>
+          <Route path="/Patient_Details" element={<Patient_Details/>}/>
+          <Route path="/Dr_Delete" element={<Dr_Delete/>}/>
+         
+          </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}
  

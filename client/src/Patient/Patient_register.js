@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"
+import Header from "../Home/Header";
 
 function Patient_register() {
   const navigate=useNavigate()
@@ -98,8 +99,9 @@ function onFormSubmit(e)
   return (
     <>
       {console.log(formData)}
-
-      <div id="hospital_register">
+      <Header/>
+      <div className="main-container">
+      <div id="patient_register">
         <div className="container">
           <form className="register">
             <fieldset>
@@ -212,14 +214,18 @@ function onFormSubmit(e)
                Register 
               </button>
 
-              <center>
+              {/* <center>
                 <b> OR</b>{" "}
               </center>
               <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={()=>navigate("/Patient_login")}>
                 Login
-              </button>
+              </button> */}
             </fieldset>
           </form>
+        </div>
+      </div>
+      <div className="hero-section-2 col-lg-6 order-1 order-lg-2 hero-img">
+          <img src={require('../assets/img/doctor.png')} className="img1 img-fluid animated" alt="" />
         </div>
       </div>
     </>

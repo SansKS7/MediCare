@@ -105,7 +105,7 @@ const navigate = useNavigate()
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                      <button>Book Appointment </button>
+                      <button onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
                     </small>
                   </p>
                 </div>
@@ -165,7 +165,7 @@ const navigate = useNavigate()
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                      <button>Book Appointment </button>
+                    <button onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
                     </small>
                   </p>
                 </div>

@@ -22,7 +22,8 @@ import C_appointment from "./Doctor/C_appointment";
 import P_appointment from "./Doctor/P_appointment";
 import R_appointment from "./Doctor/R_appointment";
 import Dr_Delete from "./Doctor/Dr_Delete";
-
+import Dr_Profile from "./Doctor/Dr_Profile";
+import Book_Appointment from "../src/Patient/Book_Appointment"
 
 import {
   BrowserRouter as Router,
@@ -32,6 +33,7 @@ import {
   BrowserRouter,
   MemoryRouter,
 } from "react-router-dom";
+
 
 
 
@@ -74,7 +76,8 @@ function App() {
           <Route path="/R_Appointment" element={<R_appointment/>}/>
           <Route path="/Patient_Details" element={<Patient_Details/>}/>
           <Route path="/Dr_Delete" element={<Dr_Delete/>}/>
-         
+          <Route path="/Dr_Profile" element={<Dr_Profile/>}/>
+         <Route path="/Book_Appointment" element={<Book_Appointment/>}/>
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

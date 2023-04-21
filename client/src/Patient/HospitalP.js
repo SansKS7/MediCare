@@ -40,12 +40,6 @@ const navigate = useNavigate()
             mailid="adityakumar@gmail.com"
             add="Address"
             address="Pune Station Road, Opposite Saurabh Hall and Alankar Talkies, Central Excise Colony, Sangamwadi, Pune"
-            exp="Experience"
-            experience=" 4 Years"
-            charge="Charges"
-            charges="500.00 Rs"
-            qua="Qualification"
-            qualification="MBBS, MS"
             ph="PhoneNo"
             phoneNo="1234567890"
           />
@@ -105,7 +99,7 @@ const navigate = useNavigate()
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                      <button onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
+                      <button  className="btn btn-primary doctor__btn text-center"onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
                     </small>
                   </p>
                 </div>
@@ -165,7 +159,7 @@ const navigate = useNavigate()
                   </p>
                   <p class="card-text">
                     <small class="text-body-secondary">
-                    <button onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
+                    <button className="btn btn-primary doctor__btn text-center" onClick={() => navigate("/Book_Appointment")}>Book Appointment </button>
                     </small>
                   </p>
                 </div>
@@ -203,20 +197,8 @@ function Card1(props) {
                     <td>{props.speciality}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.exp}</th>
-                    <td>{props.experience}</td>
-                  </tr>
-                  <tr>
                     <th scope="col">{props.ph}</th>
                     <td>{props.phoneNo}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.qua}</th>
-                    <td>{props.qualification}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.charge}</th>
-                    <td>{props.charges}</td>
                   </tr>
                   <tr>
                     <th scope="col">{props.mail}</th>
@@ -232,15 +214,15 @@ function Card1(props) {
               </table>
             </p>
            
-            <p className="text-center">
-              {/* <button
+            {/* <p className="text-center">
+               <button
                 class="btn btn-primary doctor__btn text-center"
                 type="submit" onClick={ () => navigate("/Book_Appointment")}
               >
                 Book Appointment
-              </button> */}
-            </p>
-          </div>
+              </button>
+            </p> */}
+          </div> 
         </div>
 
         <div class="card doctorcard">

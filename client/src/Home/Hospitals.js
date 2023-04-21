@@ -15,7 +15,7 @@ function Hospitals() {
         title="Jahangir Hospital"
         spe="Speciality:"
         speciality="MultiSpecialist"
-        add="Description"
+        add="Address"
         address="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad ipsa explicabo quo! Molestias delectus cupiditate magni tenetur ipsum quod"
     />
 

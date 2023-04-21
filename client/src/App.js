@@ -24,7 +24,9 @@ import R_appointment from "./Doctor/R_appointment";
 import Dr_Delete from "./Doctor/Dr_Delete";
 import Dr_Profile from "./Doctor/Dr_Profile";
 import Book_Appointment from "../src/Patient/Book_Appointment"
-
+import Patient_profile from "./Patient/Patient_profile";
+import Edit_profile from "./Patient/Edit_profile";
+import View_Appointment from "./Patient/View_Appointment";
 import {
   BrowserRouter as Router,
   Route,
@@ -78,6 +80,10 @@ function App() {
           <Route path="/Dr_Delete" element={<Dr_Delete/>}/>
           <Route path="/Dr_Profile" element={<Dr_Profile/>}/>
          <Route path="/Book_Appointment" element={<Book_Appointment/>}/>
+         <Route path="/Patient_profile" element={<Patient_profile/>}/>
+         <Route path="/Edit_profile" element={<Edit_profile/>}/>
+         <Route path="/View_Appointment" element={<View_Appointment/>}/>
+
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

@@ -29,7 +29,7 @@ function Dr_register() {
 
   function isfirstName(val) {
     //console.log(val);
-    var reg = /^[a-zA-Z]+$/;
+    var reg = /^[a-zA-Z\s]+$/;
     if (reg.test(val))
       return true;
     return false;
@@ -45,7 +45,7 @@ function Dr_register() {
 
   function isAddress(val) {
     console.log(val);
-    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    var reg = /^[a-zA-Z0-9-\s+/b+(/,@)]+$/;
     // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
 
     if (reg.test(val))
@@ -83,13 +83,23 @@ function Dr_register() {
     if (pass === repass) return true;
     return false;
   }
+  
+  function isSpeciality(val) {
+    console.log(val)
+    var regex=/^[a-zA-Z,-\s]*$/;
+     if (!regex.test(val)) {
+      return false;
+    }
+    return true;
+  }
+
   function onFormSubmit(e) {
     e.preventDefault();
     //console.log(formData)
 
     var hname = isfirstName(formData.hospitalName)
     var fname = isfirstName(formData.name);
-    var speciality = isfirstName(formData.speciality);
+    var speciality = isAddress(formData.speciality);
     var mail = isMail(formData.mail);
     var phone = isPhno(formData.phoneNo);
     var address = isAddress(formData.address);
@@ -97,7 +107,7 @@ function Dr_register() {
     var repassword = isRePassword(formData.password, formData.repassword);
     var exp = isRating(formData.experience);
     var charges = isRating(formData.charges);
-    var qualification = isfirstName(formData.qualification);
+    var qualification = isAddress(formData.qualification);
     if (fname && speciality && mail && phone && address && exp && password && repassword && charges && qualification && hname) {
       alert("Login Successful")
     }
@@ -131,7 +141,8 @@ function Dr_register() {
                     <input
                       type="text"
                       class="form-control textbox"
-
+                      value={"D101"}
+                      disabled
                       id="d_id"
                       name="d_id"
                       onChange={handleEvent}
@@ -143,7 +154,9 @@ function Dr_register() {
                     <input
                       type="text"
                       class="form-control textbox"
-
+                      value={"H101"}
+                      disabled
+                     
                       id="h_id"
                       onChange={handleEvent}
                       name="h_id"

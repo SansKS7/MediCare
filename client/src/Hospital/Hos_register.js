@@ -23,7 +23,7 @@ function Hos_register() {
 
   function isfirstName(val) {
     //console.log(val);
-     var reg=/^[a-zA-Z]+$/;
+     var reg=/^[a-zA-Z\s]+$/;
      if(reg.test(val))
      return true;
      return false;
@@ -31,22 +31,23 @@ function Hos_register() {
 
   function isRating(val)
   {
-    var rate = /^\d{2}$/;
+    var rate = /^\d{1,2}$/;
     if(rate.test(val))
     return true;
     return false;
 
   }
+  function isAddress(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9-\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
 
-  function isAddress(val){
-   console.log(val);
-   var reg=/^[a-zA-Z0-9\s+/b+(/,@)]+$/;
-  // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
-
-   if(reg.test(val))
-   return true;
-   return false;
+    if (reg.test(val))
+      return true;
+    return false;
   }
+
+
 
   function isPhno(val)
   {
@@ -80,18 +81,37 @@ function isPassword(val) {
       if(pass===repass)return true;
       return false;
    }
+
+  
+   function isSpeciality(val) {
+    console.log(val)
+    var regex=/^[a-zA-Z.-\s]*$/;
+     if (!regex.test(val)) {
+      return false;
+    }
+    return true;
+  }
+ 
 function onFormSubmit(e)
 {
    e.preventDefault();
    //console.log(formData)
    var fname=isfirstName(formData.name);
-   var speciality=isfirstName(formData.speciality);
+   //console.log(fname)
+    var speciality=isAddress(formData.speciality);
+    //console.log(speciality)
    var rating=isRating(formData.rating);
+  //console.log(rating)
    var phone=isPhno(formData.phoneNo);
-   var address=isAddress(formData.address);
+   //console.log(phone)
+    var address=isAddress(formData.address);
+   // console.log(address)
    var mail=isMail(formData.mail);
-   var password=isPassword(formData.password);
-   var repassword=isRePassword(formData.password,formData.repassword);
+  // console.log(mail)
+  var password=isPassword(formData.password);
+  //console.log(password)
+    var repassword=isRePassword(formData.password,formData.repassword);
+    //console.log(repassword)
    if(fname&&speciality&&rating&&phone&&address&&mail&&password&&repassword)
    {
       alert("Login Successful")

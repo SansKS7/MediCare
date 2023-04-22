@@ -27,6 +27,10 @@ import Book_Appointment from "../src/Patient/Book_Appointment"
 import Patient_profile from "./Patient/Patient_profile";
 import Edit_profile from "./Patient/Edit_profile";
 import View_Appointment from "./Patient/View_Appointment";
+import Dr_edit from "./Doctor/Dr_edit";
+import Hos_Profile from "./Hospital/Hos_Profile";
+import Hos_edit from "./Hospital/Hos_edit";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -35,6 +39,8 @@ import {
   BrowserRouter,
   MemoryRouter,
 } from "react-router-dom";
+
+
 
 
 
@@ -83,7 +89,9 @@ function App() {
          <Route path="/Patient_profile" element={<Patient_profile/>}/>
          <Route path="/Edit_profile" element={<Edit_profile/>}/>
          <Route path="/View_Appointment" element={<View_Appointment/>}/>
-
+         <Route path="/Dr_edit" element={<Dr_edit/>}/>
+         <Route path="/Hos_profile" element={<Hos_Profile/>}/>
+        <Route path="/Hos_edit" element={<Hos_edit/>}/>
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

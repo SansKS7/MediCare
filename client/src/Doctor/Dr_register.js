@@ -168,7 +168,6 @@ function Dr_register() {
                     <input
                       type="text"
                       class="form-control textbox"
-
                       id="hospitalName"
                       onChange={handleEvent}
                       name="hospitalName"

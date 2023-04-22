@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
-import Dr_header from './Dr_header';
+import Hos_header from './Hos_header';
 
 
 export default function () {
@@ -10,7 +10,7 @@ export default function () {
     return (
 
         <>
-            <Dr_header />
+            <Hos_header/>
             <div id='profile'>
                 <div className="container">
                     <div className="main-body">
@@ -38,7 +38,7 @@ export default function () {
                                     <div className="card-body">
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Doctor Name</h6>
+                                                <h6 className="mb-0">Hospital-ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 Kenneth Valdez
@@ -47,7 +47,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Speciality</h6>
+                                                <h6 className="mb-0">Hospital Name</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <a href="/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="4b2d223b0b213e20263e23652a27">[email&#160;protected]</a>
@@ -56,7 +56,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Mail-ID</h6>
+                                                <h6 className="mb-0">Speciality</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 (239) 816-9029
@@ -65,10 +65,19 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Phone No</h6>
+                                                <h6 className="mb-0">Mail</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 (320) 380-4539
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Phone No</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                Bay Area, San Francisco, CA
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -83,35 +92,19 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Experience</h6>
+                                                <h6 className="mb-0">Rating</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 Bay Area, San Francisco, CA
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <div className="row">
-                                            <div className="col-sm-3">
-                                                <h6 className="mb-0">Charges</h6>
-                                            </div>
-                                            <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
-                                            </div>
-                                        </div>
-                                        <hr></hr>
-                                        <div className="row">
-                                            <div className="col-sm-3">
-                                                <h6 className="mb-0">Qualification</h6>
-                                            </div>
-                                            <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
-                                            </div>
-                                        </div>
-                                        <hr></hr>
+                                       
+                                     
                                         <div className="row">
                                     
                                             <div className="col-sm-12">
-                                            <Link to="/Dr_edit" className="btn btn-primary">Edit Profile</Link>
+                                            <Link to="/Hos_edit" className="btn btn-primary">Edit Profile</Link>
                                             </div>
                                        
                                         </div>

@@ -26,14 +26,14 @@ export default function () {
 
     function isfirstName(val) {
         //console.log(val);
-        var reg = /^[a-zA-Z]+$/;
+        var reg = /^[a-zA-Z\s]+$/;
         if (reg.test(val))
-            return true;
+          return true;
         return false;
-    }
+      }
 
     function isRating(val) {
-        var rate = /^\d{2}$/;
+        var rate = /^\d{1,2}$/;
         if (rate.test(val))
             return true;
         return false;
@@ -42,13 +42,13 @@ export default function () {
 
     function isAddress(val) {
         console.log(val);
-        var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+        var reg = /^[a-zA-Z0-9-\s+/b+(/,@)]+$/;
         // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
-
+    
         if (reg.test(val))
-            return true;
+          return true;
         return false;
-    }
+      }
 
     function isPhno(val) {
         var phoneNo = /^\d{10,10}$/;
@@ -65,18 +65,29 @@ export default function () {
         return false;
     }
 
+    function isPassword(val) {
+        console.log(val)
+        var regex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+        if (!regex.test(val)) {
+          return false;
+        }
+        return true;
+      }
+    
+
 
     function onFormSubmit(e) {
         e.preventDefault();
         //console.log(formData)
         var fname = isfirstName(formData.name);
-        var speciality = isfirstName(formData.speciality);
+        var speciality = isAddress(formData.speciality);
         var rating = isRating(formData.rating);
         var phone = isPhno(formData.phoneNo);
         var address = isAddress(formData.address);
         var mail = isMail(formData.mail);
+        var password = isPassword(formData.password); 
 
-        if (fname && speciality && rating && phone && address && mail) {
+        if (fname && speciality && rating && phone && address && mail && password) {
             alert("Login Successful")
         }
         else {
@@ -214,6 +225,21 @@ export default function () {
                                                     type="text"
                                                     id="rating"
                                                     name="rating"
+                                                    className="form-control textbox"
+                                                    onChange={handleEvent}
+                                                />
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Password</h6> </label>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                <input
+                                                    type="text"
+                                                    id="password"
+                                                    name="password"
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />

@@ -14,6 +14,7 @@ export default function () {
     d_id: "",
     h_id: "",
     name: "",
+    hospitalName:"",
     speciality: "",
     mail: "",
     phoneNo: "",
@@ -84,20 +85,40 @@ export default function () {
     return true;
   }
 
+  function isPassword(val) {
+    console.log(val)
+
+    var regex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+    if (!regex.test(val)) {
+      return false;
+    }
+    return true;
+  }
+
   function onFormSubmit(e) {
     e.preventDefault();
     //console.log(formData)
 
-    var hname = isfirstName(formData.hospitalName)
+    //var hname = isfirstName(formData.hospitalName)
     var fname = isfirstName(formData.name);
+   
     var speciality = isAddress(formData.speciality);
+    
     var mail = isMail(formData.mail);
+   
     var phone = isPhno(formData.phoneNo);
+   
     var address = isAddress(formData.address);
+     
     var exp = isRating(formData.experience);
+   
+    var password=isPassword(formData.password);
+    
     var charges = isRating(formData.charges);
+  
     var qualification = isAddress(formData.qualification);
-    if (fname && speciality && mail && phone && address && exp && charges && qualification && hname) {
+   
+    if (fname && speciality && mail && phone && address && exp && password && charges && qualification) {
       alert("Login Successful")
     }
     else {
@@ -134,6 +155,36 @@ export default function () {
                             <div className="col-md-8">
                                 <div className="card card1 mb-3">
                                     <div className="card-body">
+                                    <div className="row">
+                                            <div className="col-sm-3">
+                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Hospital-ID</h6> </label>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                <input
+                                                    type="text"
+                                                    id="h_id"
+                                                    name="h_id"
+                                                    className="form-control textbox"
+                                                    disabled
+                                                />
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Hospital-Name</h6> </label>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                <input
+                                                    type="text"
+                                                    id="hospitalName"
+                                                    name="hospitalName"
+                                                    className="form-control textbox"
+                                                    disabled
+                                                />
+                                            </div>
+                                        </div>
+                                        <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
                                                 <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Doctor-ID</h6> </label>
@@ -141,8 +192,8 @@ export default function () {
                                             <div className="col-sm-9 text-secondary">
                                                 <input
                                                     type="text"
-                                                    id="h_id"
-                                                    name="h_id"
+                                                    id="d_id"
+                                                    name="d_id"
                                                     className="form-control textbox"
                                                     disabled
                                                 />
@@ -264,6 +315,21 @@ export default function () {
                                                     type="text"
                                                     id="qualification"
                                                     name="qualification"
+                                                    className="form-control textbox"
+                                                    onChange={handleEvent}
+                                                />
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Password</h6> </label>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                            <input
+                                                    type="text"
+                                                    id="password"
+                                                    name="password"
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />

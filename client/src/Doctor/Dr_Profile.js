@@ -36,6 +36,33 @@ export default function () {
                             <div className="col-md-8">
                                 <div className="card card1 mb-3">
                                     <div className="card-body">
+                                    <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Hospital-ID</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                Kenneth Valdez
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Hospital Name</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                Kenneth Valdez
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Doctor-ID</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                                Kenneth Valdez
+                                            </div>
+                                        </div>
+                                        <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
                                                 <h6 className="mb-0">Doctor Name</h6>
@@ -108,6 +135,7 @@ export default function () {
                                             </div>
                                         </div>
                                         <hr></hr>
+                                       
                                         <div className="row">
                                     
                                             <div className="col-sm-12">

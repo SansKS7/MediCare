@@ -81,6 +81,7 @@ router.get("/hospital", (req, res, next) => {
     });
 });
 
+// /api/doctor?search="D101"
 router.get("/doctor", (req, res, next) => {
   searchDoctor(req)
     .then((result) => {
@@ -252,6 +253,10 @@ router.post(
   }
 );
 
+//  /api/addDoctor
+{
+  
+}
 router.post("/addDoctor", (req, res) => {
   console.log(req.body);
   doctorRegister(req)

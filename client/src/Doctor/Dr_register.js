@@ -1,30 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
 import Hos_header from "../Hospital/Hos_header";
+import { useStateValue } from '../Context/StateProvider';
+import { actionTypes } from '../Context/reducer';
+
 function Dr_register() {
 
   const navigate = useNavigate()
-  const [formData, setForm] = useState({
-    _id: null,
-    d_id: "",
-    h_id: "",
-    hospitalName: "",
-    name: "",
-    speciality: "",
-    mail: "",
-    phoneNo: "",
-    address: "",
-    password: "",
-    repassword: "",
-    experience: "",
-    charges: "",
-    qualification: "",
+  
+
+  const URL = "/api/addDoctor";
+  const getIdUrl = "/api/doctorId";
+  const [doctor, setdocId] = useState();
+  const [ {HospitalUser} , dispatchUser] = useStateValue();
+
+ 
+
+  async function receiveID(getIdUrl) {
+    try {
+      const respones = await fetch(getIdUrl).catch((e) =>
+        console.log("Error : ", e)
+      );
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        setdocId(json.doctor_id);
+        console.log("Success");
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
   }
-  )
+
+  const [formData, setForm] = useState({});
+
+  async function uploadingData(url, data) {
+    try {
+      const respones = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        console.log("Success");
+
+        navigate("/Hos_Home");
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
 
   const handleEvent = (e) => {
-    setForm({ ...formData, [e.target.name]: e.target.value })
-  }
+    setForm({ ...formData, [e.target.name]: e.target.value });
+  };
 
 
   function isfirstName(val) {
@@ -107,7 +148,8 @@ function Dr_register() {
     var exp = isRating(formData.experience);
     var charges = isRating(formData.charges);
     var qualification = isAddress(formData.qualification);
-    if (fname && speciality && mail && phone && address && exp && password && repassword && charges && qualification && hname) {
+    if (fname && speciality && mail && phone && address && exp && password && charges && qualification && hname) {
+      uploadingData(URL, formData);
       alert("Login Successful")
     }
     else {
@@ -117,6 +159,30 @@ function Dr_register() {
 
 
   }
+
+  useEffect(() => {
+    receiveID(getIdUrl);
+  });
+  
+    useEffect(() => {
+      setForm({
+        _id: null,
+          d_id: doctor,
+          h_id: HospitalUser,
+          hospitalName: "",
+          name: "",
+          speciality: "",
+          mail: "",
+          phoneNo: "",
+          address: "",
+          password: "",
+          repassword: "",
+          experience: "",
+          charges: "",
+          qualification: "",
+      });
+    }, [doctor]);
+  
   return (
     <>
       {console.log(formData)}
@@ -140,7 +206,7 @@ function Dr_register() {
                     <input
                       type="text"
                       class="form-control textbox"
-                      value={"D101"}
+                      value={formData.d_id}
                       disabled
                       id="d_id"
                       name="d_id"
@@ -153,7 +219,7 @@ function Dr_register() {
                     <input
                       type="text"
                       class="form-control textbox"
-                      value={"H101"}
+                      value={formData.h_id}
                       disabled
                       id="h_id"
                       onChange={handleEvent}

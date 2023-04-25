@@ -9,6 +9,9 @@ function Patient_login() {
   const navigate = useNavigate();
   
   const URL = "/api/patientLogin/";
+  const doctorIdUrl = "/api/doctorId"
+  //const doctorid;
+
   const [ {PatientUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {

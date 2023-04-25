@@ -35,8 +35,10 @@ function Hos_login() {
         dispatchUser({
           type:actionTypes.SET_HOSPITAL,
           HospitalUser:formData.h_id,
+        
         });
         navigate("/Hos_home");
+        
       }
       else{
         console.log("Invalid Login");

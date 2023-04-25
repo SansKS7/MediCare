@@ -1,25 +1,62 @@
-import React, { useState } from "react";
+import React, { useEffect , useState } from "react";
 import { useNavigate } from "react-router-dom";
 function Hos_register() {
-  const navigate = useNavigate();
+  const URL = "/api/hospitalReg";
+  const getIdUrl = "/api/hospitalId";
+  const [hospital, sethosId] = useState();
 
-  const [formData, setForm] = useState({
-    _id: null,
-    h_id: "",
-    name: "",
-    speciality: "",
-    mail: "",
-    phoneNo: "",
-    address: "",
-    password: "",
-    repassword: "",
-    rating: "",
-    h_img: "",
-  });
+  async function receiveID(getIdUrl) {
+    try {
+      const respones = await fetch(getIdUrl).catch((e) =>
+        console.log("Error : ", e)
+      );
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        sethosId(json.hospital_id);
+        console.log("Success");
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
+
+  const [formData, setForm] = useState({});
+
+  async function uploadingData(url, data) {
+    try {
+      const respones = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        console.log("Success");
+
+        navigate("/patient_home");
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
 
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const navigate = useNavigate();
 
   function isfirstName(val) {
     //console.log(val);
@@ -112,17 +149,42 @@ function onFormSubmit(e)
   //console.log(password)
     var repassword=isRePassword(formData.password,formData.repassword);
     //console.log(repassword)
-   if(fname&&speciality&&rating&&phone&&address&&mail&&password&&repassword)
+   if(fname&&speciality&&rating&&phone&&address&&mail&&password)
    {
+    console.log(formData);
+    uploadingData(URL, formData);
+    
       alert("Login Successful")
    }
    else{
       alert("Login Unsuccessful")
-      
    }
-   
+
+} 
+useEffect(() => {
+  receiveID(getIdUrl);
+  console.log(hospital);
+});
+
+  useEffect(() => {
+    setForm({
+      _id: null,
+      h_id: hospital,
+      name: "",
+      speciality: "",
+      mail: "",
+      phoneNo: "",
+      address: "",
+      password: "",
+      repassword: "",
+      rating: "",
+      h_img: "",
+    });
+  }, [hospital]);
+
+
   
-}
+
   return (
     <>
   
@@ -136,7 +198,19 @@ function onFormSubmit(e)
                   <legend> Register Your Hospital Here .</legend>{" "}
                 </center>{" "}
               </b>
-
+              <div className="mb-3">
+                <label for="disabledTextInput" className="form-label">
+                  Hospital-ID
+                </label>
+                <input
+                  type="text"
+                  className="form-control textbox"
+                  id="h_id"
+                  name="h_id"
+                  value={formData.h_id}
+                  onChange={handleEvent}
+                />
+              </div>
               <div className="mb-3">
                 <label for="disabledTextInput" className="form-label">
                   Enter Name

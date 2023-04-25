@@ -7,6 +7,8 @@ import { actionTypes } from '../Context/reducer';
 function Hos_login() {
 
   const navigate = useNavigate()
+
+  const URL="api/hospitalLogin";
   const [ {HospitalUser} , dispatchUser] = useStateValue();
   const [formData, setForm] = useState(
     {
@@ -15,6 +17,35 @@ function Hos_login() {
       password: "",
     }
   )
+  async function uploadingData(url,data){
+    try{
+      const respones=await fetch(url,{
+        method:"POST",
+        headers:{
+          "Content-Type": "application/json",
+
+        },
+        body: JSON.stringify(data),
+
+      }).catch((e)=>console.log("Error ",e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if(respones.status==200){
+        console.log("Success")
+        dispatchUser({
+          type:actionTypes.SET_HOSPITAL,
+          HospitalUser:formData.h_id,
+        });
+        navigate("/Hos_home");
+      }
+      else{
+        console.log("Invalid Login");
+        alert("Invalid Login");
+      }
+    }catch(e){
+      console.log("Error",e);
+    }
+  }
 
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value })
@@ -22,28 +53,31 @@ function Hos_login() {
 
 
   function handleSubmit(e) {
-    e.preventDefault()
-    if(formData.h_id === "H101" && formData.password === "123")
-    {
-      dispatchUser({
-        type: actionTypes.SET_HOSPITAL,
-        HospitalUser: formData.h_id,
-      });
-      navigate("/Hos_home");
-    }
-    else
-    {
-      alert("Invalid Id/Password");
-    }
-    console.log(formData);
+    e.preventDefault();
+    uploadingData(URL,formData);
+        // if(formData.h_id === "H101" && formData.password === "123")
+    // {
+    //   dispatchUser({
+    //     type: actionTypes.SET_HOSPITAL,
+    //     HospitalUser: formData.h_id,
+    //   });
+    //   navigate("/Hos_home");
+    // }
+    // else
+    // {
+    //   alert("Invalid Id/Password");
+    // }
+    //console.log(formData);
   }
 
   useEffect(()=>{
-    if(HospitalUser !== null)
+    if(HospitalUser!==null)
     {
       navigate("/Hos_home")
     }
   })
+
+  
 
 
   return (

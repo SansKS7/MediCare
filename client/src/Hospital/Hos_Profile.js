@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, {useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
@@ -6,6 +6,27 @@ import Hos_header from './Hos_header';
 
 
 export default function () {
+
+const navigate = useNavigate()
+
+const [ {HospitalUser} , dispatchUser] = useStateValue();
+    const URL = "/api/hospital?search="+HospitalUser;
+
+    const [hospital, setHospital] = useState([]);
+  
+    const getHospitals = async () => {
+        const response = await fetch(URL);
+        const data = await response.json();
+        console.log(data);
+        setHospital(data);
+    };
+    useEffect(() => {
+      getHospitals();
+    },[]);
+
+
+
+
 
     return (
 
@@ -15,7 +36,8 @@ export default function () {
                 <div className="container">
                     <div className="main-body">
 
-
+                    {hospital.slice(0,3).map((curElem) => {
+                        return (
                         <div className="row gutters-sm">
                             <div className="col-md-4 mb-3">
                                 <div className="card card1">
@@ -23,9 +45,9 @@ export default function () {
                                         <div className="d-flex flex-column align-items-center text-center">
                                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
-                                                <h4>John Doe</h4>
-                                                <p className="text-secondary mb-1">Full Stack Developer</p>
-                                                <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                                <h4>{curElem.name}</h4>
+                                                <p className="text-secondary mb-1">{curElem.speciality}</p>
+                                               
                                                 
                                             </div>
                                         </div>
@@ -41,7 +63,7 @@ export default function () {
                                                 <h6 className="mb-0">Hospital-ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                Kenneth Valdez
+                                            {curElem.h_id}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -50,7 +72,7 @@ export default function () {
                                                 <h6 className="mb-0">Hospital Name</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                <a href="/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="4b2d223b0b213e20263e23652a27">[email&#160;protected]</a>
+                                            {curElem.name}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -59,7 +81,7 @@ export default function () {
                                                 <h6 className="mb-0">Speciality</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                (239) 816-9029
+                                            {curElem.speciality}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -68,7 +90,7 @@ export default function () {
                                                 <h6 className="mb-0">Mail</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                (320) 380-4539
+                                            {curElem.mail}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -77,7 +99,7 @@ export default function () {
                                                 <h6 className="mb-0">Phone No</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
+                                            {curElem.phoneNo}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -86,21 +108,11 @@ export default function () {
                                                 <h6 className="mb-0">Address</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
+                                            {curElem.address}
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <div className="row">
-                                            <div className="col-sm-3">
-                                                <h6 className="mb-0">Rating</h6>
-                                            </div>
-                                            <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
-                                            </div>
-                                        </div>
-                                        <hr></hr>
-                                       
-                                       
+                                        
                                      
                                         <div className="row">
                                     
@@ -115,6 +127,8 @@ export default function () {
 
                             </div>
                         </div>
+                        );
+                    })}
                     </div>
                 </div>
             </div>

@@ -1,13 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useState,useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
-import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
 import HeaderP from '../Home/HeaderP';
+import { useStateValue } from '../Context/StateProvider'
+import { actionTypes } from "../Context/reducer";
 
 
 
 export default function () {
 
+    const navigate = useNavigate()
+    const [ {PatientUser} , dispatchUser] = useStateValue();
+
+
+    const URL = "/api/patient?search="+PatientUser;
+
+    const [patient, setPatient] = useState([]);
+  
+    const getDoctors = async () => {
+      const response = await fetch(URL);
+      const data = await response.json();
+      console.log(data);
+      setPatient(data);
+    };
+    useEffect(() => {
+        
+      getDoctors();
+    
+  
+    });
+
+    
     return (
 
         <>
@@ -15,7 +38,7 @@ export default function () {
             <div id='profile'>
                 <div className="container">
                     <div className="main-body">
-
+                  
 
                         <div className="row gutters-sm">
                             <div className="col-md-4 mb-3">
@@ -24,7 +47,7 @@ export default function () {
                                         <div className="d-flex flex-column align-items-center text-center">
                                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
-                                                <h4>John Doe</h4>
+                                                <h4>{patient.firstName} {patient.lastName}</h4>
                                                 
                                             </div>
                                         </div>
@@ -40,7 +63,8 @@ export default function () {
                                                 <h6 className="mb-0">Patient ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                            P101
+                                            {patient.p_id} 
+                                           
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -49,7 +73,7 @@ export default function () {
                                                 <h6 className="mb-0">Patient Name</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                            Nandini 
+                                            {patient.firstName} 
                                                 </div>
                                         </div>
                                         <hr></hr>
@@ -58,7 +82,7 @@ export default function () {
                                                 <h6 className="mb-0">LastName</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                            Achugatla
+                                            {patient.lastName}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -67,7 +91,7 @@ export default function () {
                                                 <h6 className="mb-0">Age</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                20
+                                            {patient.age}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -76,7 +100,7 @@ export default function () {
                                                 <h6 className="mb-0">phone No</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                1234567890
+                                            {patient.phoneNo}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -85,7 +109,7 @@ export default function () {
                                                 <h6 className="mb-0">Address</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
-                                                Bay Area, San Francisco, CA
+                                            {patient.address}
                                             </div>
                                         </div>
                                         <hr></hr>
@@ -101,6 +125,7 @@ export default function () {
 
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

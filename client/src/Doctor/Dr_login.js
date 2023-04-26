@@ -34,7 +34,7 @@ function Dr_login() {
         console.log("Success");
         dispatchUser({
           type:actionTypes.SET_DOCTOR,
-          DoctorUser:formData.p_id,
+          DoctorUser:formData.d_id,
 
         });
         navigate("/Dr_home");

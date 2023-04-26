@@ -148,7 +148,7 @@ function Dr_register() {
     var exp = isRating(formData.experience);
     var charges = isRating(formData.charges);
     var qualification = isAddress(formData.qualification);
-    if (fname && speciality && mail && phone && address && exp && password && charges && qualification && hname) {
+    if (fname && speciality && mail && phone && address && exp && password && charges && qualification) {
       uploadingData(URL, formData);
       alert("Login Successful")
     }
@@ -230,13 +230,13 @@ function Dr_register() {
 
                 <div className="displayFlex">
                   <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Hospital Name</label>
+                    <label for="disabledTextInput" class="form-label">Enter Qualification</label>
                     <input
                       type="text"
                       class="form-control textbox"
-                      id="hospitalName"
+                      id="qualification"
                       onChange={handleEvent}
-                      name="hospitalName"
+                      name="qualification"
                     />
                   </div>
 
@@ -360,17 +360,6 @@ function Dr_register() {
                 </div>
 
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Qualification</label>
-                  <input
-                    type="text"
-                    onChange={handleEvent}
-                    class="form-control textbox"
-
-                    id="qualification"
-                    name="qualification"
-                  />
-                </div>
                 <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit}>
                   Register
                 </button>

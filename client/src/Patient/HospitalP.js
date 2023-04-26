@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 function HospitalP() {
 
+  
 const navigate = useNavigate()
 
   return (

@@ -3,8 +3,12 @@ import { useNavigate } from "react-router-dom"
 import HeaderP from "../Home/HeaderP";
 
 function Edit_profile() {
+const navigate=useNavigate()
+const URL = "/api/addDoctor";
 
-    const navigate=useNavigate()
+
+
+
   const [formData, setForm] = useState({
     _id: null,
     p_id: "",

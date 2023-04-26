@@ -129,7 +129,7 @@ function Patient_register() {
     setForm({
       _id: null,
       p_id: patient,
-      firstName: "",
+      firstName:"",
       lastName: "",
       age: "",
       phoneNo: "",

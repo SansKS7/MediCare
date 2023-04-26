@@ -17,9 +17,9 @@ export default function () {
   
     const getDoctors = async () => {
       const response = await fetch(URL);
-      setDoctor(await response.json());
       const data = await response.json();
       console.log(data);
+      setDoctor(data)
     };
     useEffect(() => {
         

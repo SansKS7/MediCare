@@ -34,7 +34,7 @@ export default function () {
 
                 <nav id="navbar" class="navbar">
                     <ul>
-                    <li><Link className="nav-link scrollto active" to="/Home">Home</Link></li>
+                    <li><Link className="nav-link scrollto active" to="/Dr_home">Home</Link></li>
                     <li><Link classname='underline' to="/Dr_Profile">View Profile</Link></li>
                         <li><Link classname='underline' to="/Appointment">Appointment</Link></li>
                         <li><Link classname='underline' to="/P_Appointment">Pending Appointment</Link></li>

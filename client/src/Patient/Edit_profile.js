@@ -109,12 +109,11 @@ function Edit_profile() {
     var age = isAge(formData.age);
     var password = isPassword(formData.password);
     if (fname && lname && age && phone && address && password) {
-      alert("Login Successful");
       console.log(formData);
       uploadingData(updateUrl, formData);
       navigate("/Patient_profile");
     } else {
-      alert("Login Unsuccessful");
+      alert("Something went wrong");
     }
   }
 

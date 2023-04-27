@@ -4,6 +4,12 @@ import Dr_register from './Dr_register';
 import Dr_header from './Dr_header';
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
+import About from '../Home/About'
+import Hero from '../Home/Hero'
+import Count from '../Home/Count'
+import Testimonials from '../Home/Testmonials'
+import Frequent_question from '../Home/Frequent_question'
+import Contact from '../Home/Contact'
 import Appointment from './Appointment';
 
 
@@ -27,7 +33,14 @@ function Dr_home () {
   return (
     <>
     <Dr_header/>
-    <Appointment/>
+    <div className='patient__dash'>
+    <Hero/>
+    <About/>
+    <Count/>
+    <Frequent_question/>
+    <Contact/>
+    
+    </div>
     </>
   )
 }

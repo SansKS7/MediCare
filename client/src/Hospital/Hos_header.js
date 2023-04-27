@@ -31,6 +31,8 @@ export default function () {
                 </div>
                 <nav id="navbar" class="navbar">
                     <ul>
+                        <li><Link to={"/Hos_home"} className='underline'>Home</Link></li>
+                    
                         <li><Link to={"/Hos_Profile"} className='underline'>View Profile</Link></li>
                         <li><Link to={"/Dr_register"} className='underline'>Add New Doctor</Link></li>
                         <li><Link to={"/Patient_Details"} className='underline'>View Patient Details</Link></li>

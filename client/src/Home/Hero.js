@@ -10,7 +10,7 @@ export default function () {
                             <h1 data-aos="fade-up">MediCare</h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
                             <div data-aos="fade-up" data-aos-delay="800">
-                                <a href="#about" className="btn-get-started scrollto">Book Appointment</a>
+                                <a href="#about" className="">Book Appointment</a>
                             </div>
                         </div>
 

@@ -25,7 +25,10 @@ export default function () {
                         
                         <li><Link className="nav-link scrollto " to="/Doctors">Doctor</Link></li>
                         <li><Link className="nav-link scrollto" to="/Hospitals">Hospital</Link> </li> 
-            <ul>
+            
+          
+                        <li><Link className="nav-link scrollto active" to="/Home">Contact</Link></li>
+                        <ul>
               <li className="dropdown underline"><a href="#"><span>Login/Register</span> <i className="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><Link className="nav-link scrollto" to="/Patient_login" >Patient</Link></li>
@@ -35,9 +38,7 @@ export default function () {
               </li>
               
             </ul>
-          
-                        <li><Link className="nav-link scrollto active" to="/Contact">Contact</Link></li>
-                        <li><Link className="getstarted scrollto" to="#about">Book Appointment</Link></li>
+                     
                     </ul>
                     <i className="bi bi-list mobile-nav-toggle"> </i>
                     

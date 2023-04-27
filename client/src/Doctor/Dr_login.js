@@ -37,9 +37,11 @@ function Dr_login() {
           DoctorUser:formData.d_id,
 
         });
+        alert("Login Successful!!");
         navigate("/Dr_home");
       }
       else{
+        alert("Invalid Login");
         console.log("Invalid");
       }
     }catch(e){

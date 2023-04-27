@@ -33,10 +33,8 @@ export default function () {
                     <ul>
                         <li><Link to={"/Hos_Profile"} className='underline'>View Profile</Link></li>
                         <li><Link to={"/Dr_register"} className='underline'>Add New Doctor</Link></li>
-                        <li><Link to={"/Dr_update"} className='underline'>Update Doctor Info</Link></li>
-                        <li><Link to={"/Dr_schedule"} className='underline'>Add Doctors Schedule</Link></li>
                         <li><Link to={"/Patient_Details"} className='underline'>View Patient Details</Link></li>
-                        <li><Link to={"/Dr_Delete"} className='underline'>Delete Existing Doctor </Link></li>
+                        <li><Link to={"/Dr_Delete"} className='underline'>View Doctor Details</Link></li>
                         <li><button type="submit" class="getstarted scrollto" onClick={logoutUser}>Logout</button></li>
                     </ul>
                     <i class="bi bi-list mobile-nav-toggle"></i>

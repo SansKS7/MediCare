@@ -1,4 +1,4 @@
-import React,  { useState } from 'react'
+import React,  { useState,useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
@@ -8,32 +8,58 @@ import Dr_header from './Dr_header';
 export default function () {
 
     
-  const navigate = useNavigate()
-  const [formData, setForm] = useState({
-    _id: null,
-    d_id: "",
-    h_id: "",
-    name: "",
-    hospitalName:"",
-    speciality: "",
-    mail: "",
-    phoneNo: "",
-    address: "",
-    password: "",
-    experience: "",
-    charges: "",
-    qualification: "",
-  }
-  )
+  const navigate = useNavigate();
+  const [{ DoctorUser }, dispatchUser] = useStateValue();
+  const URL = "/api/doctor?search=" + DoctorUser;
+  const updateUrl ="/api/doctorUpdate";
+  
 
-  let name,value;
-  const handleEvent = (e) => {
+  const [doctor, setDoctor] = useState([]);
+  const [formData, setForm] = useState({});
 
-
-    setForm({ ...formData, [e.target.name]: e.target.value });
-    
+  const getDoctors = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data,"Temp");
+    setForm({...data[0]});
 
   };
+  useEffect(() => {
+    getDoctors();
+  },[]);
+
+  
+  let name, value;
+  const handleEvent = (e) => {
+    setForm({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  async function uploadingData(updateUrl, data) {
+    try {
+      const respones = await fetch(updateUrl, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        console.log("Success");
+        alert("Updated Successfull!!")
+        navigate("/Dr_profile");
+      } else {
+        //Login Invalid
+        alert("Something went wrong!!")
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
+
 
   function isfirstName(val) {
     //console.log(val);
@@ -119,13 +145,31 @@ export default function () {
     var qualification = isAddress(formData.qualification);
    
     if (fname && speciality && mail && phone && address && exp && password && charges && qualification) {
-      alert("Login Successful")
+     
+      uploadingData(updateUrl, formData);
     }
     else {
-      alert("Login Unsuccessful")
+      alert("Something went wrong")
 
     }
   }
+  useEffect(() => {
+    setForm({
+      _id: null,
+      d_id: doctor,
+      h_id:"",
+      hospitalName:"",
+      name:"",
+      speciality: "",
+      mail:"",
+      phoneNo: "",
+      address: "",
+      password: "",
+      experience: "",
+      charges:"",
+      qualification:"",
+    });
+  }, [doctor]);
     return (
 
         <>
@@ -142,9 +186,9 @@ export default function () {
                                         <div className="d-flex flex-column align-items-center text-center">
                                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
-                                                <h4>John Doe</h4>
-                                                <p className="text-secondary mb-1">Full Stack Developer</p>
-                                                <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                                <h4>{formData.name}</h4>
+                                                <p className="text-secondary mb-1">{formData.qualification}</p>
+                                                <p className="text-muted font-size-sm">{formData.speciality}</p>
 
                                             </div>
                                         </div>
@@ -163,6 +207,7 @@ export default function () {
                                                 <input
                                                     type="text"
                                                     id="h_id"
+                                                    value={formData.h_id}
                                                     name="h_id"
                                                     className="form-control textbox"
                                                     disabled
@@ -179,6 +224,7 @@ export default function () {
                                                     type="text"
                                                     id="hospitalName"
                                                     name="hospitalName"
+                                                    value={formData.hospitalName}
                                                     className="form-control textbox"
                                                     disabled
                                                 />
@@ -195,6 +241,7 @@ export default function () {
                                                     id="d_id"
                                                     name="d_id"
                                                     className="form-control textbox"
+                                                    value={formData.d_id}
                                                     disabled
                                                 />
                                             </div>
@@ -211,6 +258,7 @@ export default function () {
                                                     id="name"
                                                     name="name"
                                                     className="form-control textbox"
+                                                    value={formData.name}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -226,6 +274,7 @@ export default function () {
                                                     id="mail"
                                                     name="mail"
                                                     className="form-control textbox"
+                                                    value={formData.mail}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -241,6 +290,7 @@ export default function () {
                                                     id="phoneNo"
                                                     name="phoneNo"
                                                     className="form-control textbox"
+                                                    value={formData.phoneNo}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -256,6 +306,7 @@ export default function () {
                                                     id="address"
                                                     name="address"
                                                     className="form-control textbox"
+                                                    value={formData.address}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -271,6 +322,7 @@ export default function () {
                                                     id="speciality"
                                                     name="speciality"
                                                     className="form-control textbox"
+                                                    value={formData.speciality}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -286,6 +338,7 @@ export default function () {
                                                     id="experience"
                                                     name="experience"
                                                     className="form-control textbox"
+                                                    value={formData.experience}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -301,6 +354,7 @@ export default function () {
                                                     id="charges"
                                                     name="charges"
                                                     className="form-control textbox"
+                                                    value={formData.charges}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -316,6 +370,7 @@ export default function () {
                                                     id="qualification"
                                                     name="qualification"
                                                     className="form-control textbox"
+                                                    value={formData.qualification}
                                                     onChange={handleEvent}
                                                 />
                                             </div>
@@ -331,6 +386,7 @@ export default function () {
                                                     id="password"
                                                     name="password"
                                                     className="form-control textbox"
+                                                    value={formData.password}
                                                     onChange={handleEvent}
                                                 />
                                             </div>

@@ -41,10 +41,12 @@ function Patient_login() {
               type: actionTypes.SET_PATIENT,
               PatientUser: formData.p_id,
             });
+            alert("Login Successful!!")
             navigate("/patient_home");
 
       } else {
         //Login Invalid
+        alert("Invalid Login")
         console.log("Invalid");
       }
       

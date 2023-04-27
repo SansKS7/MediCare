@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
@@ -7,22 +7,57 @@ import Hos_header from './Hos_header';
 
 export default function () {
     const navigate = useNavigate();
+    
+const [ {HospitalUser} , dispatchUser] = useStateValue();
+const URL = "/api/hospital?search="+HospitalUser;
+const updateUrl ="/api/hospitalUpdate";
+const [hospital, setHospital] = useState([]);
+const [formData, setForm] = useState({});
 
-    const [formData, setForm] = useState({
-        _id: null,
-        h_id: "",
-        name: "",
-        speciality: "",
-        mail: "",
-        phoneNo: "",
-        address: "",
-        rating: "",
-        h_img: "",
-    });
+const getHospitals = async () => {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data);
+    setForm({...data[0]});
 
-    const handleEvent = (e) => {
-        setForm({ ...formData, [e.target.name]: e.target.value });
-    };
+};
+useEffect(() => {
+  getHospitals();
+},[]);
+
+    
+let name, value;
+const handleEvent = (e) => {
+  setForm({ ...formData, [e.target.name]: e.target.value });
+};
+
+async function uploadingData(updateUrl, data) {
+  try {
+    const respones = await fetch(updateUrl, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).catch((e) => console.log("Error : ", e));
+    const json = await respones.json();
+    console.log(respones.status);
+    if (respones.status === 200) {
+      //Login Success
+      console.log("Success");
+        alert("Updated Successfully");
+      navigate("/Hos_profile");
+      
+    } else {
+      //Login Invalid
+      alert("Something went wrong!!")
+      console.log("Invalid");
+    }
+  } catch (e) {
+    console.log("Error : ", e);
+  }
+}
+
 
     function isfirstName(val) {
         //console.log(val);
@@ -87,16 +122,29 @@ export default function () {
         var mail = isMail(formData.mail);
         var password = isPassword(formData.password); 
 
-        if (fname && speciality && rating && phone && address && mail && password) {
-            alert("Login Successful")
+        if (fname && speciality && phone && address && mail && password) {
+            
+            uploadingData(updateUrl, formData);
         }
         else {
-            alert("Login Unsuccessful")
+            alert("Something went wrong!!")
 
         }
 
 
     }
+    useEffect(() => {
+        setForm({
+          _id: null,
+          h_id: hospital,
+          name:"",
+          speciality: "",
+          mail: "",
+          phoneNo: "",
+          address: "",
+          password: "",
+        });
+      }, [hospital]);
     return (
 
         <>
@@ -105,7 +153,7 @@ export default function () {
                 <div className="container">
                     <div className="main-body">
 
-
+                    
                         <div className="row gutters-sm">
                             <div className="col-md-4 mb-3">
                                 <div className="card card1">
@@ -113,10 +161,8 @@ export default function () {
                                         <div className="d-flex flex-column align-items-center text-center">
                                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
-                                                <h4>John Doe</h4>
-                                                <p className="text-secondary mb-1">Full Stack Developer</p>
-                                                <p className="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
-
+                                                <h4>{formData.name}</h4>
+                                             
                                             </div>
                                         </div>
                                     </div>
@@ -135,6 +181,7 @@ export default function () {
                                                     type="text"
                                                     id="h_id"
                                                     name="h_id"
+                                                    value={formData.h_id}
                                                     className="form-control textbox"
                                                     disabled
                                                 />
@@ -150,6 +197,7 @@ export default function () {
                                                     type="text"
                                                     id="name"
                                                     name="name"
+                                                    value={formData.name}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
@@ -165,6 +213,7 @@ export default function () {
                                                     type="text"
                                                     id="speciality"
                                                     name="speciality"
+                                                    value={formData.speciality}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
@@ -180,6 +229,7 @@ export default function () {
                                                     type="text"
                                                     id="mail"
                                                     name="mail"
+                                                     value={formData.mail}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
@@ -195,6 +245,7 @@ export default function () {
                                                     type="text"
                                                     id="phoneNo"
                                                     name="phoneNo"
+                                                    value={formData.phoneNo}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
@@ -210,27 +261,14 @@ export default function () {
                                                     type="text"
                                                     id="address"
                                                     name="address"
+                                                    value={formData.address}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
                                             </div>
                                         </div>
                                         <hr></hr>
-                                        <div className="row">
-                                            <div className="col-sm-3">
-                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Rating</h6> </label>
-                                            </div>
-                                            <div className="col-sm-9 text-secondary">
-                                                <input
-                                                    type="text"
-                                                    id="rating"
-                                                    name="rating"
-                                                    className="form-control textbox"
-                                                    onChange={handleEvent}
-                                                />
-                                            </div>
-                                        </div>
-                                        <hr></hr>
+                                        
                                         <div className="row">
                                             <div className="col-sm-3">
                                                 <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Password</h6> </label>
@@ -240,6 +278,7 @@ export default function () {
                                                     type="text"
                                                     id="password"
                                                     name="password"
+                                                    value={formData.password}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
                                                 />
@@ -257,6 +296,7 @@ export default function () {
                                 </div>
                             </div>
                         </div>
+                       
                     </div>
                 </div>
             </div>

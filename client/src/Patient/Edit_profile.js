@@ -9,24 +9,18 @@ function Edit_profile() {
 
   const [{ PatientUser }, dispatchUser] = useStateValue();
   const URL = "/api/patient?search=" + PatientUser;
+  const updateUrl ="/api/patientUpdate";
+  
 
   const [patient, setPatient] = useState([]);
-  const [formData, setForm] = useState({
-    _id: null,
-    p_id: patient,
-    firstName: "",
-    lastName: "",
-    age: "",
-    phoneNo: "",
-    address: "",
-    password: "",
-    repassword: "",
-  });
+  const [formData, setForm] = useState({});
+
   const getDoctors = async () => {
     const response = await fetch(URL);
     const data = await response.json();
     console.log(data,"Temp");
     setForm({...data});
+
   };
   useEffect(() => {
     getDoctors();
@@ -37,6 +31,33 @@ function Edit_profile() {
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
+
+  async function uploadingData(updateUrl, data) {
+    try {
+      const respones = await fetch(updateUrl, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        console.log("Success");
+        alert("Updated Successfull!!")
+        navigate("/patient_profile");
+      } else {
+        //Login Invalid
+        alert("Something went wrong!")
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
+
 
   function isfirstName(val) {
     //console.log(val);
@@ -90,12 +111,27 @@ function Edit_profile() {
     if (fname && lname && age && phone && address && password) {
       alert("Login Successful");
       console.log(formData);
-
+      uploadingData(updateUrl, formData);
       navigate("/Patient_profile");
     } else {
       alert("Login Unsuccessful");
     }
   }
+
+  useEffect(() => {
+    setForm({
+      _id: null,
+      p_id: patient,
+      firstName:"",
+      lastName: "",
+      age: "",
+      phoneNo: "",
+      address: "",
+      password: "",
+      repassword: "",
+    });
+  }, [patient]);
+
 
   return (
     <>

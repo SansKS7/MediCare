@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 export default function () {
-
+    const navigate=useNavigate()
     return (
+     
         <section id="hero" className="d-flex align-items-center">
             <div className="container">
                 <div className="row">            
@@ -9,8 +12,12 @@ export default function () {
 
                             <h1 data-aos="fade-up">MediCare</h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
+                            <p><h9 data-aos="fade-up">We understand healthcare goes beyond signs, symptoms, diagnosis, and 
+                                        treatment. It’s about the deep connection between doctors and patients that leads to 
+                                        continuous care and sustained, better outcomes.</h9></p>
                             <div data-aos="fade-up" data-aos-delay="800">
-                                <a href="#about" className="">Book Appointment</a>
+                                <Link to="/Book_Appointment" className="btn btn-primary">Book Appointment</Link>
+                                
                             </div>
                         </div>
 

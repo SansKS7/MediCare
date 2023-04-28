@@ -14,7 +14,8 @@ export default function () {
           <div className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div className="contact-about">
               <h3>MediCare</h3>
-              <p>Cras fermentum odio eu feugiat. Justo eget magna fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum leo. Amet volutpat consequat mauris nunc congue.</p>
+              <p> MediCare works on trust. We are aware of the responsibility placed on us by patients and over a doctors. 
+                We always have and always will do everything we possibly can to uphold this trust.</p>
               <div className="social-links">
                 <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
                 <a href="#" className="facebook"><i className="bi bi-facebook"></i></a>

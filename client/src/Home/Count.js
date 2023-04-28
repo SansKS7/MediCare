@@ -17,31 +17,33 @@ export default function () {
             <div class="count-box">
               <i class="bi bi-building"></i>
               <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> consequuntur voluptas nostrum aliquid ipsam architecto ut.</p>
+              <p><strong>MediCare</strong> Care a Billion</p>
             </div>
           </div>
 
           <div class="col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
+          <div class="count-box">
+              <i class="bi bi-building"></i>
+              <span data-purecounter-start="0" data-purecounter-end="65" data-purecounter-duration="1" class="purecounter"></span>
+              <p><strong>Happy Clients</strong>Number of patients cured through website</p>
+            </div>
+            
+          </div>
+
+          <div class="col-md-6 d-md-flex align-items-md-stretch">
+          <div class="count-box">
               <i class="bi bi-journal-richtext"></i>
               <span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> adipisci atque cum quia aspernatur totam laudantium et quia dere tan</p>
+              <p><strong>Doctors</strong> Number Of Doctors enrolled on website.</p>
             </div>
+           
           </div>
 
           <div class="col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-clock"></i>
+          <div class="count-box">
+              <i class="bi bi-journal-richtext"></i>
               <span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Years of experience</strong> aut commodi quaerat modi aliquam nam ducimus aut voluptate non vel</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Awards</strong> rerum asperiores dolor alias quo reprehenderit eum et nemo pad der</p>
+              <p><strong>Hospitals</strong> Number of Hospitals registered on website.</p>
             </div>
           </div>
         </div>

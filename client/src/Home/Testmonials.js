@@ -26,11 +26,12 @@ export default class Testimonials extends Component {
         <img src={require('../assets/img/user.png')} className="img-fluid animated" alt="" />
          
           <div className="myCarousel">
-            <h3>Shirley Fultz</h3>
-            <h4>Designer</h4>
+            <h3>Prajwal Tribhuvan</h3>
+            <h4>Patient</h4>
             <p>
-              It's freeing to be able to catch up on customized news and not be
-              distracted by a social media element on the same site
+            The doctors at this medical website are some of the best I've ever encountered. They truly care about 
+            their patients and take the time to listen and understand their needs.
+             I feel lucky to have found such a fantastic medical practice.
             </p>
           </div>
         </div>
@@ -39,11 +40,12 @@ export default class Testimonials extends Component {
         <img src={require('../assets/img/user.png')} className="img-fluid animated" alt="" />
          
           <div className="myCarousel">
-            <h3>Daniel Keystone</h3>
-            <h4>Designer</h4>
+            <h3>Tanmay Suryawanshi</h3>
+            <h4>Patient</h4>
             <p>
-              The simple and intuitive design makes it easy for me use. I highly
-              recommend Fetch to my peers.
+            I have never had a bad experience with this medical website. The doctors are knowledgeable and compassionate,
+             the staff is friendly and efficient, and the facilities are clean and modern. 
+            I recommend this practice to anyone in need of medical care.
             </p>
           </div>
         </div>
@@ -52,11 +54,11 @@ export default class Testimonials extends Component {
         <img src={require('../assets/img/user.png')} className="img-fluid animated" alt="" />
        
           <div className="myCarousel">
-            <h3>Theo Sorel</h3>
-            <h4>Designer</h4>
+            <h3>Pranjali Shah</h3>
+            <h4>Patient</h4>
             <p>
-              I enjoy catching up with Fetch on my laptop, or on my phone when
-              I'm on the go!
+            I've been using this website for consultations with doctors, and it has been a game-changer.
+             The process is simple, and I've received quality care from the comfort of my own home. 
             </p>
           </div>
         </div>

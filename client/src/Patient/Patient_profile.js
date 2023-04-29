@@ -104,6 +104,43 @@ export default function () {
                                             </div>
                                         </div>
                                         <hr></hr>
+                                        
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Gender</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                            {patient.gender}
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Blood Group</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                            {patient.bloodGroup}
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Height</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                            {patient.height}
+                                            </div>
+                                        </div>
+                                        <hr></hr>
+                                        <div className="row">
+                                            <div className="col-sm-3">
+                                                <h6 className="mb-0">Weight</h6>
+                                            </div>
+                                            <div className="col-sm-9 text-secondary">
+                                            {patient.weight}
+                                            </div>
+                                        </div>
+                                        <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
                                                 <h6 className="mb-0">Address</h6>
@@ -113,7 +150,7 @@ export default function () {
                                             </div>
                                         </div>
                                         <hr></hr>
-                                       
+                                        
                                         <div className="row">
                                             <div className="col-sm-12">
                                             <Link to="/Edit_profile" className="btn btn-primary " >Edit Profile</Link>

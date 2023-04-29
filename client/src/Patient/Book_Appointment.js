@@ -5,25 +5,20 @@ import { Link, useLocation } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 
 function DoctorP(props) {
-  //const location =useLocation();
   const [{ PatientUser }, dispatchUser] = useStateValue();
-  const data = {};
   const state = useLocation();
   const [doctorData, setDoctorData] = useState(state.state);
-  // console.log(typeof data);
-  // console.log("data =", data);
-
-  const URL = "/api/doctor?search=" + data.doctor;
   const getnameURL = "/api/patient?search=" + PatientUser;
-  // console.log(URL);
-
   const [patient, setPatient] = useState([]);
+  const getappointment ="/api/getAppointment";
+  const [appointment, setappointment] = useState([]);
+
 
   async function getDoctors() {
     const response = await fetch(getnameURL);
     const data = await response.json();
-
-    setPatient(data);
+    console.log(data,"Temp");
+    setForm({...data});
   }
 
   useEffect(() => {
@@ -32,22 +27,22 @@ function DoctorP(props) {
   });
 
   const [formData, setForm] = useState({
-    _id: null,
-    a_id: "",
-    p_id: "",
-    firstName: "",
-    lastName: "",
-    gender: "",
-    phoneNo: "",
-    d_id: "",
-    name: "",
-    h_id: "",
-    hospitalName: "",
-    appoDateTime: "",
-    createDate: "",
-    appoStatus: "",
-    appoMessage: "",
-    __v: "",
+    // _id: null,
+    // a_id: "",
+    // p_id: PatientUser,
+    // firstName: patient.firstName,
+    // lastName: patient.lastName,
+    // gender: patient.gender,
+    // phoneNo: patient.phoneNo,
+    // d_id: doctorData.d_id,
+    // name: doctorData.name,
+    // h_id: doctorData.h_id,
+    // hospitalName: doctorData.hospitalName,
+    // appoDateTime: "",
+    // createDate: new Date(),
+    // appoStatus: "Pending",
+    // appoMessage: "",
+    // __v: "",
   });
 
   function isfirstName(val) {
@@ -70,24 +65,49 @@ function DoctorP(props) {
 
   function onFormSubmit(e) {
     e.preventDefault();
-    // console.log(formData);
+    console.log("Check point")
+    console.log(formData);
 
-    var name = isfirstName(formData.firstName);
-    var drname = isfirstName(formData.name);
-    var hosname = isfirstName(formData.hospitalName);
-    var Message = isfirstName(formData.appoMessage);
-    var date = isDate(formData.appoDateTime);
-    if (Message && date && name && drname && hosname) {
-      // console.log(formData);
-      alert("Success!");
-    } else {
-      // console.log("Failure!");
-    }
+    // var name = isfirstName(formData.firstName);
+    // var drname = isfirstName(formData.name);
+    // var hosname = isfirstName(formData.hospitalName);
+    // var Message = isfirstName(formData.appoMessage);
+ 
+    //var date = isDate(formData.appoDateTime);
+    // console.log(Message);
+    // console.log(date);
+    // if (Message) {
+    //   alert("Success!");
+    //   console.log(formData);
+     
+    // } else {
+    //   console.log("Failure!");
+    // }
   }
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
-
+  useEffect(() => {
+    setForm({
+    _id: null,
+    a_id: "",
+    p_id: PatientUser,
+    firstName: patient.firstName,
+    lastName: patient.lastName,
+    gender: patient.gender,
+    phoneNo: patient.phoneNo,
+    d_id: doctorData.d_id,
+    name: doctorData.name,
+    h_id: doctorData.h_id,
+    hospitalName: doctorData.hospitalName,
+    appoDateTime: "",
+    createDate: new Date(),
+    appoStatus: "Pending",
+    appoMessage: "",
+    __v: "",
+  });
+}, [appointment]);
+ 
   return (
     <>
       <HeaderP />
@@ -108,7 +128,7 @@ function DoctorP(props) {
                   </label>
                   <input
                     type="text"
-                    id="firstName+lastName"
+                    id="firstName"
                     value={patient.firstName + " " + patient.lastName}
                     name="firstName"
                     className="form-control textbox"

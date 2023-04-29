@@ -66,7 +66,40 @@ function Edit_profile() {
     return false;
   }
 
+
   function isAddress(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+    if (reg.test(val)) return true;
+    return false;
+  }
+  function isGender(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+    if (reg.test(val)) return true;
+    return false;
+  }
+  function isBlood(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+    if (reg.test(val)) return true;
+    return false;
+  }
+  function isheight(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+    if (reg.test(val)) return true;
+    return false;
+  }
+  function isWeight(val) {
     console.log(val);
     var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
     // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
@@ -108,7 +141,11 @@ function Edit_profile() {
     var address = isAddress(formData.address);
     var age = isAge(formData.age);
     var password = isPassword(formData.password);
-    if (fname && lname && age && phone && address && password) {
+    var gender = isGender(formData.gender);
+    var bloodGroup=isBlood(formData.bloodGroup);
+    var height=isheight(formData.height);
+    var weight=isWeight(formData.weight);
+    if (fname && lname && age && phone && address && password && gender && height && bloodGroup && weight) {
       console.log(formData);
       uploadingData(updateUrl, formData);
       navigate("/Patient_profile");
@@ -127,6 +164,10 @@ function Edit_profile() {
       phoneNo: "",
       address: "",
       password: "",
+      gender:"",
+      bloodGroup:"",
+      height:"",
+      weight:"",
       repassword: "",
     });
   }, [patient]);
@@ -241,7 +282,7 @@ function Edit_profile() {
                         <div className="col-sm-3">
                           <label for="disabledTextInput" class="form-label">
                             {" "}
-                            <h6 className="mb-0">phone No</h6>
+                            <h6 className="mb-0">Phone No</h6>
                           </label>
                         </div>
                         <div className="col-sm-9 text-secondary">
@@ -251,6 +292,82 @@ function Edit_profile() {
                             id="phoneNo"
                             name="phoneNo"
                             value={formData.phoneNo}
+                            onChange={handleEvent}
+                          />
+                        </div>
+                      </div>
+                      <hr></hr>
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <label for="disabledTextInput" class="form-label">
+                            {" "}
+                            <h6 className="mb-0">Gender</h6>
+                          </label>
+                        </div>
+                        <div className="col-sm-9 text-secondary">
+                          <input
+                            type="text"
+                            className="form-control textbox"
+                            id="gender"
+                            name="gender"
+                            value={formData.gender}
+                            onChange={handleEvent}
+                          />
+                        </div>
+                      </div>
+                      <hr></hr>
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <label for="disabledTextInput" class="form-label">
+                            {" "}
+                            <h6 className="mb-0">Blood Group</h6>
+                          </label>
+                        </div>
+                        <div className="col-sm-9 text-secondary">
+                          <input
+                            type="text"
+                            className="form-control textbox"
+                            id="bloodGroup"
+                            name="bloodGroup"
+                            value={formData.bloodGroup}
+                            onChange={handleEvent}
+                          />
+                        </div>
+                      </div>
+                      <hr></hr>
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <label for="disabledTextInput" class="form-label">
+                            {" "}
+                            <h6 className="mb-0">Height</h6>
+                          </label>
+                        </div>
+                        <div className="col-sm-9 text-secondary">
+                          <input
+                            type="text"
+                            className="form-control textbox"
+                            id="height"
+                            name="height"
+                            value={formData.height}
+                            onChange={handleEvent}
+                          />
+                        </div>
+                      </div>
+                      <hr></hr>
+                      <div className="row">
+                        <div className="col-sm-3">
+                          <label for="disabledTextInput" class="form-label">
+                            {" "}
+                            <h6 className="mb-0">Weight</h6>
+                          </label>
+                        </div>
+                        <div className="col-sm-9 text-secondary">
+                          <input
+                            type="text"
+                            className="form-control textbox"
+                            id="weight"
+                            name="weight"
+                            value={formData.weight}
                             onChange={handleEvent}
                           />
                         </div>

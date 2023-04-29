@@ -30,7 +30,7 @@ import View_Appointment from "./Patient/View_Appointment";
 import Dr_edit from "./Doctor/Dr_edit";
 import Hos_Profile from "./Hospital/Hos_Profile";
 import Hos_edit from "./Hospital/Hos_edit";
-
+import HospitalDr from "./Patient/HospitalDr";
 import {
   BrowserRouter as Router,
   Route,
@@ -92,6 +92,7 @@ function App() {
          <Route path="/Dr_edit" element={<Dr_edit/>}/>
          <Route path="/Hos_profile" element={<Hos_Profile/>}/>
         <Route path="/Hos_edit" element={<Hos_edit/>}/>
+        <Route path="/HospitalDr" element={<HospitalDr/>}/>
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

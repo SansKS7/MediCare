@@ -10,6 +10,7 @@ function DoctorP() {
     const response = await fetch(URL);
     setDoctor(await response.json());
     const data = await response.json();
+    console.log(data);
     // const doctorDipslay = doctor.slice(0,2);
 
     //console.log(data);
@@ -38,127 +39,78 @@ function DoctorP() {
         </form>
       </div>
       <div className="row">
-
-
-      {doctor.map((curElem) => {
+      {doctor.map((currElem) => {
           return (
             <>
-            <Card1
-          img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
-          hname="Hospital Name"
-          name={curElem.hospitalName}
-          drname={curElem.name}
-          spe="Speciality"
-          speciality={curElem.speciality}
-          mail="Mail"
-          mailid={curElem.mail}
-          add="Address"
-          address={curElem.address}
-          exp="Experience"
-          experience={curElem.experience}
-          charge="Charges"
-          charges={curElem.charges}
-          qua="Qualification"
-          qualification={curElem.qualification}
-          ph="PhoneNo"
-          phoneNo={curElem.phoneNo}
-        /> 
-            </>
-          );
-        })}
-
-        {/* <Card1
-          img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
-          hname="Hospital Name"
-          name="Jehangir Hospital"
-          drname="Dr. Madhuri Thakare "
-          spe="Speciality"
-          speciality="Eye Care"
-          mail="Mail"
-          mailid="adityakumar@gmail.com"
-          add="Address"
-          address="Pune Station Road, Opposite Saurabh Hall and Alankar Talkies, Central Excise Colony, Sangamwadi, Pune"
-          exp="Experience"
-          experience=" 4 Years"
-          charge="Charges"
-          charges="500.00 Rs"
-          qua="Qualification"
-          qualification="MBBS, MS"
-          ph="PhoneNo"
-          phoneNo="1234567890"
-        /> */}
-       
-      </div>
-    </>
-  );
-}
-
-function Card1(props) {
-  return (
-    <>
       <div className="col">
         <div class="card doctorcard">
           <img
-            src={props.img}
+            src=""
             class="card-img-top doctor__card__imgblock"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title"> {props.drname}</h5>
+            <h5 class="card-title"> {currElem.name}</h5>
             <p class="card-text">
               <table class="table">
                 <thead>
                   <tr>
-                    <th scope="col">{props.hname}</th>
-                    <td>{props.name}</td>
+                    <th scope="col">Hospital Name:</th>
+                    <td>{currElem.hospitalName}</td>
                   </tr>
 
                   <tr>
-                    <th scope="col">{props.spe}</th>
-                    <td>{props.speciality}</td>
+                    <th scope="col">Speciality:</th>
+                    <td>{currElem.speciality}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.exp}</th>
-                    <td>{props.experience}</td>
+                    <th scope="col">Experience</th>
+                    <td>{currElem.experience}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.ph}</th>
-                    <td>{props.phoneNo}</td>
+                    <th scope="col">Phone No </th>
+                    <td>{currElem.phoneNo}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.qua}</th>
-                    <td>{props.qualification}</td>
+                    <th scope="col">Qualification</th>
+                    <td>{currElem.qualification}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.charge}</th>
-                    <td>{props.charges}</td>
+                    <th scope="col">Charges</th>
+                    <td>{currElem.charges}</td>
                   </tr>
                   <tr>
-                    <th scope="col">{props.mail}</th>
-                    <td>{props.mailid}</td>
+                    <th scope="col">Mail</th>
+                    <td>{currElem.mail}</td>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <th>{props.add}</th>
-                    <td className="card__address">{props.address}</td>
+                    <th>Address</th>
+                    <td className="card__address">{currElem.address}</td>
                   </tr>
                 </tbody>
               </table>
             </p>
             <p className="text-center">
-              <button
-                class="btn btn-primary doctor__btn text-center"
-                type="submit"
-              >
-                Book Appointment
-              </button>
+            <Link to="/Book_Appointment" state={currElem}  class="btn btn-primary hospitalbtn-card">
+            Book Appointment
+          </Link>
+            
             </p>
           </div>
         </div>
+        
+      </div>
+        </>
+          );
+        })}
+
       </div>
     </>
   );
 }
+
+
 
 export default DoctorP;

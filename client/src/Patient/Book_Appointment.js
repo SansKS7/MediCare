@@ -1,8 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderP from "../Home/HeaderP";
-import { Link } from "react-router-dom";
-function DoctorP() {
+import { Link, useLocation } from "react-router-dom";
+function DoctorP(props) {
+
+  
+  //const location =useLocation();
+ const data={};
+ const state = useLocation();
+ const [doctorData,setDoctorData] = useState(state.state);
+  console.log(typeof(  data))
+  console.log("data =" ,data);
+
+const URL = "/api/doctor?search="+data.doctor;
+console.log(URL);
+
+useEffect(() => {
+  //getDoctors();
+ // console.log(doctor1);
+ console.log(doctorData)
+});
+
+
+    
+
   const [formData, setForm] = useState({
     _id: null,
     a_id: "",
@@ -84,7 +105,7 @@ function DoctorP() {
                     name="firstName"
                     className="form-control textbox"
                     onChange={handleEvent}
-                    required
+                    readOnly
                   />
                 </div>
 
@@ -96,9 +117,11 @@ function DoctorP() {
                     type="text"
                     id="name"
                     name="name"
+                    value={doctorData.name}
                     className="form-control textbox"
                     onChange={handleEvent}
-                    required
+                    readOnly
+
                   />
                 </div>
 
@@ -110,9 +133,11 @@ function DoctorP() {
                     type="text"
                     id="hospitalName"
                     name="hospitalName"
+                    value={doctorData.hospitalName}
                     className="form-control textbox"
                     onChange={handleEvent}
-                    required
+                    readOnly
+
                   />
                 </div>
 

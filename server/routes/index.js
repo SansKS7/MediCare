@@ -30,6 +30,7 @@ const {
   searchDoctor,
   updateDoctor,
   doctorProfileUpdate,
+  deleteDoctor,
 } = require("../controllers/doctor.controller");
 const {
   incrementId,
@@ -40,7 +41,7 @@ const {
   updateAppointmentId,
 } = require("../controllers/nextId.controller");
 
-const { appointmentReg } = require("../controllers/appointment.controller");
+const { appointmentReg,searchDoctorAppointment,searchPatientAppointment,updateAppointmentStatus } = require("../controllers/appointment.controller");
 const { json } = require("body-parser");
 
 // Configuration Cloudinary
@@ -81,7 +82,6 @@ router.get("/hospital", (req, res, next) => {
     });
 });
 
-// /api/doctor?search="D101"
 router.get("/doctor", (req, res, next) => {
   searchDoctor(req)
     .then((result) => {
@@ -168,8 +168,16 @@ router.post("/getAppointment", (req, res) => {
       updateAppointmentId(incrementId(req.body.a_id));
     })
     .catch((e) => {
-      console.log(e);
-      res.status(500).json({ message: "Internet Server Error" });
+      console.log(e. _message);
+      if(e._message === "appointment validation failed")
+      {
+        res.status(404).json({ message: "Update Profile Details Properly..." });
+      }
+      else
+      {
+        res.status(500).json({ message: "Internet Server Error" });
+      }
+      
     });
   }).catch((e)=>{
     console.log(e);
@@ -253,10 +261,6 @@ router.post(
   }
 );
 
-//  /api/addDoctor
-{
-  
-}
 router.post("/addDoctor", (req, res) => {
   console.log(req.body);
   doctorRegister(req)
@@ -269,6 +273,18 @@ router.post("/addDoctor", (req, res) => {
       res.status(500).json({ message: "Internet Server Error" });
     });
 });
+
+router.delete("/deleteDoctor", (req, res) => {
+  console.log(req.body);
+  deleteDoctor(req)
+  .then((result) => {
+    res.status(200).json(result);
+  })
+  .catch((e) => {
+    res.status(500).json({ message: "Internet Server Error" });
+  });
+});
+
 
 router.post("/doctorUpdate", (req, res) => {
   updateDoctor(req)
@@ -341,6 +357,43 @@ router.get("/doctorId", (req, res) => {
     res.status(200).json(result[0]);
   });
 });
+
+
+router.get("/doctorAppointment", (req, res, next) => {
+ // console.log(req.query);
+ searchDoctorAppointment(req)
+    .then((result) => {
+   //    console.log(result);
+      res.status(200).json(result);
+    })
+    .catch((e) => {
+      res.status(500).json({ message: "Internet Server Error" });
+    });
+});
+
+router.get("/patientAppointment", (req, res) => {
+  console.log(req.query);
+  searchPatientAppointment(req)
+     .then((result) => {
+       console.log(result);
+       res.status(200).json(result);
+     })
+     .catch((e) => {
+       res.status(500).json({ message: "Internet Server Error" });
+     });
+ });
+
+router.post("/updateAppointmentStatus", (req, res) => {
+  // console.log(req.body);
+   updateAppointmentStatus(req)
+    .then((result) => {
+       console.log(result);
+       res.status(200).json(result);
+    })
+    .catch((e) => {
+      res.status(500).json({ message: "Internet Server Error" });
+    });
+ });
 
 router.get("*", (req, res) => {
   res.send("API");

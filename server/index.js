@@ -25,6 +25,6 @@ cloudinary.config({
   api_secret: "JVvF5sfMcy2VYO1BE8eIFXVaEVo",
 });
 
-app.use("/test", (req, res) => {
+app.use("/test", (req, response) => {
   res.send("Testing...");
 });

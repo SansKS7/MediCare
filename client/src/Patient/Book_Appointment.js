@@ -17,32 +17,30 @@ function DoctorP(props) {
   async function getDoctors() {
     const response = await fetch(getnameURL);
     const data = await response.json();
-    console.log(data,"Temp");
+  //  console.log(data,"Temp");
     setForm({...data});
   }
 
   useEffect(() => {
-    getDoctors();
-    console.log(patient);
+  //  getDoctors();
+   // console.log(patient);
   });
 
   const [formData, setForm] = useState({
-    // _id: null,
-    // a_id: "",
-    // p_id: PatientUser,
-    // firstName: patient.firstName,
-    // lastName: patient.lastName,
-    // gender: patient.gender,
-    // phoneNo: patient.phoneNo,
-    // d_id: doctorData.d_id,
-    // name: doctorData.name,
-    // h_id: doctorData.h_id,
-    // hospitalName: doctorData.hospitalName,
-    // appoDateTime: "",
-    // createDate: new Date(),
-    // appoStatus: "Pending",
-    // appoMessage: "",
-    // __v: "",
+    a_id: "",
+    p_id: PatientUser,
+    firstName: patient.firstName,
+    lastName: patient.lastName,
+    gender: patient.gender,
+    phoneNo: patient.phoneNo,
+    d_id: doctorData.d_id,
+    name: doctorData.name,
+    h_id: doctorData.h_id,
+    hospitalName: doctorData.hospitalName,
+    appoDateTime: "",
+    createDate: new Date(),
+    appoStatus: "Pending",
+    appoMessage: "",
   });
 
   function isfirstName(val) {
@@ -87,26 +85,26 @@ function DoctorP(props) {
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
-  useEffect(() => {
-    setForm({
-    _id: null,
-    a_id: "",
-    p_id: PatientUser,
-    firstName: patient.firstName,
-    lastName: patient.lastName,
-    gender: patient.gender,
-    phoneNo: patient.phoneNo,
-    d_id: doctorData.d_id,
-    name: doctorData.name,
-    h_id: doctorData.h_id,
-    hospitalName: doctorData.hospitalName,
-    appoDateTime: "",
-    createDate: new Date(),
-    appoStatus: "Pending",
-    appoMessage: "",
-    __v: "",
-  });
-}, [appointment]);
+//   useEffect(() => {
+//     setForm({
+//     _id: null,
+//     a_id: "",
+//     p_id: PatientUser,
+//     firstName: patient.firstName,
+//     lastName: patient.lastName,
+//     gender: patient.gender,
+//     phoneNo: patient.phoneNo,
+//     d_id: doctorData.d_id,
+//     name: doctorData.name,
+//     h_id: doctorData.h_id,
+//     hospitalName: doctorData.hospitalName,
+//     appoDateTime: "",
+//     createDate: new Date(),
+//     appoStatus: "Pending",
+//     appoMessage: "",
+//     __v: "",
+//   });
+// });
  
   return (
     <>
@@ -177,6 +175,7 @@ function DoctorP(props) {
                     className="form-control textbox"
                     id="appoDateTime"
                     name="appoDateTime"
+                    value={formData.appoDateTime}
                     onChange={handleEvent}
                     required
                   />
@@ -192,6 +191,7 @@ function DoctorP(props) {
                     placeholder="Enter Your Problems and symptoms..."
                     id="appoMessage"
                     name="appoMessage"
+                    value={formData.appoMessage}
                     onChange={handleEvent}
                     required
                   ></textarea>

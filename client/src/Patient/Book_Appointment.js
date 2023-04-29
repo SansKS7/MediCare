@@ -2,27 +2,34 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderP from "../Home/HeaderP";
 import { Link, useLocation } from "react-router-dom";
+import { useStateValue } from "../Context/StateProvider";
+
 function DoctorP(props) {
-
-  
   //const location =useLocation();
- const data={};
- const state = useLocation();
- const [doctorData,setDoctorData] = useState(state.state);
-  console.log(typeof(  data))
-  console.log("data =" ,data);
+  const [{ PatientUser }, dispatchUser] = useStateValue();
+  const data = {};
+  const state = useLocation();
+  const [doctorData, setDoctorData] = useState(state.state);
+  // console.log(typeof data);
+  // console.log("data =", data);
 
-const URL = "/api/doctor?search="+data.doctor;
-console.log(URL);
+  const URL = "/api/doctor?search=" + data.doctor;
+  const getnameURL = "/api/patient?search=" + PatientUser;
+  // console.log(URL);
 
-useEffect(() => {
-  //getDoctors();
- // console.log(doctor1);
- console.log(doctorData)
-});
+  const [patient, setPatient] = useState([]);
 
+  async function getDoctors() {
+    const response = await fetch(getnameURL);
+    const data = await response.json();
 
-    
+    setPatient(data);
+  }
+
+  useEffect(() => {
+    getDoctors();
+    console.log(patient);
+  });
 
   const [formData, setForm] = useState({
     _id: null,
@@ -44,7 +51,7 @@ useEffect(() => {
   });
 
   function isfirstName(val) {
-    console.log(val);
+    // console.log(val);
     //var reg=/^[a-zA-Z0-9]\s/;
     var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
 
@@ -53,7 +60,7 @@ useEffect(() => {
   }
 
   function isDate(val) {
-    console.log(val);
+    // console.log(val);
 
     const reg = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
 
@@ -63,7 +70,7 @@ useEffect(() => {
 
   function onFormSubmit(e) {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
 
     var name = isfirstName(formData.firstName);
     var drname = isfirstName(formData.name);
@@ -71,10 +78,10 @@ useEffect(() => {
     var Message = isfirstName(formData.appoMessage);
     var date = isDate(formData.appoDateTime);
     if (Message && date && name && drname && hosname) {
-      console.log(formData);
+      // console.log(formData);
       alert("Success!");
     } else {
-      console.log("Failure!");
+      // console.log("Failure!");
     }
   }
   const handleEvent = (e) => {
@@ -102,6 +109,7 @@ useEffect(() => {
                   <input
                     type="text"
                     id="firstName+lastName"
+                    value={patient.firstName + " " + patient.lastName}
                     name="firstName"
                     className="form-control textbox"
                     onChange={handleEvent}
@@ -121,7 +129,6 @@ useEffect(() => {
                     className="form-control textbox"
                     onChange={handleEvent}
                     readOnly
-
                   />
                 </div>
 
@@ -137,7 +144,6 @@ useEffect(() => {
                     className="form-control textbox"
                     onChange={handleEvent}
                     readOnly
-
                   />
                 </div>
 

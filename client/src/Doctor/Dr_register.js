@@ -11,6 +11,7 @@ function Dr_register() {
 
   const URL = "/api/addDoctor";
   const getIdUrl = "/api/doctorId";
+  
   const [doctor, setdocId] = useState();
   const [ {HospitalUser} , dispatchUser] = useStateValue();
 

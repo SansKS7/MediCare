@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderP from "../Home/HeaderP";
 import { Link, useLocation } from "react-router-dom";
+import DatePicker from "react-datepicker";
 import { useStateValue } from "../Context/StateProvider";
+import addDays from "date-fns/addDays";
+import "react-datepicker/dist/react-datepicker.css";
 
 function Book_Appointment(props) {
    const navigate = useNavigate();
@@ -51,7 +54,6 @@ function Book_Appointment(props) {
   };
 
   const [formData, setForm] = useState({
-    a_id: "",
     p_id: PatientUser,
     firstName: "",
     lastName:"",
@@ -61,7 +63,7 @@ function Book_Appointment(props) {
     name: doctorData.name,
     h_id: doctorData.h_id,
     hospitalName: doctorData.hospitalName,
-    appoDateTime: "",
+    appoDateTime: new Date(),
     createDate: new Date(),
     appoStatus: "Pending",
     appoMessage: "",
@@ -85,16 +87,14 @@ function Book_Appointment(props) {
     return false;
   }
 
-  const [startDate, setStartDate] = useState(
-    setHours(setMinutes(new Date(), 30), 16)
-  );
+
 
 
   function onFormSubmit(e) {
     e.preventDefault();
       console.log(formData);
-      uploadingData(getappointment, formData);
-      alert('Bhavin')
+     uploadingData(getappointment, formData);
+     // alert('Bhavin')
   }
 
 
@@ -167,18 +167,23 @@ function Book_Appointment(props) {
                     Select Time{" "}
                   </label>
                  
-                   <DatePicker
-                   selected={startDate}
-                   onChange={(date) => setStartDate(date)}
-                   showTimeSelect
-                   excludeTimes={[
-                     setHours(setMinutes(new Date(), 0), 17),
-                     setHours(setMinutes(new Date(), 30), 18),
-                     setHours(setMinutes(new Date(), 30), 19),
-                     setHours(setMinutes(new Date(), 30), 17),
-                   ]}
-                   dateFormat="MMMM d, yyyy h:mm aa"
-                 />
+                  <DatePicker
+                  //  showIcon
+                  id="appoDateTime"
+                  onChange={(date) =>
+                    setForm({
+                      ...formData,
+                      appoDateTime: date,
+                    })
+                  }
+                  selected={formData.appoDateTime}
+                  className="form-control"
+                  showTimeSelect
+                  timeCaption="Slot"
+                  dateFormat="MMMM d, yyyy h:mm aa"
+                  minDate={new Date()}
+                  maxDate={addDays(new Date(), 7)}
+                />
                   
                 </div>
                 <div className="mb-3">

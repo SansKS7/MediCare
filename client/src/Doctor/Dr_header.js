@@ -37,7 +37,7 @@ export default function () {
                     <li><Link className="nav-link scrollto active" to="/Dr_home">Home</Link></li>
                     <li><Link classname='underline' to="/Dr_Profile">View Profile</Link></li>
                         <li><Link classname='underline' to="/Appointment">Appointment</Link></li>
-                        <li><Link classname='underline' to="/P_Appointment">Pending Appointment</Link></li>
+                        {/* <li><Link classname='underline' to="/P_Appointment">Pending Appointment</Link></li> */}
                         <li><Link classname='underline' to="/R_Appointment">Rejected Appointment</Link> </li>
                         <li><Link classname='underline' to="/C_Appointment">Completed Appointment</Link></li>
                         <li><button type="submit" className="getstarted scrollto" onClick={logoutUser}>Logout</button></li>

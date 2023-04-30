@@ -20,11 +20,7 @@ function Book_Appointment(props) {
     const data = await response.json();
     console.log("Patient data: ")
     console.log(data);
-   // setPatient(data);
-    
-    // const doctorDipslay = doctor.slice(0,2);
-
-    //console.log(data);
+    setPatient(data);
   };
 
   

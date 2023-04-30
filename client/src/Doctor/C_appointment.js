@@ -8,7 +8,7 @@ import Dr_header from './Dr_header';
 export default function () {
     const navigate = useNavigate()
     const [{ DoctorUser }, dispatchUser] = useStateValue();
-    const URL = "/api/doctorAppointment?search=" + DoctorUser + "+Pending";
+    const URL = "/api/doctorAppointment?search=" + DoctorUser + "+Accepted";
     const [doctor, setdoctor] = useState([]);
 
 
@@ -21,7 +21,7 @@ export default function () {
 
 
     useEffect(() => {
-        getDoctor();
+     getDoctor();
     });
     return (
 
@@ -31,7 +31,8 @@ export default function () {
                 <table className="table">
                     <thead className="thead-dark1">
                         <tr>
-                            <th scope="col">Sr.No</th>
+                            <th scope="col">Appointment ID</th>
+                            <th scope="col">Patient ID</th>
                             <th scope="col">Patient Name</th>
                             <th scope="col">Select Time</th>
                             <th scope="col">Message</th>
@@ -42,6 +43,8 @@ export default function () {
                     {doctor.map((currElem) => {
                         return(
                         <tr>
+                        <th scope="row">{currElem.a_id}</th>
+
                             <th scope="row">{currElem.p_id}</th>
                             <td>{currElem.firstName} {currElem.lastName}</td>
                             <td>{currElem.appoDateTime}</td>

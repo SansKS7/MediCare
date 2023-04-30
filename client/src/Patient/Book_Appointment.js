@@ -4,27 +4,33 @@ import HeaderP from "../Home/HeaderP";
 import { Link, useLocation } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 
-function DoctorP(props) {
+function Book_Appointment(props) {
   const [{ PatientUser }, dispatchUser] = useStateValue();
   const state = useLocation();
+
   const [doctorData, setDoctorData] = useState(state.state);
-  const getnameURL = "/api/patient?search=" + PatientUser;
+  const getnameURL = "/api/patient?search="+PatientUser;
   const [patient, setPatient] = useState([]);
-  const getappointment ="/api/getAppointment";
-  const [appointment, setappointment] = useState([]);
+  const [appo, setappo] = useState([]);
+  
 
 
-  async function getDoctors() {
+  const getPatient = async () => {
     const response = await fetch(getnameURL);
     const data = await response.json();
-  //  console.log(data,"Temp");
-    setForm({...data});
-  }
+    console.log("Patient data: ")
+    console.log(data);
+   // setPatient(data);
+    
+    // const doctorDipslay = doctor.slice(0,2);
 
+    //console.log(data);
+  };
+
+  
   useEffect(() => {
-  //  getDoctors();
-   // console.log(patient);
-  });
+    getPatient()})
+
 
   const [formData, setForm] = useState({
     a_id: "",
@@ -43,68 +49,23 @@ function DoctorP(props) {
     appoMessage: "",
   });
 
-  function isfirstName(val) {
-    // console.log(val);
-    //var reg=/^[a-zA-Z0-9]\s/;
-    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
-
-    if (reg.test(val)) return true;
-    return false;
-  }
-
-  function isDate(val) {
-    // console.log(val);
-
-    const reg = /^(\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/;
-
-    if (reg.test(val)) return true;
-    return false;
-  }
-
+  
   function onFormSubmit(e) {
     e.preventDefault();
+    //getPatient();
+
     console.log("Check point")
     console.log(formData);
+    //setappo(formData);
+    //console.log(appo);
 
-    // var name = isfirstName(formData.firstName);
-    // var drname = isfirstName(formData.name);
-    // var hosname = isfirstName(formData.hospitalName);
-    // var Message = isfirstName(formData.appoMessage);
- 
-    //var date = isDate(formData.appoDateTime);
-    // console.log(Message);
-    // console.log(date);
-    // if (Message) {
-    //   alert("Success!");
-    //   console.log(formData);
-     
-    // } else {
-    //   console.log("Failure!");
-    // }
+  
   }
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
-//   useEffect(() => {
-//     setForm({
-//     _id: null,
-//     a_id: "",
-//     p_id: PatientUser,
-//     firstName: patient.firstName,
-//     lastName: patient.lastName,
-//     gender: patient.gender,
-//     phoneNo: patient.phoneNo,
-//     d_id: doctorData.d_id,
-//     name: doctorData.name,
-//     h_id: doctorData.h_id,
-//     hospitalName: doctorData.hospitalName,
-//     appoDateTime: "",
-//     createDate: new Date(),
-//     appoStatus: "Pending",
-//     appoMessage: "",
-//     __v: "",
-//   });
-// });
+
+
  
   return (
     <>
@@ -220,4 +181,4 @@ function DoctorP(props) {
   );
 }
 
-export default DoctorP;
+export default Book_Appointment;

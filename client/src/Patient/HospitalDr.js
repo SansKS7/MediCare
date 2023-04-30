@@ -49,7 +49,69 @@ function HospitalDr(props)   {
       {doctor.map((curElem) => {
           return (
             <>
-            <Card1
+
+
+            <div className="col">
+        <div class="card doctorcard">
+          <img
+            src=""
+            class="card-img-top hospital__dr__card__imgblock"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title"> {curElem.name}</h5>
+            <p class="card-text">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Hospital Name -</th>
+                    <td>{curElem.hospitalName}</td>
+                  </tr>
+
+                  <tr>
+                    <th scope="col">Speciality</th>
+                    <td>{curElem.speciality}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Experience</th>
+                    <td>{curElem.experience}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Phone No</th>
+                    <td>{curElem.phoneNo}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Qualification</th>
+                    <td>{curElem.qualification}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Charges</th>
+                    <td>{curElem.charges}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Mail</th>
+                    <td>{curElem.mail}</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Address</th>
+                    <td className="card__address">{curElem.address}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+            <p className="text-center">
+            <Link to="/Book_Appointment"  state={curElem}  class="btn btn-primary hospitalbtn-card">
+            Book Appointment
+          </Link>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+            {/* <Card1
           img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
           hname="Hospital Name"
           name={curElem.hospitalName}
@@ -68,7 +130,7 @@ function HospitalDr(props)   {
           qualification={curElem.qualification}
           ph="PhoneNo"
           phoneNo={curElem.phoneNo}
-        /> 
+        />  */}
             </>
           );
         })}

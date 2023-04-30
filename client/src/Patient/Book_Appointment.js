@@ -9,32 +9,28 @@ function Book_Appointment(props) {
   const state = useLocation();
 
   const [doctorData, setDoctorData] = useState(state.state);
-  const getnameURL = "/api/patient?search="+PatientUser;
-  const [patient, setPatient] = useState([]);
-  const [appo, setappo] = useState([]);
-  
+  const getnameURL = "/api/patient?search=" + PatientUser;
 
 
   const getPatient = async () => {
     const response = await fetch(getnameURL);
-    const data = await response.json();
-    console.log("Patient data: ")
-    console.log(data);
-    setPatient(data);
+    const patient = await response.json();
+    setForm({
+      ...formData,
+      firstName: patient.firstName,
+      lastName: patient.lastName,
+      gender: patient.gender,
+      phoneNo: patient.phoneNo
+    })
   };
-
-  
-  useEffect(() => {
-    getPatient()})
-
 
   const [formData, setForm] = useState({
     a_id: "",
     p_id: PatientUser,
-    firstName: patient.firstName,
-    lastName: patient.lastName,
-    gender: patient.gender,
-    phoneNo: patient.phoneNo,
+    firstName: "",
+    lastName:"",
+    gender: "",
+    phoneNo: "",
     d_id: doctorData.d_id,
     name: doctorData.name,
     h_id: doctorData.h_id,
@@ -45,24 +41,19 @@ function Book_Appointment(props) {
     appoMessage: "",
   });
 
-  
   function onFormSubmit(e) {
     e.preventDefault();
-    //getPatient();
-
-    console.log("Check point")
+    console.log("Check point");
     console.log(formData);
-    //setappo(formData);
-    //console.log(appo);
-
-  
   }
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
 
-
- 
+  useEffect(() => {
+    getPatient();
+  },[]);
+  
   return (
     <>
       <HeaderP />
@@ -84,7 +75,7 @@ function Book_Appointment(props) {
                   <input
                     type="text"
                     id="firstName"
-                    value={patient.firstName + " " + patient.lastName}
+                    value={formData.firstName + " " + formData.lastName}
                     name="firstName"
                     className="form-control textbox"
                     onChange={handleEvent}

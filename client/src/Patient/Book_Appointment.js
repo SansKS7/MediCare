@@ -5,11 +5,37 @@ import { Link, useLocation } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 
 function Book_Appointment(props) {
+   const navigate = useNavigate();
   const [{ PatientUser }, dispatchUser] = useStateValue();
   const state = useLocation();
 
   const [doctorData, setDoctorData] = useState(state.state);
   const getnameURL = "/api/patient?search=" + PatientUser;
+  const getappointment="/api/getappointment";
+
+  async function uploadingData(getappointment, data) {
+    try {
+      const respones = await fetch(getappointment, {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }).catch((e) => console.log("Error : ", e));
+      const json = await respones.json();
+      console.log(respones.status);
+      if (respones.status === 200) {
+        //Login Success
+        console.log("Success");
+        navigate("/patient_home");
+      } else {
+        //Login Invalid
+        console.log("Invalid");
+      }
+    } catch (e) {
+      console.log("Error : ", e);
+    }
+  }
 
 
   const getPatient = async () => {
@@ -49,6 +75,28 @@ function Book_Appointment(props) {
   const handleEvent = (e) => {
     setForm({ ...formData, [e.target.name]: e.target.value });
   };
+
+  function isMessage(val) {
+    console.log(val);
+    var reg = /^[a-zA-Z0-9\s+/b+(/,@)]+$/;
+    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
+
+    if (reg.test(val)) return true;
+    return false;
+  }
+
+  const [startDate, setStartDate] = useState(
+    setHours(setMinutes(new Date(), 30), 16)
+  );
+
+
+  function onFormSubmit(e) {
+    e.preventDefault();
+      console.log(formData);
+      uploadingData(getappointment, formData);
+      alert('Bhavin')
+  }
+
 
   useEffect(() => {
     getPatient();
@@ -118,15 +166,20 @@ function Book_Appointment(props) {
                     {" "}
                     Select Time{" "}
                   </label>
-                  <input
-                    type="date"
-                    className="form-control textbox"
-                    id="appoDateTime"
-                    name="appoDateTime"
-                    value={formData.appoDateTime}
-                    onChange={handleEvent}
-                    required
-                  />
+                 
+                   <DatePicker
+                   selected={startDate}
+                   onChange={(date) => setStartDate(date)}
+                   showTimeSelect
+                   excludeTimes={[
+                     setHours(setMinutes(new Date(), 0), 17),
+                     setHours(setMinutes(new Date(), 30), 18),
+                     setHours(setMinutes(new Date(), 30), 19),
+                     setHours(setMinutes(new Date(), 30), 17),
+                   ]}
+                   dateFormat="MMMM d, yyyy h:mm aa"
+                 />
+                  
                 </div>
                 <div className="mb-3">
                   <label for="disabledTextInput" class="form-label">

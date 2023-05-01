@@ -48,7 +48,6 @@ export default function () {
       if (respones.status === 200) {
         //Login Success
         console.log("Success");
-        alert("Updated Successfull!!")
         navigate("/Dr_profile");
       } else {
         //Login Invalid
@@ -147,6 +146,8 @@ export default function () {
     if (fname && speciality && mail && phone && address && exp && password && charges && qualification) {
      
       uploadingData(updateUrl, formData);
+      alert("Updated Successfull!!")
+
     }
     else {
       alert("Something went wrong")

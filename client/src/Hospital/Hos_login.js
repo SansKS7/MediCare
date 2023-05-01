@@ -37,6 +37,7 @@ function Hos_login() {
           HospitalUser:formData.h_id,
         
         });
+        alert("Login successful")
         navigate("/Hos_home");
         
       }

@@ -45,7 +45,7 @@ async function uploadingData(updateUrl, data) {
     if (respones.status === 200) {
       //Login Success
       console.log("Success");
-        alert("Updated Successfully");
+        //alert("Updated Successfully");
       navigate("/Hos_profile");
       
     } else {
@@ -125,6 +125,7 @@ async function uploadingData(updateUrl, data) {
         if (fname && speciality && phone && address && mail && password) {
             
             uploadingData(updateUrl, formData);
+            alert("Updated Successfully")
         }
         else {
             alert("Something went wrong!!")
@@ -200,6 +201,7 @@ async function uploadingData(updateUrl, data) {
                                                     value={formData.name}
                                                     className="form-control textbox"
                                                     onChange={handleEvent}
+                                                    readOnly
                                                 />
                                             </div>
                                         </div>

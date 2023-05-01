@@ -46,7 +46,6 @@ function Edit_profile() {
       if (respones.status === 200) {
         //Login Success
         console.log("Success");
-        alert("Updated Successfull!!")
         navigate("/patient_profile");
       } else {
         //Login Invalid
@@ -148,6 +147,8 @@ function Edit_profile() {
     if (fname && lname && age && phone && address && password && gender && height && bloodGroup && weight) {
       console.log(formData);
       uploadingData(updateUrl, formData);
+      alert("Updated Successfull!!")
+
       navigate("/Patient_profile");
     } else {
       alert("Something went wrong");

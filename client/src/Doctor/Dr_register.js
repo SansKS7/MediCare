@@ -151,10 +151,10 @@ function Dr_register() {
     var qualification = isAddress(formData.qualification);
     if (fname && speciality && mail && phone && address && exp && password && charges && qualification) {
       uploadingData(URL, formData);
-      alert("Login Successful")
+      alert("Register Successful")
     }
     else {
-      alert("Login Unsuccessful")
+      alert("Register Unsuccessful")
 
     }
 

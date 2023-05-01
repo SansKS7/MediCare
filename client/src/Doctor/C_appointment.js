@@ -49,7 +49,7 @@ export default function () {
                             <td>{currElem.firstName} {currElem.lastName}</td>
                             <td>{currElem.appoDateTime}</td>
                             <td>{currElem.appoMessage}</td>
-                            <td><button className="btn btn-success">Complete</button></td>
+                            <td><button className="btn btn-success">Accepted</button></td>
                         </tr>
                           );
                         })}   

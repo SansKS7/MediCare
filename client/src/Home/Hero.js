@@ -9,14 +9,21 @@ export default function () {
             <div className="container">
                 <div className="row">            
                         <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
 
+                            {/* <h2 data-aos="fade-up" data-aos-delay="400">Welcome Nandini Achugatla To ..</h2>
+                             */}
                             <h1 data-aos="fade-up">MediCare</h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
+                            
                             <p><h9 data-aos="fade-up">We understand healthcare goes beyond signs, symptoms, diagnosis, and 
                                         treatment. It’s about the deep connection between doctors and patients that leads to 
                                         continuous care and sustained, better outcomes.</h9></p>
                             <div data-aos="fade-up" data-aos-delay="800">
-                                <Link to="/Book_Appointment" className="btn btn-primary">Book Appointment</Link>
+                                <Link to="/Patient_login" className="btn btn-primary">Book Appointment</Link>
                                 
                             </div>
                         </div>

@@ -7,20 +7,44 @@ import { useStateValue } from '../Context/StateProvider'
 function View_Appointment() {
     const navigate = useNavigate()
     const [{ PatientUser }, dispatchUser] = useStateValue();
-    const URL = "/api/patientAppointment?search=" + PatientUser + "+Pending";
+    const URLPending = "/api/patientAppointment?search=" + PatientUser + "+Pending";
+    const URLAccepted = "/api/patientAppointment?search=" + PatientUser + "+Accepted";
+    const URLRejected = "/api/patientAppointment?search=" + PatientUser+"+Rejected";
+    
     const [patient, setPatient] = useState([]);
+    const [patientA,setPatientA]=useState([]);
+    const [PatientR,setPatientR]=useState([]);
 
 
     const getPatient = async () => {
-        const response = await fetch(URL);
+        const response = await fetch(URLPending);
         const data = await response.json();
         console.log(data);
         setPatient(data);
     };
+    
 
+    const getPatientAcc = async () => {
+        const response = await fetch(URLAccepted);
+        const data = await response.json();
+        console.log(data);
+        setPatientA(data);
+    };
 
+    
+    const getPatientR = async () => {
+        const response = await fetch(URLRejected);
+        const data = await response.json();
+        console.log(data);
+        setPatientR(data);
+    };
+
+//getPatient();
     useEffect(() => {
-        getPatient();
+        // getPatient();
+        // getPatientAcc();
+        // getPatientR();
+        
     });
 
 
@@ -54,7 +78,39 @@ function View_Appointment() {
                             <td><button className="btn btn-primary">Pending</button></td>
                         </tr>
                        );
+                    })}  
+
+
+                    {patientA.map((currElem) => {
+                        return(
+                        <tr>
+                            <th scope="row">{currElem.a_id}</th>
+                            <td>{currElem.hospitalName}</td>
+                            <td>{currElem.name}</td>
+                            <td>{currElem.appoDateTime}</td>
+                            <td>{currElem.appoMessage}</td>
+
+                            <td><button className="btn btn-success">Accepted</button></td>
+                        </tr>
+                       );
                     })}   
+
+
+                    {PatientR.map((currElem) => {
+                        return(
+                        <tr>
+                            <th scope="row">{currElem.a_id}</th>
+                            <td>{currElem.hospitalName}</td>
+                            <td>{currElem.name}</td>
+                            <td>{currElem.appoDateTime}</td>
+                            <td>{currElem.appoMessage}</td>
+
+                            <td><button className="btn btn-danger">Rejected</button></td>
+                        </tr>
+                       );
+                    })}   
+
+                        
                     </tbody>
                 </table>
 

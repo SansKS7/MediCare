@@ -15,6 +15,23 @@ function Hos_home () {
   const [{HospitalUser},dispatchUser]=useStateValue();
   const navigate=useNavigate()
 
+  
+  const getnameURL = "/api/hospital?search=" + HospitalUser;
+  
+  const [hospital, setHospital] = useState([]);
+
+  const   getHospital=async()=> {
+    const response = await fetch(getnameURL);
+    const data = await response.json();
+    setHospital(data[0]);
+  }
+
+  useEffect(() => {
+    getHospital();
+    console.log(hospital.name);
+  });
+
+
 
   
   
@@ -54,7 +71,7 @@ function Hos_home () {
                         <br/>
 
                         <h2 data-aos="fade-up" text data-aos-delay="400" >Welcome    
-                            <span className="text-primary">    </span>    To ..</h2>
+                            <span className="text-primary">  {hospital.name}  </span>    To ..</h2>
                             
 
                            

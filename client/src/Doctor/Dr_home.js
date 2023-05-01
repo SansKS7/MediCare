@@ -1,4 +1,4 @@
-import React,{ useEffect } from 'react';
+import React,{ useState,useEffect } from 'react';
 import Dr_login from "./Dr_login";
 import Dr_register from './Dr_register';
 import Dr_header from './Dr_header';
@@ -17,6 +17,23 @@ function Dr_home () {
   const [ {DoctorUser} , dispatchUser] = useStateValue();
 
   const navigate=useNavigate();
+  
+  const getnameURL = "/api/doctor?search=" + DoctorUser;
+  
+  const [doctor, setDoctor] = useState([]);
+
+  const   getDoctor=async()=> {
+    const response = await fetch(getnameURL);
+    const data = await response.json();
+    setDoctor(data[0]);
+  }
+
+  useEffect(() => {
+    getDoctor();
+    console.log(doctor.name);
+  });
+
+
   function logoutUser()
   {
       window.localStorage.clear();
@@ -44,9 +61,9 @@ function Dr_home () {
                         <br/>
                         <br/>
 
-                            {/* <h2 data-aos="fade-up" data-aos-delay="400">Welcome Nandini Achugatla To ..</h2>
-                             */}
-                            <h1 data-aos="fade-up">MediCare</h1>
+                            <h2 data-aos="fade-up" data-aos-delay="400">Welcome   <span className="text-primary">  {doctor.name}  </span>  To..</h2>
+                            
+                            <h1 data-aos="fade-up">{doctor.hospitalName}</h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
                             
                             <p><h9 data-aos="fade-up">We understand healthcare goes beyond signs, symptoms, diagnosis, and 

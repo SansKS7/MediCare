@@ -107,7 +107,7 @@ function Patient_login() {
                 </div>
                 <button type="submit" class="btn btn-primary my-2 ">Login</button>
 
-                <center> <b> OR</b> </center>
+                <center> <b> No account Register Here..</b> </center>
                 <button type="submit" class="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>
 
               </fieldset>

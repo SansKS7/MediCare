@@ -1,18 +1,18 @@
 import React, {useState,useEffect}from "react";
 import HeaderP from "../Home/HeaderP";
-import { Link, useLocation } from "react-router-dom";
+
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function HospitalDr(props)   {
-    const location =useLocation();
-    const data=location.state;
-    console.log(typeof(  data))
-    console.log("data =" ,data);
-  const URL = "/api/doctor?search="+data.hospital;
-  console.log(URL);
+  const navigate=useNavigate();
+    const state =useLocation();
+    const [doctor1, setDoctor1 ] = useState(state.state);
 
-  const [doctor, setDoctor] = useState([]);
+    const URL = "/api/doctor?search="+doctor1.h_id;
+    console.log(URL);
 
-  const getDoctors = async () => {
+    const [doctor, setDoctor] = useState([])
+    const getDoctors = async () => {
     const response = await fetch(URL);
     setDoctor(await response.json());
     const data = await response.json();
@@ -20,28 +20,26 @@ function HospitalDr(props)   {
 
     //console.log(data);
   };
+
+  // console.log(doctor1.hospitalName);
+  // console.log(doctor1.hospitalName);
+  
+
   useEffect(() => {
-    getDoctors();
-  }, []);
+    console.log("Dr dta1")
+    console.log(doctor1.name)
+   getDoctors();
+  });
 
   return (
     <>
       <HeaderP />
+
+
       <div className="search__back">
-        <form
-          class="search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
-          role="search"
-        >
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search Doctors Here....."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
+     <center> <h3 data-aos="fade-up" text data-aos-delay="400" >  Here Are Doctors of    
+                            <span className="text-primary">  {doctor1.name} </span>    </h3> </center>
+                           
       </div>
       <div className="row">
 

@@ -3,13 +3,19 @@ import { useNavigate } from "react-router-dom";
 import HeaderP from "../Home/HeaderP";
 import { useStateValue } from "../Context/StateProvider";
 import { actionTypes } from "../Context/reducer";
+import axios from "axios";
 
 function Edit_profile() {
   const navigate = useNavigate();
 
   const [{ PatientUser }, dispatchUser] = useStateValue();
   const URL = "/api/patient?search=" + PatientUser;
+
+
   const updateUrl ="/api/patientUpdate";
+
+  const profileURL= "/api/patientProfileUpdate/";
+
   
 
   const [patient, setPatient] = useState([]);
@@ -20,12 +26,36 @@ function Edit_profile() {
     const data = await response.json();
     console.log(data,"Temp");
     setForm({...data});
+};
 
-  };
+
+const [image, setImage] = useState('')
+  function handleImage(e){
+    console.log(e.target.files);
+    setImage(e.target.files[0]);
+  }
+
+  const  uploadImg=async()=>{
+    const imgData=new FormData()
+    imgData.append('image', image)
+    imgData.append('p_id', PatientUser)
+
+    axios.post(profileURL,imgData).then((res)=>{
+        console.log(res);
+        //setForm(res)
+    })
+      
+  }
+
   useEffect(() => {
     getDoctors();
-  },[]);
+    console.log("object")
+    console.log(patient)
+  });
 
+  useEffect(()=>{
+    uploadImg();
+  },[])
   
   let name, value;
   const handleEvent = (e) => {
@@ -155,23 +185,24 @@ function Edit_profile() {
     }
   }
 
-  useEffect(() => {
-    setForm({
-      _id: null,
-      p_id: patient,
-      firstName:"",
-      lastName: "",
-      age: "",
-      phoneNo: "",
-      address: "",
-      password: "",
-      gender:"",
-      bloodGroup:"",
-      height:"",
-      weight:"",
-      repassword: "",
-    });
-  }, [patient]);
+  // useEffect(() => {
+  //   setForm({
+  //     _id: null,
+  //     p_id: patient,
+  //     firstName:"",
+  //     lastName: "",
+  //     age: "",
+  //     phoneNo: "",
+  //     address: "",
+  //     password: "",
+  //     gender:"",
+  //     bloodGroup:"",
+  //     height:"",
+  //     weight:"",
+  //     repassword: "",
+  //     profileUrl:"",
+  //   });
+  // }, [patient]);
 
 
   return (
@@ -187,17 +218,26 @@ function Edit_profile() {
                     <div className="card-body">
                       <div className="d-flex flex-column align-items-center text-center">
                         <img
-                          src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                          alt="Admin"
+                        // {require('../assets/img/home.png')}
+                          src={formData.profileUrl}
+                          alt="Profile Image"
                           className="rounded-circle"
                           width="150"
                         />
+                        <br />
+                        <br /> <br />
+
                         <div className="mt-3">
                           <h4>
-                            {patient.firstName} {patient.lastName}
+                            {formData.firstName} {formData.lastName}
                           </h4>
                         </div>
                       </div>
+                      
+                      <input className="btn btn-primary " type="file" value=""  onChange={handleImage}  /> 
+                      <br />
+                      <button onClick={uploadImg}> Upload</button>
+
                     </div>
                   </div>
                 </div>

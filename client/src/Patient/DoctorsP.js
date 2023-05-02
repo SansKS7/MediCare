@@ -2,41 +2,53 @@ import React, {useState,useEffect}from "react";
 import HeaderP from "../Home/HeaderP";
 import { Link } from "react-router-dom";
 function DoctorP() {
-  const URL = "/api/doctor?search=";
+ 
+  
+  
+  const [query,setQuery]=useState([]);
+  console.log(query);
+  
+  const URL = "/api/doctor?search="+query;
 
-  const [doctor, setDoctor] = useState([]);
+  const [doctor, setDoctors] = useState([]);
 
-  const getDoctors = async () => {
-    const response = await fetch(URL);
-    setDoctor(await response.json());
-    const data = await response.json();
-    console.log(data);
-    // const doctorDipslay = doctor.slice(0,2);
+   
+  
 
-    //console.log(data);
-  };
-  useEffect(() => {
+    const getDoctors = async () => {
+      const response = await fetch(URL);
+      setDoctors(await response.json());
+      const data=await response.json();
+   
+    };
+
+    useEffect(()=>{
+
     getDoctors();
-  }, []);
+  
+    },[query]);
 
+
+ 
+
+
+ 
+ 
   return (
     <>
       <HeaderP />
       <div className="search__back">
-        <form
-          class="search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
-          role="search"
-        >
-          <input
-            class="form-control me-2"
+                 <input
+            class="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
             type="search"
+            id="search_doctorss"
+            name="search_doctors"
             placeholder="Search Doctors Here....."
             aria-label="Search"
+            onChange={(e)=>setQuery(e.target.value)}
+
           />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form>
+ 
       </div>
       <div className="row">
       {doctor.map((currElem) => {

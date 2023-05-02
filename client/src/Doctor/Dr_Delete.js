@@ -3,9 +3,11 @@ import { useNavigate } from "react-router-dom"
 import Hos_header from "../Hospital/Hos_header";
 import { useStateValue } from "../Context/StateProvider";
 function Dr_schedule() {
-       const navigate = useNavigate()
+    
+    const navigate = useNavigate()
     const [{ HospitalUser }, dispatchUser] = useStateValue();
     const URL = "/api/doctor?search=" + HospitalUser;
+    const deleteURL="/api/deleteDoctor";
     const [doctor, setdoctor] = useState([]);
 
 
@@ -15,6 +17,32 @@ function Dr_schedule() {
         console.log(data);
         setdoctor(data);
     };
+
+    async  function deleteDoctor(d_id)  {
+        try{
+    
+           const respones=await fetch(deleteURL,{
+            method:'DELETE',
+            body:JSON.stringify({
+                d_id:d_id,
+            }),
+            headers: {
+                'Content-type': 'application/json',
+             },
+    
+        }).catch((e)=>console.log("Error",e));
+        if(respones.status==200)
+        {
+            console.log("success")
+        }
+        else{
+            console.log("not")
+            
+        }
+    }catch(e){
+        console.log("error",e);
+    }
+    }
 
 
     useEffect(() => {
@@ -42,7 +70,10 @@ return(
                             <th scope="row">{currElem.d_id}</th>
                             <td>{currElem.name}</td>
                             <td>{currElem.speciality}</td>
-                            <td><button className="btn btn-danger">Delete</button></td>
+                            <td><button className="btn btn-danger" onClick={()=>{
+                            alert(currElem.d_id);
+                            deleteDoctor(currElem.d_id);
+                            }}>Delete</button></td>
                         </tr>
                           );
                         })}  

@@ -62,6 +62,8 @@ async function deleteDoctor(request) {
   const deleteData = await Doctor.deleteOne(data);
   return deleteData;
 }
-
+// {
+//   d_id:"D101"
+// }
 
 module.exports = { doctorRegister, doctorLogin, searchDoctor, updateDoctor,doctorProfileUpdate,deleteDoctor };

@@ -1182,7 +1182,10 @@ section-title h2 {
   overflow: hidden;
   margin-top: 7rem;
   width: 58%;
+  height:5%;
   margin-left: 20%;
+  padding: 1rem;;
+  border : 1px solid grey;
 }
 
 .hospital__display{
@@ -1290,17 +1293,17 @@ section-title h2 {
 /* ##################################### Table Design ########################################### */
 
 .table-container{
-  margin-top: 10%;
-  width: 90%;
-  margin-left: 5%;
+  margin-top: 8%;
+  width: 80%;
+  margin-left: 10%;
   border: 1px solid black;
   box-shadow: 0px 0px 4px 4px gray;
   text-align: center;
 }
 .table-container1{
   margin-top: 10%;
-  width: 80%;
-  margin-left: 10%;
+  width: 95%;
+  margin-left: 2%;
   border: 1px solid black;
   box-shadow: 0px 0px 4px 4px gray;
   text-align: center;

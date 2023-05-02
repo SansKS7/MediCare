@@ -275,7 +275,7 @@ router.post("/addDoctor", (req, res) => {
 });
 
 router.delete("/deleteDoctor", (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   deleteDoctor(req)
   .then((result) => {
     res.status(200).json(result);

@@ -70,7 +70,7 @@ function HospitalP() {
             <>
              <div className="col">
              <div class="card hospitalcard">
-        <img src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
+        <img src={curElem.profileUrl}
  class="card-img-top" alt="..." />
 
             

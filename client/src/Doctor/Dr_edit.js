@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
 import Dr_header from './Dr_header';
+import axios from "axios";
 
 
 export default function () {
@@ -12,6 +13,7 @@ export default function () {
   const [{ DoctorUser }, dispatchUser] = useStateValue();
   const URL = "/api/doctor?search=" + DoctorUser;
   const updateUrl ="/api/doctorUpdate";
+  const profileURL= "/api/doctorProfileUpdate/";
   
 
   const [doctor, setDoctor] = useState([]);
@@ -24,9 +26,30 @@ export default function () {
     setForm({...data[0]});
 
   };
+  const [image, setImage] = useState('')
+  function handleImage(e){
+    console.log(e.target.files);
+    setImage(e.target.files[0]);
+  }
+
+  const  uploadImg=async()=>{
+    const imgData=new FormData()
+    imgData.append('image', image)
+    imgData.append('d_id', DoctorUser)
+
+    axios.post(profileURL,imgData).then((res)=>{
+        console.log(res);
+        //setForm(res)
+    })
+      
+  }
   useEffect(() => {
     getDoctors();
   },[]);
+
+  useEffect(()=>{
+    uploadImg();
+  },[])
 
   
   let name, value;
@@ -185,7 +208,7 @@ export default function () {
                                 <div className="card card1">
                                     <div className="card-body">
                                         <div className="d-flex flex-column align-items-center text-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
+                                            <img src={formData.profileUrl} alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
                                                 <h4>{formData.name}</h4>
                                                 <p className="text-secondary mb-1">{formData.qualification}</p>
@@ -193,6 +216,9 @@ export default function () {
 
                                             </div>
                                         </div>
+                                        <input className="btn btn-primary " type="file" value=""  onChange={handleImage}  /> 
+                      <br />
+                      <button onClick={uploadImg}> Upload</button>
                                     </div>
                                 </div>
 

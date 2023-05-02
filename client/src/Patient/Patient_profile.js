@@ -45,7 +45,7 @@ export default function () {
                                 <div className="card card1">
                                     <div className="card-body">
                                         <div className="d-flex flex-column align-items-center text-center">
-                                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" className="rounded-circle" width="150" />
+                                            <img src={patient.profileUrl} alt="Admin" className="rounded-circle" width="150" />
                                             <div className="mt-3">
                                                 <h4>{patient.firstName} {patient.lastName}</h4>
                                                 

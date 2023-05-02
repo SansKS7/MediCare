@@ -29,7 +29,7 @@ function Hospitals() {
           return (
             <>
               <Card
-                img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
+                img={curElem.profileUrl}
                 title={curElem.name}
                 spe="Speciality:"
                 speciality={curElem.speciality}

@@ -124,5 +124,8 @@ function DoctorP() {
 }
 
 
+function Card1(props) {
+  return <></>;
+}
 
 export default DoctorP;

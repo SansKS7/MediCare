@@ -10,7 +10,7 @@ export default function () {
 
     const navigate = useNavigate()
     
-    const state =useLocation();
+    const state = useLocation();
     const [doctor1, setDoctor1 ] = useState(state.state);
     const URL = "/api/patient?search="+doctor1.p_id;
     console.log(URL);

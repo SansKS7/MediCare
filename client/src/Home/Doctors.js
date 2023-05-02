@@ -30,7 +30,7 @@ function Doctors() {
           return (
             <>
               <Card
-                img="https://upload.wikimedia.org/wikipedia/commons/3/34/Jehangir_Hospital_Building.jpg"
+                img={curElem.profileUrl}
                 dnm="Doctor Name:"
                 dname={curElem.name}
                 hosnm="Hospital Name"

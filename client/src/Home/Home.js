@@ -10,7 +10,7 @@ import { useStateValue } from "../Context/StateProvider";
 import { useNavigate } from "react-router-dom";
 
 function Home () {
-  const [ {PatientUser} , dispatchUser] = useStateValue();
+  const [ {PatientUser} , dispatchUser] = useStateValue() ?? [{}, () => {}];
   const navigate=useNavigate();
 
   useEffect(()=>{

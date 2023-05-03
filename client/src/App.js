@@ -33,7 +33,7 @@ import Hos_edit from "./Hospital/Hos_edit";
 import HospitalDr from "./Patient/HospitalDr";
 import Patient_profile_dr from "./Doctor/Patient_profile_dr";
 import {
-  BrowserRouter as Router,
+
   Route,
   Link,
   Routes,

@@ -167,21 +167,20 @@ export default function () {
                         className="rounded-circle"
                         width="150"
                       />
-                        <br />
-                        <br /> <br />
+                      
 
                       <div className="mt-3">
                         <h4>{formData.name}</h4>
                       </div>
                     </div>
                     <input
-                      className="btn btn-primary "
+                      className="btn btn-primary designbtn "
                       type="file"
                       value=""
                       onChange={handleImage}
                     />
                     <br />
-                    <button onClick={uploadImg}> Upload</button>
+                    <button className ="btn btn-primary designbtn1 "onClick={uploadImg}> Upload</button>
                   </div>
                 </div>
               </div>

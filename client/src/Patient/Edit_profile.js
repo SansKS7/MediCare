@@ -224,9 +224,7 @@ const [image, setImage] = useState('')
                           className="rounded-circle"
                           width="150"
                         />
-                        <br />
-                        <br /> <br />
-
+                        
                         <div className="mt-3">
                           <h4>
                             {formData.firstName} {formData.lastName}
@@ -234,9 +232,9 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       
-                      <input className="btn btn-primary " type="file" value=""  onChange={handleImage}  /> 
-                      <br />
-                      <button onClick={uploadImg}> Upload</button>
+                      <input className="btn btn-primary designbtn" type="file" value=""  onChange={handleImage}  /> 
+                      
+                      <button  className="btn btn-primary designbtn1" onClick={uploadImg}> Upload</button>
 
                     </div>
                   </div>

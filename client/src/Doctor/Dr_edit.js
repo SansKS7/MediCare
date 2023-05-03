@@ -216,9 +216,9 @@ export default function () {
 
                                             </div>
                                         </div>
-                                        <input className="btn btn-primary " type="file" value=""  onChange={handleImage}  /> 
+                                        <input className="btn btn-primary designbtn" type="file" value=""  onChange={handleImage}  /> 
                       <br />
-                      <button onClick={uploadImg}> Upload</button>
+                      <button className="btn btn-primary designbtn1" onClick={uploadImg}> Upload</button>
                                     </div>
                                 </div>
 

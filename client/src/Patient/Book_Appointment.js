@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { Link, useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { useStateValue } from "../Context/StateProvider";

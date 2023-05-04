@@ -1,5 +1,5 @@
 import React, {useState,useEffect}from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { Link } from "react-router-dom";
 function DoctorP() {
  

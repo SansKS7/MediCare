@@ -5,14 +5,12 @@ import { useStateValue } from "../Context/StateProvider";
 import { actionTypes } from "../Context/reducer";
 
 function Patient_login() {
-
   const navigate = useNavigate();
-  
   const URL = "/api/patientLogin/";
   const doctorIdUrl = "/api/doctorId"
   //const doctorid;
 
-  const [ {PatientUser} , dispatchUser] = useStateValue();
+  const [ {PatientUser} , dispatchUser] = useStateValue() ?? [{}, () => {}];
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -65,19 +63,6 @@ function Patient_login() {
   function handleSubmit(e) {
     e.preventDefault();
     uploadingData(URL,formData);
-    // if(formData.p_id === "P101" && formData.password === "123")
-    // {
-    //   dispatchUser({
-    //     type: actionTypes.SET_PATIENT,
-    //     PatientUser: formData.p_id,
-    //   });
-    //   navigate("/patient_home");
-    // }
-    // else
-    // {
-    //   alert("Invalid Id/Password");
-    // }
-    // console.log(formData);
   }
 
   useEffect(()=>{
@@ -85,7 +70,7 @@ function Patient_login() {
     {
       navigate("/patient_home")
     }
-  })
+  },[])
 
   return (
     <>
@@ -93,19 +78,19 @@ function Patient_login() {
       <div className='main-container'>
         <div id='patient_login'>
           <div className='container'>
-            <form className='login' onSubmit={handleSubmit}>
+            <form className='login' id="login" name="login" onSubmit={handleSubmit}>
               <fieldset>
                 <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Patient-ID</label>
-                  <input type="text" id="p_id" name="p_id"   class="form-control" onChange={handleEvent} />
+                <div className="mb-3">
+                  <label htmlFor="p_id" className="form-label">Enter Patient-ID</label>
+                  <input type="text" id="p_id" name="p_id"  placeholder='ID' class="form-control" onChange={handleEvent} />
                 </div>
 
                 <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Password</label>
-                  <input type="password" id="password" name="password" class="form-control" onChange={handleEvent} />
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input type="password" id="password" name="password" placeholder='Password' class="form-control" onChange={handleEvent} />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 ">Login</button>
+                <button type="submit" class="btn btn-primary my-2 " name="Submit">Login</button>
 
                 <center> <b> No account Register Here..</b> </center>
                 <button type="submit" class="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>

@@ -57,7 +57,7 @@ function DoctorP() {
       <div className="col">
         <div class="card doctorcard">
           <img
-            src=""
+            src={currElem.profileUrl}
             class="card-img-top doctor__card__imgblock"
             alt="..."
           />

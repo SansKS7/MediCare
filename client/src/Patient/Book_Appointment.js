@@ -30,10 +30,13 @@ function Book_Appointment(props) {
       if (respones.status === 200) {
         //Login Success
         console.log("Success");
+        alert("Appointment Booked successfully");
         navigate("/patient_home");
       } else {
         //Login Invalid
+        alert("Fill your profile before Booking Appointment"); 
         console.log("Invalid");
+        navigate("/patient_profile")
       }
     } catch (e) {
       console.log("Error : ", e);

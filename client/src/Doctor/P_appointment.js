@@ -18,6 +18,25 @@ export default function () {
         console.log(data);
         setdoctor(data);
     };
+    
+    function getDateData(d) {
+        const date = new Date(d);
+        const dateTemp = date.getDate(date);
+        const monthTemp = date.getMonth(date);
+        const yearTemp = date.getFullYear(date);
+    
+        return dateTemp + "/" + monthTemp + "/" + yearTemp;
+      }
+    
+      function getTimeData(d) {
+        const date = new Date(d);
+        const h = date.getHours(date);
+        const m = date.getMinutes(date);
+        // const yearTemp = date.getFullYear(date);
+    
+        return h + ":" + m;
+      }
+
 
 
     useEffect(() => {
@@ -35,8 +54,8 @@ export default function () {
                         <tr>
                             <th scope="col">Patient ID</th>
                             <th scope="col">Patient Name</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Message</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>                            <th scope="col">Message</th>
                             <th scope="col">Appointment Status</th>
                         </tr>
                     </thead>
@@ -46,8 +65,9 @@ export default function () {
                         <tr>
                             <th scope="row">{currElem.p_id}</th>
                             <td>{currElem.firstName} {currElem.lastName}</td>
-                            <td>{currElem.appoDateTime}</td>
-                            <td>{currElem.appoMessage}</td>
+                            <td>{getDateData(currElem.appoDateTime)}</td>
+                           <td>{getTimeData(currElem.appoDateTime)}</td>
+                           <td>{currElem.appoMessage}</td>
                             <td><button className="btn btn-primary">Pending</button></td>
                         </tr>
                           );

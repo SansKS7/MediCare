@@ -71,7 +71,7 @@ return(
                             <td>{currElem.name}</td>
                             <td>{currElem.speciality}</td>
                             <td><button className="btn btn-danger" onClick={()=>{
-                            alert(currElem.d_id);
+                            //alert("Deleting Doctor");
                             deleteDoctor(currElem.d_id);
                             }}>Delete</button></td>
                         </tr>

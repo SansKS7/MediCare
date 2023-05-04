@@ -20,6 +20,23 @@ export default function () {
     };
 
 
+    function getDateData(d) {
+        const date = new Date(d);
+        const dateTemp = date.getDate(date);
+        const monthTemp = date.getMonth(date);
+        const yearTemp = date.getFullYear(date);
+    
+        return dateTemp + "/" + monthTemp + "/" + yearTemp;
+      }
+    
+      function getTimeData(d) {
+        const date = new Date(d);
+        const h = date.getHours(date);
+        const m = date.getMinutes(date);
+        // const yearTemp = date.getFullYear(date);
+    
+        return h + ":" + m;
+      }
     useEffect(() => {
      getDoctor();
     });
@@ -34,7 +51,8 @@ export default function () {
                             <th scope="col">Appointment ID</th>
                             <th scope="col">Patient ID</th>
                             <th scope="col">Patient Name</th>
-                            <th scope="col">Select Time</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Time</th>
                             <th scope="col">Message</th>
                             <th scope="col">Appointment Status</th>
                         </tr>
@@ -47,7 +65,8 @@ export default function () {
 
                             <th scope="row">{currElem.p_id}</th>
                             <td>{currElem.firstName} {currElem.lastName}</td>
-                            <td>{currElem.appoDateTime}</td>
+                            <td>{getDateData(currElem.appoDateTime)}</td>
+                           <td>{getTimeData(currElem.appoDateTime)}</td>
                             <td>{currElem.appoMessage}</td>
                             <td><button className="btn btn-success">Accepted</button></td>
                         </tr>

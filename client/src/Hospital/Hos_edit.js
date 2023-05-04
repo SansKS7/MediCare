@@ -40,7 +40,7 @@ export default function () {
 
   useEffect(() => {
     getHospitals();
-  });
+  },[]);
   useEffect(() => {
     uploadImg();
   }, []);
@@ -138,18 +138,18 @@ export default function () {
       alert("Something went wrong!!");
     }
   }
-  // useEffect(() => {
-  //     setForm({
-  //       _id: null,
-  //       h_id: hospital,
-  //       name:"",
-  //       speciality: "",
-  //       mail: "",
-  //       phoneNo: "",
-  //       address: "",
-  //       password: "",
-  //     });
-  //   }, [hospital]);
+  useEffect(() => {
+      setForm({
+        _id: null,
+        h_id: hospital,
+        name:"",
+        speciality: "",
+        mail: "",
+        phoneNo: "",
+        address: "",
+        password: "",
+      });
+    }, [hospital]);
   return (
     <>
       <Hos_header />

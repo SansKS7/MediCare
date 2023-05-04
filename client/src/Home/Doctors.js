@@ -49,8 +49,8 @@ function Doctors() {
 function Card(props) {
   return (
     <div className="col">
-      <div class="card hospitalcard">
-        <img src={props.img} class="card-img-top" alt="..." />
+      <div class="card doctorcard1">
+        <img src={props.img} class="card-img-top" alt="..."  className="home_doctors" />
         <div class="card-body">
           <p class="card-text">
             <table class="table">

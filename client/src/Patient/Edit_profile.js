@@ -51,7 +51,7 @@ const [image, setImage] = useState('')
     getDoctors();
     console.log("object")
     console.log(patient)
-  });
+  },[]);
 
   useEffect(()=>{
     uploadImg();
@@ -185,24 +185,24 @@ const [image, setImage] = useState('')
     }
   }
 
-  // useEffect(() => {
-  //   setForm({
-  //     _id: null,
-  //     p_id: patient,
-  //     firstName:"",
-  //     lastName: "",
-  //     age: "",
-  //     phoneNo: "",
-  //     address: "",
-  //     password: "",
-  //     gender:"",
-  //     bloodGroup:"",
-  //     height:"",
-  //     weight:"",
-  //     repassword: "",
-  //     profileUrl:"",
-  //   });
-  // }, [patient]);
+  useEffect(() => {
+    setForm({
+      _id: null,
+      p_id: patient,
+      firstName:"",
+      lastName: "",
+      age: "",
+      phoneNo: "",
+      address: "",
+      password: "",
+      gender:"",
+      bloodGroup:"",
+      height:"",
+      weight:"",
+      repassword: "",
+      profileUrl:"",
+    });
+  }, [patient]);
 
 
   return (

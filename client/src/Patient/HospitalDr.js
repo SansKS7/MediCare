@@ -50,9 +50,9 @@ function HospitalDr(props)   {
 
 
             <div className="col">
-        <div class="card doctorcard">
+        <div class="card doctorcardHD">
           <img
-            src=""
+            src={curElem.profileUrl}
             class="card-img-top hospital__dr__card__imgblock"
             alt="..."
           />

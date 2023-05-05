@@ -107,9 +107,9 @@ function Hos_login() {
               </div>
               <button type="submit" class="btn btn-primary my-2">Login</button>
 
-              {/* <center> <b> OR</b> </center>
-   <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>
-     */}
+              <center> <b> Register Hospital Here</b> </center>
+            <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>
+     
             </fieldset>
           </form>
 

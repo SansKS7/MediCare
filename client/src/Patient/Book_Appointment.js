@@ -9,12 +9,22 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Book_Appointment(props) {
    const navigate = useNavigate();
-  const [{ PatientUser }, dispatchUser] = useStateValue();
+  const [{ PatientUser }, dispatchUser] = useStateValue() ?? [{}, () => {}];
   const state = useLocation();
 
   const [doctorData, setDoctorData] = useState(state.state);
   const getnameURL = "/api/patient?search=" + PatientUser;
   const getappointment="/api/getappointment";
+  // if(doctorData===null) {
+  //   const [formData, setForm] = useState({
+
+  //   d_id: "D101",
+  //   name: "Nandini Achugatla",
+  //   h_id: "H101",
+  //   hospitalName: "Sriram Hospital",
+  //   })
+
+  // }
 
   async function uploadingData(getappointment, data) {
     try {
@@ -120,7 +130,7 @@ function Book_Appointment(props) {
                 </b>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" class="form-label"   data-testid="firstname">
                     Patient Name
                   </label>
                   <input

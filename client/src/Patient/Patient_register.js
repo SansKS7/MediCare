@@ -192,6 +192,8 @@ function Patient_register() {
                       type="text"
                       id="lastName"
                       name="lastName"
+
+                      
                       className="form-control textbox"
                       onChange={handleEvent}
                     />

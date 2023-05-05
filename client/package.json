@@ -22,7 +22,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose",
+    "test": "react-scripts test /client/src/Patient/__test__/Patient_View_Appointment.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,3 +47,4 @@
     "@types/jest": "^29.5.1"
   }
 }
+

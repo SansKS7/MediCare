@@ -49,11 +49,11 @@ function Doctors() {
 function Card(props) {
   return (
     <div className="col">
-      <div class="card doctorcard1">
-        <img src={props.img} class="card-img-top" alt="..."  className="home_doctors" />
-        <div class="card-body">
-          <p class="card-text">
-            <table class="table">
+      <div className="card doctorcard1">
+        <img src={props.img} className="card-img-top" alt="..."  className="home_doctors" />
+        <div className="card-body">
+          <p className="card-text">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">{props.dnm}</th>
@@ -72,7 +72,7 @@ function Card(props) {
               <tbody></tbody>
             </table>
           </p>
-          <Link to="/Patient_login" class="btn btn-primary hospitalbtn-card">
+          <Link to="/Patient_login" className="btn btn-primary hospitalbtn-card">
             View more
           </Link>
         </div>

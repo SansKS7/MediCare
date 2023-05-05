@@ -4,12 +4,13 @@ import Header from '../Home/Header'
 import { useStateValue } from '../Context/StateProvider';
 import { actionTypes } from '../Context/reducer';
 
+
 function Hos_login() {
 
   const navigate = useNavigate()
 
   const URL="api/hospitalLogin";
-  const [ {HospitalUser} , dispatchUser] = useStateValue();
+  const [ {HospitalUser} , dispatchUser] = useStateValue()?? [{}, () => {}];
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -58,19 +59,6 @@ function Hos_login() {
   function handleSubmit(e) {
     e.preventDefault();
     uploadingData(URL,formData);
-        // if(formData.h_id === "H101" && formData.password === "123")
-    // {
-    //   dispatchUser({
-    //     type: actionTypes.SET_HOSPITAL,
-    //     HospitalUser: formData.h_id,
-    //   });
-    //   navigate("/Hos_home");
-    // }
-    // else
-    // {
-    //   alert("Invalid Id/Password");
-    // }
-    //console.log(formData);
   }
 
   useEffect(()=>{
@@ -78,7 +66,7 @@ function Hos_login() {
     {
       navigate("/Hos_home")
     }
-  })
+  },[])
 
   
 
@@ -87,9 +75,6 @@ function Hos_login() {
 
     <>
       <Header />
-      {
-        console.log(formData)
-      }
     <div className='main-container'>
       <div id='hospital_login'>
         <div className='container'>
@@ -97,19 +82,15 @@ function Hos_login() {
             <fieldset >
               <b className='my-2'> <center><legend>Hospital Login</legend> </center> </b>
               <div className="mb-3">
-                <label for="disabledTextInput" class="form-label">Enter Hospital-ID</label>
-                <input type="text" id="h_id" name="h_id" class="form-control textbox" onChange={handleEvent} />
+                <label  id="hospital-id-label" className="form-label">Enter Hospital-ID</label>
+                <input type="text" aria-labelledby="hospital-id-label"  id="h_id" name="h_id" className="form-control textbox" onChange={handleEvent} />
               </div>
 
-              <div class="mb-3">
-                <label for="disabledTextInput" class="form-label">Enter Password</label>
-                <input type="password" id="password" name="password" class="form-control textbox" onChange={handleEvent} />
+              <div className="mb-3">
+                <label  id="hospital-password-label" htmlFor="password" className="form-label">Enter Password</label>
+                <input type="password" id="password" name="password" aria-labelledby="hospital-password-label" className="form-control textbox" onChange={handleEvent} />
               </div>
-              <button type="submit" class="btn btn-primary my-2">Login</button>
-
-              {/* <center> <b> OR</b> </center>
-   <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>
-     */}
+              <button type="submit"  className="btn btn-primary my-2">Login</button>
             </fieldset>
           </form>
 

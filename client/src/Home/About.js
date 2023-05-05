@@ -3,15 +3,15 @@ import React from 'react'
 export default function () {
 
     return (
-        <section id="about" class="about">
-            <div class="container">
+        <section id="about" className="about">
+            <div className="container">
 
-                <div class="section-title" data-aos="fade-up">
+                <div className="section-title" data-aos="fade-up">
                     <h2>About Us</h2>
                 </div>
 
-                <div class="row content">
-                    <div class="col" data-aos="fade-up" data-aos-delay="150">
+                <div className="row content">
+                    <div className="col" data-aos="fade-up" data-aos-delay="150">
                         <p>
                         “Our mission is to provide healthcare of international standards through a team of highly 
                         qualified professionals and affordable to the community. We are also committed to maintaining 
@@ -23,7 +23,7 @@ export default function () {
                         use of the best technology."
                         </ul>
                     </div>
-                    <div class="col" data-aos="fade-up" data-aos-delay="300">
+                    <div className="col" data-aos="fade-up" data-aos-delay="300">
                         <p>
                             MediCare is committed to achieving and maintaining excellence in health care services, 
                             medical education, and research. The belief that clinical services supported by medical education

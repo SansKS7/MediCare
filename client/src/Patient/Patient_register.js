@@ -156,7 +156,7 @@ function Patient_register() {
                 </b>
                 <div className="displayFlex-2">
                   <div className="mb-3">
-                    <label for="disabledTextInput" class="form-label">
+                    <label for="disabledTextInput" className="form-label">
                       Patient-ID
                     </label>
                     <input
@@ -172,7 +172,7 @@ function Patient_register() {
 
                 <div className="displayFlex">
                   <div className="mb-3">
-                    <label for="disabledTextInput" class="form-label">
+                    <label for="disabledTextInput" className="form-label">
                       Enter First Name
                     </label>
                     <input
@@ -185,7 +185,7 @@ function Patient_register() {
                   </div>
 
                   <div className="mb-3">
-                    <label for="disabledTextInput" class="form-label">
+                    <label for="disabledTextInput" className="form-label">
                       Enter Last Name
                     </label>
                     <input
@@ -199,7 +199,7 @@ function Patient_register() {
                 </div>
                 <div className="displayFlex">
                   <div className="mb-3">
-                    <label for="disabledTextInput" class="form-label">
+                    <label for="disabledTextInput" className="form-label">
                       Enter Age
                     </label>
                     <input
@@ -212,7 +212,7 @@ function Patient_register() {
                   </div>
 
                   <div className="mb-3">
-                    <label for="disabledTextInput" class="form-label">
+                    <label for="disabledTextInput" className="form-label">
                       Enter Phone No
                     </label>
                     <input
@@ -225,7 +225,7 @@ function Patient_register() {
                   </div>
                 </div>
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     Enter Address
                   </label>
                   <input
@@ -237,35 +237,35 @@ function Patient_register() {
                   />
                 </div>
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">
                     Enter Password
                   </label>
                   <input
                     type="password"
                     id="password"
                     name="password"
-                    class="form-control textbox"
+                    className="form-control textbox"
                     onChange={handleEvent}
                   />
                 </div>
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">
                     Retype Password
                   </label>
                   <input
                     type="password"
                     id="repassword"
                     name="repassword"
-                    class="form-control textbox"
+                    className="form-control textbox"
                     onChange={handleEvent}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  class=" displayFlex-2  textalign-center btn btn-primary my-2 "
+                  className=" displayFlex-2  textalign-center btn btn-primary my-2 "
                   onClick={onFormSubmit}
                 >
                   Register
@@ -274,7 +274,7 @@ function Patient_register() {
                 {/* <center>
                 <b> OR</b>{" "}
               </center>
-              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={()=>navigate("/Patient_login")}>
+              <button type="submit" className="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={()=>navigate("/Patient_login")}>
                 Login
               </button> */}
               </fieldset>

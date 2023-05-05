@@ -58,7 +58,7 @@ function Patient_home() {
       
 
       
-      <button type="submit" class="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
+      <button type="submit" className="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
 
       <HeaderP/>
     <div className='patient__dash'>

@@ -28,3 +28,5 @@ cloudinary.config({
 app.use("/test", (req, response) => {
   res.send("Testing...");
 });
+
+module.exports = app;

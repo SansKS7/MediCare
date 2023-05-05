@@ -75,7 +75,10 @@ router.get("/hospital", (req, res, next) => {
   searchHospital(req)
     .then((result) => {
       // console.log(result);
+      if(result.length > 0)
       res.status(200).json(result);
+      else if (result.length === 0)
+      result.status(404).json({message:"Data Not Found"});
     })
     .catch((e) => {
       res.status(500).json({ message: "Internet Server Error" });
@@ -197,6 +200,7 @@ router.post("/getAppointment", (req, res) => {
 router.post("/hospitalLogin", (req, res) => {
   const h_id = req.body.h_id;
   const password = req.body.password;
+  console.log(req.body);
   hospitalLogin(req)
     .then((result) => {
       console.log(result);
@@ -217,7 +221,7 @@ router.post("/hospitalReg", (req, res) => {
   console.log(req.body);
   hospitalRegister(req)
     .then((result) => {
-      res.status(200).json(result);
+      res.status(200).json({ message: "Registration successful" });
       updateHospitalId(incrementId(req.body.h_id));
     })
     .catch((e) => {
@@ -265,7 +269,7 @@ router.post("/addDoctor", (req, res) => {
   console.log(req.body);
   doctorRegister(req)
     .then((result) => {
-      res.status(200).json(result);
+      res.status(200).json({ message: "Registration successful" });
       updateDoctorId(incrementId(req.body.d_id));
     })
     .catch((e) => {

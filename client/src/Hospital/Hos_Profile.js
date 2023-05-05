@@ -9,7 +9,7 @@ export default function () {
 
 const navigate = useNavigate()
 
-const [ {HospitalUser} , dispatchUser] = useStateValue();
+const [ {HospitalUser} , dispatchUser] = useStateValue()??[{}, () => {}];
     const URL = "/api/hospital?search="+HospitalUser;
 
     const [hospital, setHospital] = useState([]);
@@ -23,11 +23,6 @@ const [ {HospitalUser} , dispatchUser] = useStateValue();
     useEffect(() => {
       getHospitals();
     },[]);
-
-
-
-
-
     return (
 
         <>

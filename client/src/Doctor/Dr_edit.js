@@ -228,7 +228,7 @@ export default function () {
                                     <div className="card-body">
                                     <div className="row">
                                             <div className="col-sm-3">
-                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Hospital-ID</h6> </label>
+                                                <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Hospital-ID</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -244,7 +244,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Hospital-Name</h6> </label>
+                                                <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Hospital-Name</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -260,7 +260,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Doctor-ID</h6> </label>
+                                                <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Doctor-ID</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -277,7 +277,7 @@ export default function () {
 
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Doctor Name</h6> </label>
+                                                <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Doctor Name</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -293,7 +293,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Mail-ID</h6> </label>    
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Mail-ID</h6> </label>    
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -309,7 +309,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Phone No</h6> </label>    
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Phone No</h6> </label>    
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -325,7 +325,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Address</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Address</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -341,7 +341,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Speciality</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Speciality</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -357,7 +357,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Experience</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Experience</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -373,7 +373,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Charges</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Charges</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -389,7 +389,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Qualification</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Qualification</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -405,7 +405,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                            <label for="disabledTextInput" class="form-label"> <h6 className="mb-0">Password</h6> </label>
+                                            <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Password</h6> </label>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input

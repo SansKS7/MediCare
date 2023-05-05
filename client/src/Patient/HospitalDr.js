@@ -50,16 +50,16 @@ function HospitalDr(props)   {
 
 
             <div className="col">
-        <div class="card doctorcardHD">
+        <div className="card doctorcardHD">
           <img
             src={curElem.profileUrl}
-            class="card-img-top hospital__dr__card__imgblock"
+            className="card-img-top hospital__dr__card__imgblock"
             alt="..."
           />
-          <div class="card-body">
-            <h5 class="card-title"> {curElem.name}</h5>
-            <p class="card-text">
-              <table class="table">
+          <div className="card-body">
+            <h5 className="card-title"> {curElem.name}</h5>
+            <p className="card-text">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Hospital Name -</th>
@@ -100,7 +100,7 @@ function HospitalDr(props)   {
               </table>
             </p>
             <p className="text-center">
-            <Link to="/Book_Appointment"  state={curElem}  class="btn btn-primary hospitalbtn-card">
+            <Link to="/Book_Appointment"  state={curElem}  className="btn btn-primary hospitalbtn-card">
             Book Appointment
           </Link>
             </p>
@@ -142,16 +142,16 @@ function Card1(props) {
   return (
     <>
       <div className="col">
-        <div class="card doctorcard">
+        <div className="card doctorcard">
           <img
             src={props.img}
-            class="card-img-top hospital__dr__card__imgblock"
+            className="card-img-top hospital__dr__card__imgblock"
             alt="..."
           />
-          <div class="card-body">
-            <h5 class="card-title"> {props.drname}</h5>
-            <p class="card-text">
-              <table class="table">
+          <div className="card-body">
+            <h5 className="card-title"> {props.drname}</h5>
+            <p className="card-text">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">{props.hname}</th>
@@ -193,7 +193,7 @@ function Card1(props) {
             </p>
             <p className="text-center">
               <button
-                class="btn btn-primary doctor__btn text-center"
+                className="btn btn-primary doctor__btn text-center"
                 type="submit"
               >
                 Book Appointment

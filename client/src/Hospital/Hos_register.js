@@ -1,5 +1,7 @@
-import React, { useEffect , useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {isfirstName,isRating,isAddress,isPhno,isMail,isPassword,isRePassword,isSpeciality} from "./ValidationFunctions";
+
 function Hos_register() {
   const URL = "/api/hospitalReg";
   const getIdUrl = "/api/hospitalId";
@@ -58,113 +60,40 @@ function Hos_register() {
 
   const navigate = useNavigate();
 
-  function isfirstName(val) {
-    //console.log(val);
-     var reg=/^[a-zA-Z\s]+$/;
-     if(reg.test(val))
-     return true;
-     return false;
-  }
-
-  function isRating(val)
-  {
-    var rate = /^\d{1,2}$/;
-    if(rate.test(val))
-    return true;
-    return false;
-
-  }
-  function isAddress(val) {
-    console.log(val);
-    var reg = /^[a-zA-Z0-9-\s+/b+(/,@)]+$/;
-    // var reg=/^(\d{1,}) [a-zA-Z0-9\s]+(\,)? [a-zA-Z]+(\,)? [A-Z]{2} [0-9]{5,6}$/
-
-    if (reg.test(val))
-      return true;
-    return false;
-  }
-
-
-
-  function isPhno(val)
-  {
-   var phoneNo = /^\d{10,10}$/;
-   if(phoneNo.test(val))
-   return true;
-   return false;
-  }
-
-  function isMail(val){
-   console.log(val);
-   var mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-   if(mail.test(val))
-   return true;
-   return false;
-  }
-
   
-function isPassword(val) {
-   console.log(val)
-   
-   var regex = /^[a-zA-Z0-9!@#$%^&*]{8,16}$/;
-   if(!regex.test(val)){
-     return false;
-   }
-   return true;
- }
 
- function isRePassword(pass,repass) 
-   {
-      if(pass===repass)return true;
-      return false;
-   }
-
-  
-   function isSpeciality(val) {
-    console.log(val)
-    var regex=/^[a-zA-Z.-\s]*$/;
-     if (!regex.test(val)) {
-      return false;
-    }
-    return true;
-  }
- 
-function onFormSubmit(e)
-{
-   e.preventDefault();
-   //console.log(formData)
-   var fname=isfirstName(formData.name);
-   //console.log(fname)
-    var speciality=isAddress(formData.speciality);
+  function onFormSubmit(e) {
+    e.preventDefault();
+    //console.log(formData)
+    var fname = isfirstName(formData.name);
+    //console.log(fname)
+    var speciality = isAddress(formData.speciality);
     //console.log(speciality)
-   var rating=isRating(formData.rating);
-  //console.log(rating)
-   var phone=isPhno(formData.phoneNo);
-   //console.log(phone)
-    var address=isAddress(formData.address);
-   // console.log(address)
-   var mail=isMail(formData.mail);
-  // console.log(mail)
-  var password=isPassword(formData.password);
-  //console.log(password)
-    var repassword=isRePassword(formData.password,formData.repassword);
+    var rating = isRating(formData.rating);
+    //console.log(rating)
+    var phone = isPhno(formData.phoneNo);
+    //console.log(phone)
+    var address = isAddress(formData.address);
+    // console.log(address)
+    var mail = isMail(formData.mail);
+    // console.log(mail)
+    var password = isPassword(formData.password);
+    //console.log(password)
+    var repassword = isRePassword(formData.password, formData.repassword);
     //console.log(repassword)
-   if(fname&&speciality&&rating&&phone&&address&&mail&&password)
-   {
-    console.log(formData);
-    uploadingData(URL, formData);
-    
-      alert("Login Successful")
-   }
-   else{
-      alert("Login Unsuccessful")
-   }
+    if (fname && speciality && rating && phone && address && mail && password) {
+      console.log(formData);
+      uploadingData(URL, formData);
 
-} 
-useEffect(() => {
-  receiveID(getIdUrl);
-  console.log(hospital);
-});
+      alert("Login Successful");
+    } else {
+      alert("Login Unsuccessful");
+    }
+  }
+  useEffect(() => {
+    receiveID(getIdUrl);
+  //  console.log(hospital);
+  });
 
   useEffect(() => {
     setForm({
@@ -182,12 +111,8 @@ useEffect(() => {
     });
   }, [hospital]);
 
-
-  
-
   return (
     <>
-  
       <div id="hospital_register">
         <div className="container">
           <form className="register">
@@ -199,7 +124,7 @@ useEffect(() => {
                 </center>{" "}
               </b>
               <div className="mb-3">
-                <label for="disabledTextInput" className="form-label">
+                <label id="h_id_label" className="form-label" htmlFor="h_id">
                   Hospital-ID
                 </label>
                 <input
@@ -209,10 +134,11 @@ useEffect(() => {
                   name="h_id"
                   value={formData.h_id}
                   onChange={handleEvent}
+                  aria-labelledby="h_id_label"
                 />
               </div>
               <div className="mb-3">
-                <label for="disabledTextInput" className="form-label">
+                <label id="name_label" className="form-label" htmlFor="name">
                   Enter Name
                 </label>
                 <input
@@ -221,12 +147,17 @@ useEffect(() => {
                   id="name"
                   name="name"
                   onChange={handleEvent}
+                  aria-labelledby="name_label"
                 />
               </div>
 
               <div className="displayFlex">
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label
+                    id="speciality_label"
+                    className="form-label"
+                    htmlFor="speciality"
+                  >
                     Enter Speciality
                   </label>
                   <input
@@ -235,11 +166,12 @@ useEffect(() => {
                     id="speciality"
                     name="speciality"
                     onChange={handleEvent}
+                    aria-labelledby="speciality_label"
                   />
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label id="mail_label" className="form-label" htmlFor="mail">
                     Enter Mail-ID
                   </label>
                   <input
@@ -248,13 +180,18 @@ useEffect(() => {
                     id="mail"
                     name="mail"
                     onChange={handleEvent}
+                    aria-labelledby="mail_label"
                   />
                 </div>
               </div>
 
               <div className="displayFlex">
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label
+                    id="phoneNo_label"
+                    className="form-label"
+                    htmlFor="phoneNo"
+                  >
                     Enter Phone No
                   </label>
                   <input
@@ -263,11 +200,16 @@ useEffect(() => {
                     id="phoneNo"
                     name="phoneNo"
                     onChange={handleEvent}
+                    aria-labelledby="phoneNo_label"
                   />
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label
+                    id="rating_label"
+                    className="form-label"
+                    htmlFor="rating"
+                  >
                     Enter Rating
                   </label>
                   <input
@@ -276,12 +218,17 @@ useEffect(() => {
                     id="rating"
                     name="rating"
                     onChange={handleEvent}
+                    aria-labelledby="rating_label"
                   />
                 </div>
               </div>
 
               <div className="mb-3">
-                <label for="disabledTextInput" className="form-label">
+                <label
+                  id="address_label"
+                  className="form-label"
+                  htmlFor="address"
+                >
                   Enter Address
                 </label>
                 <input
@@ -290,25 +237,27 @@ useEffect(() => {
                   name="address"
                   className="form-control textbox"
                   onChange={handleEvent}
+                  aria-labelledby="address_label"
                 />
               </div>
 
               <div className="displayFlex">
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label id="password_label" className="form-label">
                     Enter Password
                   </label>
                   <input
                     type="password"
                     id="password"
                     name="password"
+                    aria-labelledby="password_label" 
                     className="form-control textbox"
                     onChange={handleEvent}
                   />
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">
+                  <label id="repassword_label" className="form-label">
                     Retype Password
                   </label>
                   <input
@@ -316,20 +265,11 @@ useEffect(() => {
                     id="repassword"
                     name="repassword"
                     className="form-control textbox"
+                    aria-labelledby="repassword_label" 
                     onChange={handleEvent}
                   />
                 </div>
               </div>
-              {/* 
-                     <div className="mb-3">
-                     <label for="disabledTextInput" className="form-label">Upload Image</label>
-                        <input type="image" className="form-control textbox" id='h_img' name='h_img' onChange={handleEvent} />
-                     </div> */}
-
-              {/* <div className="mb-3">
-   <input type="image" id="hospital_img" name="hospital_image" src="submit.gif" alt="Hospital Image"  width="70" height="20"/>
-
-   </div> */}
 
               <button
                 className="displayFlex-2  textalign-center btn btn-primary my-2  "
@@ -344,7 +284,7 @@ useEffect(() => {
               </center>
 
               <button
-                type="submit"
+           
                 className="displayFlex-2  textalign-center btn btn-primary my-2  "
                 onClick={() => navigate("/Hos_login")}
               >

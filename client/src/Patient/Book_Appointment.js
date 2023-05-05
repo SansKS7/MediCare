@@ -120,7 +120,7 @@ function Book_Appointment(props) {
                 </b>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     Patient Name
                   </label>
                   <input
@@ -135,7 +135,7 @@ function Book_Appointment(props) {
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     Doctor Name
                   </label>
                   <input
@@ -150,7 +150,7 @@ function Book_Appointment(props) {
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     Hospital Name
                   </label>
                   <input
@@ -165,7 +165,7 @@ function Book_Appointment(props) {
                 </div>
 
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     {" "}
                     Select Time{" "}
                   </label>
@@ -190,13 +190,13 @@ function Book_Appointment(props) {
                   
                 </div>
                 <div className="mb-3">
-                  <label for="disabledTextInput" class="form-label">
+                  <label for="disabledTextInput" className="form-label">
                     {" "}
                     {} Message
                   </label>
                   <textarea
                     rows="5"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Enter Your Problems and symptoms..."
                     id="appoMessage"
                     name="appoMessage"
@@ -208,7 +208,7 @@ function Book_Appointment(props) {
 
                 <button
                   type="submit"
-                  class=" displayFlex-2  textalign-center btn btn-primary my-2 "
+                  className=" displayFlex-2  textalign-center btn btn-primary my-2 "
                   onClick={onFormSubmit}
                 >
                   Book Appointment

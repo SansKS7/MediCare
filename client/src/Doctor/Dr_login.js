@@ -84,19 +84,19 @@ function Dr_login() {
             <form className='login' onSubmit={handleSubmit}>
               <fieldset >
                 <b className='my-2'> <center><legend>Doctor Login</legend> </center> </b>
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Doctor_ID</label>
-                  <input type="text" id="d_id" name="d_id" class="form-control" onChange={handleEvent} />
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">Enter Doctor_ID</label>
+                  <input type="text" id="d_id" name="d_id" className="form-control" onChange={handleEvent} />
                 </div>
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Password</label>
-                  <input type="password" id="password" name="password"  onChange={handleEvent} class="form-control" />
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">Enter Password</label>
+                  <input type="password" id="password" name="password"  onChange={handleEvent} className="form-control" />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 " >Login</button>
+                <button type="submit" className="btn btn-primary my-2 " >Login</button>
 
                 {/* <center> <b> OR</b> </center>
-                <button type="submit" class="btn btn-primary my-2 ">Register</button> */}
+                <button type="submit" className="btn btn-primary my-2 ">Register</button> */}
 
               </fieldset>
             </form>

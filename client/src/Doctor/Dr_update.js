@@ -136,11 +136,11 @@ function Dr_register() {
                 </b>
 
                 <div className="displayFlex">
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Doctor-ID</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Doctor-ID</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       value={"D101"}
                       disabled
                       id="d_id"
@@ -149,11 +149,11 @@ function Dr_register() {
                     />
                   </div>
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Hospital-ID</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Hospital-ID</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       value={"H101"}
                       disabled
                      
@@ -165,11 +165,11 @@ function Dr_register() {
                 </div>
 
                 <div className="displayFlex">
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Hospital Name</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Hospital Name</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       id="hospitalName"
                       onChange={handleEvent}
@@ -177,11 +177,11 @@ function Dr_register() {
                     />
                   </div>
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Doctor Name</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Doctor Name</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       id="name"
                       onChange={handleEvent}
@@ -191,11 +191,11 @@ function Dr_register() {
                 </div>
 
                 <div className="displayFlex">
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Speciality</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Speciality</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       id="speciality"
                       name="speciality"
@@ -203,11 +203,11 @@ function Dr_register() {
                     />
                   </div>
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Mail-ID</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Mail-ID</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       id="mail"
                       onChange={handleEvent}
@@ -217,22 +217,22 @@ function Dr_register() {
                 </div>
 
                 <div className="displayFlex">
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Phone No</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Phone No</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       onChange={handleEvent}
                       id="phoneNo"
                       name="phoneNo"
                     />
                   </div>
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Address</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Address</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       onChange={handleEvent}
                       id="address"
@@ -243,11 +243,11 @@ function Dr_register() {
                 </div>
                 <div className="displayFlex">
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Experience</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Experience</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
 
                       onChange={handleEvent}
                       id="experience"
@@ -256,11 +256,11 @@ function Dr_register() {
                   </div>
 
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Charges</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Charges</label>
                     <input
                       type="text"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       onChange={handleEvent}
 
                       id="charges"
@@ -270,25 +270,25 @@ function Dr_register() {
                 </div>
 
                 <div className="displayFlex">
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Enter Password</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Enter Password</label>
                     <input
                       type="password"
                       id="password"
                       name="password"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       onChange={handleEvent}
 
                     />
                   </div>
 
-                  <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">Retype Password</label>
+                  <div className="mb-3">
+                    <label for="disabledTextInput" className="form-label">Retype Password</label>
                     <input
                       type="password"
                       id="repassword"
                       name="repassword"
-                      class="form-control textbox"
+                      className="form-control textbox"
                       onChange={handleEvent}
 
                     />
@@ -297,18 +297,18 @@ function Dr_register() {
                 </div>
 
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Qualification</label>
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">Enter Qualification</label>
                   <input
                     type="text"
                     onChange={handleEvent}
-                    class="form-control textbox"
+                    className="form-control textbox"
 
                     id="qualification"
                     name="qualification"
                   />
                 </div>
-                <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit}>
+                <button type="submit" className="displayFlex-2  textalign-center btn btn-primary my-2 " onClick={onFormSubmit}>
                   Update
                 </button>
 
@@ -317,7 +317,7 @@ function Dr_register() {
                 <b> OR</b>{" "}
               </center>
 
-              <button type="submit" class="displayFlex-2  textalign-center btn btn-primary my-2  "
+              <button type="submit" className="displayFlex-2  textalign-center btn btn-primary my-2  "
               onClick={()=>navigate("/dr_login")}>
                 Login
               </button> */}

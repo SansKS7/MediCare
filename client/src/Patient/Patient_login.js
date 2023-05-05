@@ -96,19 +96,19 @@ function Patient_login() {
             <form className='login' onSubmit={handleSubmit}>
               <fieldset>
                 <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Enter Patient-ID</label>
-                  <input type="text" id="p_id" name="p_id"   class="form-control" onChange={handleEvent} />
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">Enter Patient-ID</label>
+                  <input type="text" id="p_id" name="p_id"   className="form-control" onChange={handleEvent} />
                 </div>
 
-                <div class="mb-3">
-                  <label for="disabledTextInput" class="form-label">Password</label>
-                  <input type="password" id="password" name="password" class="form-control" onChange={handleEvent} />
+                <div className="mb-3">
+                  <label for="disabledTextInput" className="form-label">Password</label>
+                  <input type="password" id="password" name="password" className="form-control" onChange={handleEvent} />
                 </div>
-                <button type="submit" class="btn btn-primary my-2 ">Login</button>
+                <button type="submit" className="btn btn-primary my-2 ">Login</button>
 
                 <center> <b> No account Register Here..</b> </center>
-                <button type="submit" class="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>
+                <button type="submit" className="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>
 
               </fieldset>
             </form>

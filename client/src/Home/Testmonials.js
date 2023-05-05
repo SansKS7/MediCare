@@ -8,7 +8,7 @@ export default class Testimonials extends Component {
        
       <section id="testimonial" className="testimonials">
       <div id="Testimonials" className="testimonials">
-      <div class="section-title" data-aos="fade-up">
+      <div className="section-title" data-aos="fade-up">
                     <h2>Testimonials</h2>
                 </div>
 

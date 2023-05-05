@@ -244,7 +244,7 @@ const [image, setImage] = useState('')
                     <div className="card-body">
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Patient-ID</h6>{" "}
                           </label>
@@ -263,7 +263,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Patient Name</h6>
                           </label>
                         </div>
@@ -282,7 +282,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">LastName</h6>
                           </label>
@@ -301,7 +301,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Age</h6>
                           </label>
                         </div>
@@ -319,7 +319,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Phone No</h6>
                           </label>
@@ -338,7 +338,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Gender</h6>
                           </label>
@@ -357,7 +357,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Blood Group</h6>
                           </label>
@@ -376,7 +376,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Height</h6>
                           </label>
@@ -395,7 +395,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Weight</h6>
                           </label>
@@ -414,7 +414,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             {" "}
                             <h6 className="mb-0">Address</h6>
                           </label>
@@ -433,7 +433,7 @@ const [image, setImage] = useState('')
                       <hr></hr>
                       <div className="row">
                         <div className="col-sm-3">
-                          <label for="disabledTextInput" class="form-label">
+                          <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Password</h6>
                           </label>
                         </div>
@@ -443,7 +443,7 @@ const [image, setImage] = useState('')
                             id="password"
                             name="password"
                             value={formData.password}
-                            class="form-control textbox"
+                            className="form-control textbox"
                             onChange={handleEvent}
                           />
                         </div>

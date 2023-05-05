@@ -24,7 +24,7 @@ export default function () {
   
 
     return (
-        <header id="header" class="fixed-top d-flex align-items-center">
+        <header id="header" className="fixed-top d-flex align-items-center">
             <div className="container d-flex align-items-center justify-content-between">
 
                 <div className="logo">
@@ -32,7 +32,7 @@ export default function () {
                     <a href="index.html"><img src="assets/img/logo.png" alt="" className="img-fluid"/></a>
                 </div>
 
-                <nav id="navbar" class="navbar">
+                <nav id="navbar" className="navbar">
                     <ul>
                     <li><Link className="nav-link scrollto active" to="/Dr_home">Home</Link></li>
                     <li><Link classname='underline' to="/Dr_Profile">View Profile</Link></li>

@@ -165,7 +165,7 @@ function getPatientDetails(p_id)
                             <button className="btn btn-danger" onClick={()=>rejectAppoClick(currElem.a_id)} >  Reject</button>
                             {/* <button className="btn btn-primary" onClick={()=>getPatientDetails(currElem.p_id)} >  Details</button>
                              */}
-                             {/* <Link to="/Patient_profile_dr"state={currElem}  class="btn btn-primary">
+                             {/* <Link to="/Patient_profile_dr"state={currElem}  className="btn btn-primary">
                                  Details
                                  </Link> */}
 

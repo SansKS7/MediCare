@@ -39,7 +39,7 @@ function DoctorP() {
       <HeaderP />
       <div className="search__back">
                  <input
-            class="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
+            className="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
             type="search"
             id="search_doctorss"
             name="search_doctors"
@@ -55,16 +55,16 @@ function DoctorP() {
           return (
             <>
       <div className="col">
-        <div class="card doctorcard">
+        <div className="card doctorcard">
           <img
             src={currElem.profileUrl}
-            class="card-img-top doctor__card__imgblock"
+            className="card-img-top doctor__card__imgblock"
             alt="..."
           />
-          <div class="card-body">
-            <h5 class="card-title"> {currElem.name}</h5>
-            <p class="card-text">
-              <table class="table">
+          <div className="card-body">
+            <h5 className="card-title"> {currElem.name}</h5>
+            <p className="card-text">
+              <table className="table">
                 <thead>
                   <tr>
                     <th scope="col">Hospital Name:</th>
@@ -105,7 +105,7 @@ function DoctorP() {
               </table>
             </p>
             <p className="text-center">
-            <Link to="/Book_Appointment" state={currElem}  class="btn btn-primary hospitalbtn-card">
+            <Link to="/Book_Appointment" state={currElem}  className="btn btn-primary hospitalbtn-card">
             Book Appointment
           </Link>
             

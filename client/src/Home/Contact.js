@@ -53,7 +53,7 @@ export default function () {
               <div className="form-group">
                 <input type="email" className="form-control" name="email" id="email" placeholder="Your Email" required />
               </div>
-              <div classNameName="form-group">
+              <div className="form-group">
                 <input type="text" className="form-control" name="subject" id="subject" placeholder="Subject" required />
               </div>
               <div className="form-group">

@@ -14,7 +14,7 @@ import Frequent_question from '../Home/Frequent_question'
 import Contact from '../Home/Contact'
 
 function Patient_home() {
-  const [ {PatientUser} , dispatchUser] = useStateValue();
+  const [ {PatientUser} , dispatchUser] = useStateValue() ?? [{}, () => {}];
   const navigate=useNavigate();
 
 
@@ -58,7 +58,7 @@ function Patient_home() {
       
 
       
-      <button type="submit" class="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
+      <button type="submit" className="btn btn-primary my-2 " onClick={logoutUser}>Logout</button>
 
       <HeaderP/>
     <div className='patient__dash'>
@@ -74,7 +74,7 @@ function Patient_home() {
                             <h2 data-aos="fade-up" text data-aos-delay="400" >Welcome    
                             <span className="text-primary">  {patient.firstName} {patient.lastName}  </span>    To ..</h2>
                             
-                            <h1 data-aos="fade-up">MediCare</h1>
+                            <h1 id="medicareTitle" data-aos="fade-up">Medi-Care </h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
                             
                             <p><h9 data-aos="fade-up">We understand healthcare goes beyond signs, symptoms, diagnosis, and 

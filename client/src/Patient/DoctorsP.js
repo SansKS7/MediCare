@@ -50,7 +50,7 @@ function DoctorP() {
           />
  
       </div>
-      <div className="row">
+      <div className="row" data-testid="my-div-doctor">
       {doctor.map((currElem) => {
           return (
             <>
@@ -107,7 +107,7 @@ function DoctorP() {
             <p className="text-center">
             <Link to="/Book_Appointment" state={currElem}  class="btn btn-primary hospitalbtn-card">
             Book Appointment
-          </Link>
+            </Link>
             
             </p>
           </div>

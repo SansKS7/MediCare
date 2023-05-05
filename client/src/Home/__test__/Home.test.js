@@ -56,3 +56,4 @@ test('navigates to the correct route when a link is clicked', () => {
   expect(window.location.pathname).toEqual('/Home');
 });
 });
+

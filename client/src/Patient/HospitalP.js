@@ -29,16 +29,13 @@ function HospitalP() {
       }
       <HeaderP />
       <div className="search__back">
-        {/* <form
-          class="search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
-          role="search"
-          onSubmit={handleSubmit}
-        > */}
+        
         <input
           class="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
-          type="search"
+          type="text"
           id="search_hospitals"
           name="search_hospitals"
+          role="search_hospitals"
           placeholder="Search Hospitals Here....."
           aria-label="Search"
           onChange={(e) => setQuery(e.target.value)}
@@ -49,7 +46,7 @@ function HospitalP() {
         </form> */}
       </div>
 
-      <div className="row">
+      <div data-testid="my-div-hospital" className="row">
         {hospital.map((curElem) => {
           return (
             <>
@@ -88,7 +85,7 @@ function HospitalP() {
                         </tbody>
                       </table>
                     </p>
-                    <p className="text-center">
+                    <p className="text-center"  data-testid="book-appointment">
                       <Link
                         to="/HospitalDr"
                         state={curElem}

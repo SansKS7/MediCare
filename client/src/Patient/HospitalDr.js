@@ -109,26 +109,7 @@ function HospitalDr(props)   {
       </div>
 
 
-            {/* <Card1
-          img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
-          hname="Hospital Name"
-          name={curElem.hospitalName}
-          drname={curElem.name}
-          spe="Speciality"
-          speciality={curElem.speciality}
-          mail="Mail"
-          mailid={curElem.mail}
-          add="Address"
-          address={curElem.address}
-          exp="Experience"
-          experience={curElem.experience}
-          charge="Charges"
-          charges={curElem.charges}
-          qua="Qualification"
-          qualification={curElem.qualification}
-          ph="PhoneNo"
-          phoneNo={curElem.phoneNo}
-        />  */}
+
             </>
           );
         })}
@@ -138,72 +119,5 @@ function HospitalDr(props)   {
   );
 }
 
-function Card1(props) {
-  return (
-    <>
-      <div className="col">
-        <div class="card doctorcard">
-          <img
-            src={props.img}
-            class="card-img-top hospital__dr__card__imgblock"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title"> {props.drname}</h5>
-            <p class="card-text">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">{props.hname}</th>
-                    <td>{props.name}</td>
-                  </tr>
-
-                  <tr>
-                    <th scope="col">{props.spe}</th>
-                    <td>{props.speciality}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.exp}</th>
-                    <td>{props.experience}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.ph}</th>
-                    <td>{props.phoneNo}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.qua}</th>
-                    <td>{props.qualification}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.charge}</th>
-                    <td>{props.charges}</td>
-                  </tr>
-                  <tr>
-                    <th scope="col">{props.mail}</th>
-                    <td>{props.mailid}</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>{props.add}</th>
-                    <td className="card__address">{props.address}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </p>
-            <p className="text-center">
-              <button
-                class="btn btn-primary doctor__btn text-center"
-                type="submit"
-              >
-                Book Appointment
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
 
 export default HospitalDr;

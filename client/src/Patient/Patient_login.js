@@ -82,17 +82,6 @@ function Patient_login() {
               <fieldset>
                 <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
                 <div className="mb-3">
-<<<<<<< HEAD
-                  <label for="disabledTextInput" className="form-label">Enter Patient-ID</label>
-                  <input type="text" id="p_id" name="p_id"   className="form-control" onChange={handleEvent} />
-                </div>
-
-                <div className="mb-3">
-                  <label for="disabledTextInput" className="form-label">Password</label>
-                  <input type="password" id="password" name="password" className="form-control" onChange={handleEvent} />
-                </div>
-                <button type="submit" className="btn btn-primary my-2 ">Login</button>
-=======
                   <label htmlFor="p_id" className="form-label">Enter Patient-ID</label>
                   <input type="text" id="p_id" name="p_id"  placeholder='ID' class="form-control" onChange={handleEvent} />
                 </div>
@@ -102,7 +91,6 @@ function Patient_login() {
                   <input type="password" id="password" name="password" placeholder='Password' class="form-control" onChange={handleEvent} />
                 </div>
                 <button type="submit" class="btn btn-primary my-2 " name="Submit">Login</button>
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
 
                 <center> <b> No account Register Here..</b> </center>
                 <button type="submit" className="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>

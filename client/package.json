@@ -24,15 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-<<<<<<< HEAD
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"  --verbose --silent",
-=======
-<<<<<<< HEAD
-    "test": "react-scripts test /client/src/Doctor/__test__/Doctor_editprofile.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\"",
-=======
-    "test": "react-scripts test /client/src/Patient/__test__/Patient_View_Appointment.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose",
->>>>>>> 63af44e36b1bdafc2eeaa2ed1efe62333be7cd28
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -60,7 +52,3 @@
   }
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67

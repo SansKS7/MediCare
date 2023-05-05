@@ -130,11 +130,7 @@ function Book_Appointment(props) {
                 </b>
 
                 <div className="mb-3">
-<<<<<<< HEAD
                   <label for="disabledTextInput" className="form-label">
-=======
-                  <label for="disabledTextInput" class="form-label"   data-testid="firstname">
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                     Patient Name
                   </label>
                   <input

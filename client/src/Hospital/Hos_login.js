@@ -90,15 +90,7 @@ function Hos_login() {
                 <label  id="hospital-password-label" htmlFor="password" className="form-label">Enter Password</label>
                 <input type="password" id="password" name="password" aria-labelledby="hospital-password-label" className="form-control textbox" onChange={handleEvent} />
               </div>
-<<<<<<< HEAD
               <button type="submit"  className="btn btn-primary my-2">Login</button>
-=======
-              <button type="submit" class="btn btn-primary my-2">Login</button>
-
-              <center> <b> Register Hospital Here</b> </center>
-            <button type="submit" class="btn btn-primary my-2 "onClick={()=>navigate("/Hos_register")}>Register</button>
-     
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
             </fieldset>
           </form>
 

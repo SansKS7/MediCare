@@ -29,7 +29,6 @@ function HospitalP() {
       }
       <HeaderP />
       <div className="search__back">
-<<<<<<< HEAD
         {/* <form
           className="search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
           role="search"
@@ -38,12 +37,6 @@ function HospitalP() {
         <input
           className="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
           type="search"
-=======
-        
-        <input
-          class="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
-          type="text"
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
           id="search_hospitals"
           name="search_hospitals"
           role="search_hospitals"

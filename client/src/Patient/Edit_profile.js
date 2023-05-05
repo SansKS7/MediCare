@@ -43,6 +43,8 @@ const [image, setImage] = useState('')
     axios.post(profileURL,imgData).then((res)=>{
         console.log(res);
         //setForm(res)
+    }).catch((e)=>{
+      console.log("Error :", e);
     })
       
   }

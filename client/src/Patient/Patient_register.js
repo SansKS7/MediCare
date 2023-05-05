@@ -133,11 +133,7 @@ function Patient_register() {
 
                 <div className="displayFlex">
                   <div className="mb-3">
-<<<<<<< HEAD
-                    <label for="disabledTextInput" className="form-label">
-=======
                     <label htmlfor="disabledTextInput" class="form-label">
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                       Enter First Name
                     </label>
                     <input

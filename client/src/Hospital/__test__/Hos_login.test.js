@@ -9,7 +9,7 @@ import userEvent from "@testing-library/user-event";
 import Hos_login from "../Hos_login";
 import { BrowserRouter } from "react-router-dom";
 const request = require("supertest");
-const axios = require("axios");
+
 import fetch from 'isomorphic-fetch';
 
 //0. If User already login then redirect to home page

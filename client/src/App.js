@@ -40,6 +40,7 @@ import {
   BrowserRouter,
   MemoryRouter,
 } from "react-router-dom";
+import HeaderP from "./Patient/HeaderP";
 
 
 
@@ -95,6 +96,7 @@ function App() {
         <Route path="/Hos_edit" element={<Hos_edit/>}/>
         <Route path="/HospitalDr" element={<HospitalDr/>}/>
         <Route path="/Patient_profile_dr" element={<Patient_profile_dr/>}/>
+        <Route path="/HeaderP" element={<HeaderP/>}/>
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

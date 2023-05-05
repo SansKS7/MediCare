@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";

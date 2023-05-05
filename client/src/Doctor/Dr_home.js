@@ -14,7 +14,7 @@ import Appointment from './Appointment';
 
 
 function Dr_home () {
-  const [ {DoctorUser} , dispatchUser] = useStateValue();
+  const [ {DoctorUser} , dispatchUser] = useStateValue()?? [{}, () => {}];
 
   const navigate=useNavigate();
   
@@ -31,7 +31,7 @@ function Dr_home () {
   useEffect(() => {
     getDoctor();
     console.log(doctor.name);
-  });
+  },[]);
 
 
   function logoutUser()
@@ -44,7 +44,7 @@ function Dr_home () {
     {
       navigate("/Dr_login")
     }
-  })
+  },[])
 
 
   return (

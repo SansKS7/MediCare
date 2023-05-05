@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 import { Link } from "react-router-dom";
 
-import HeaderP from '../Home/HeaderP'
+import HeaderP from './HeaderP'
 import Home from '../Home/Home'
 import About from '../Home/About'
 import Hero from '../Home/Hero'

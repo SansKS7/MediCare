@@ -8,7 +8,7 @@ import { actionTypes } from "../Context/reducer";
 
 export default function () {
     const navigate = useNavigate()
-    const [ {DoctorUser} , dispatchUser] = useStateValue();
+    const [ {DoctorUser} , dispatchUser] = useStateValue() ?? [{}, () => {}];
 
 
     const URL = "/api/doctor?search="+DoctorUser;
@@ -59,7 +59,7 @@ export default function () {
                                     <div className="card-body">
                                     <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Hospital-ID</h6>
+                                                <h6 className="mb-0" data-testid="h_id">Hospital-ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.h_id}
@@ -68,7 +68,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Hospital Name</h6>
+                                                <h6 className="mb-0"  data-testid="hospitalName">Hospital Name</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.hospitalName}
@@ -77,7 +77,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Doctor-ID</h6>
+                                                <h6 className="mb-0"  data-testid="d_id">Doctor-ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.d_id}
@@ -86,7 +86,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Doctor Name</h6>
+                                                <h6 className="mb-0"  data-testid="dname">Doctor Name</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.name}
@@ -95,7 +95,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Speciality</h6>
+                                                <h6 className="mb-0"  data-testid="speciality">Speciality</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.speciality}
@@ -104,7 +104,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Mail-ID</h6>
+                                                <h6 className="mb-0"  data-testid="mail">Mail-ID</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.mail}
@@ -113,7 +113,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Phone No</h6>
+                                                <h6 className="mb-0"  data-testid="phoneNo">Phone No</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.phoneNo}
@@ -122,7 +122,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Address</h6>
+                                                <h6 className="mb-0"  data-testid="address">Address</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.address}
@@ -131,7 +131,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Experience</h6>
+                                                <h6 className="mb-0"  data-testid="experience">Experience</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.experience}
@@ -140,7 +140,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Charges</h6>
+                                                <h6 className="mb-0"  data-testid="charges">Charges</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.charges}
@@ -149,7 +149,7 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
-                                                <h6 className="mb-0">Qualification</h6>
+                                                <h6 className="mb-0"  data-testid="qualification">Qualification</h6>
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             {doctor.qualification}
@@ -160,7 +160,7 @@ export default function () {
                                         <div className="row">
                                     
                                             <div className="col-sm-12">
-                                            <Link to="/Dr_edit" className="btn btn-primary">Edit Profile</Link>
+                                            <Link to="/Dr_edit" className="btn btn-primary"  name="eprofile">Edit Profile</Link>
                                             </div>
                                        
                                         </div>

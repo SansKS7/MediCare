@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 
 export default function () {
-    const [ {DoctorUser} , dispatchUser] = useStateValue();
+    const [ {DoctorUser} , dispatchUser] = useStateValue()?? [{}, () => {}];
     const navigate=useNavigate()
   
     function logoutUser()

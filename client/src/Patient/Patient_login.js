@@ -5,14 +5,12 @@ import { useStateValue } from "../Context/StateProvider";
 import { actionTypes } from "../Context/reducer";
 
 function Patient_login() {
-
   const navigate = useNavigate();
-  
   const URL = "/api/patientLogin/";
   const doctorIdUrl = "/api/doctorId"
   //const doctorid;
 
-  const [ {PatientUser} , dispatchUser] = useStateValue();
+  const [ {PatientUser} , dispatchUser] = useStateValue() ?? [{}, () => {}];
   const [formData, setForm] = useState(
     {
       _id: null,
@@ -65,19 +63,6 @@ function Patient_login() {
   function handleSubmit(e) {
     e.preventDefault();
     uploadingData(URL,formData);
-    // if(formData.p_id === "P101" && formData.password === "123")
-    // {
-    //   dispatchUser({
-    //     type: actionTypes.SET_PATIENT,
-    //     PatientUser: formData.p_id,
-    //   });
-    //   navigate("/patient_home");
-    // }
-    // else
-    // {
-    //   alert("Invalid Id/Password");
-    // }
-    // console.log(formData);
   }
 
   useEffect(()=>{
@@ -85,7 +70,7 @@ function Patient_login() {
     {
       navigate("/patient_home")
     }
-  })
+  },[])
 
   return (
     <>
@@ -93,10 +78,11 @@ function Patient_login() {
       <div className='main-container'>
         <div id='patient_login'>
           <div className='container'>
-            <form className='login' onSubmit={handleSubmit}>
+            <form className='login' id="login" name="login" onSubmit={handleSubmit}>
               <fieldset>
                 <b className='my-2'> <center><legend>Patient Login</legend> </center> </b>
                 <div className="mb-3">
+<<<<<<< HEAD
                   <label for="disabledTextInput" className="form-label">Enter Patient-ID</label>
                   <input type="text" id="p_id" name="p_id"   className="form-control" onChange={handleEvent} />
                 </div>
@@ -106,6 +92,17 @@ function Patient_login() {
                   <input type="password" id="password" name="password" className="form-control" onChange={handleEvent} />
                 </div>
                 <button type="submit" className="btn btn-primary my-2 ">Login</button>
+=======
+                  <label htmlFor="p_id" className="form-label">Enter Patient-ID</label>
+                  <input type="text" id="p_id" name="p_id"  placeholder='ID' class="form-control" onChange={handleEvent} />
+                </div>
+
+                <div class="mb-3">
+                  <label htmlFor="password" className="form-label">Password</label>
+                  <input type="password" id="password" name="password" placeholder='Password' class="form-control" onChange={handleEvent} />
+                </div>
+                <button type="submit" class="btn btn-primary my-2 " name="Submit">Login</button>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
 
                 <center> <b> No account Register Here..</b> </center>
                 <button type="submit" className="btn btn-primary my-2 " onClick={() => navigate("/Patient_register")}>Register</button>

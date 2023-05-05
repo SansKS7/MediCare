@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
     "date-fns": "^2.30.0",
+    "msw": "^1.2.1",
     "react": "^18.2.0",
     "react-date-picker": "^10.0.3",
     "react-datepicker": "^4.11.0",
@@ -23,7 +24,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+<<<<<<< HEAD
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!axios)/\"  --verbose --silent",
+=======
+<<<<<<< HEAD
+    "test": "react-scripts test /client/src/Doctor/__test__/Doctor_editprofile.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\"",
+=======
+    "test": "react-scripts test /client/src/Patient/__test__/Patient_View_Appointment.test.js --transformIgnorePatterns \"node_modules/(?!axios)/\" --verbose",
+>>>>>>> 63af44e36b1bdafc2eeaa2ed1efe62333be7cd28
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,4 +60,7 @@
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67

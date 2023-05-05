@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function HospitalP() {
@@ -29,6 +29,7 @@ function HospitalP() {
       }
       <HeaderP />
       <div className="search__back">
+<<<<<<< HEAD
         {/* <form
           className="search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
           role="search"
@@ -37,8 +38,15 @@ function HospitalP() {
         <input
           className="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
           type="search"
+=======
+        
+        <input
+          class="form-control me-2 search__bar__dr d-flex navbar navbar-expand  fixed-top d-flex align-items-center"
+          type="text"
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
           id="search_hospitals"
           name="search_hospitals"
+          role="search_hospitals"
           placeholder="Search Hospitals Here....."
           aria-label="Search"
           onChange={(e) => setQuery(e.target.value)}
@@ -49,7 +57,7 @@ function HospitalP() {
         </form> */}
       </div>
 
-      <div className="row">
+      <div data-testid="my-div-hospital" className="row">
         {hospital.map((curElem) => {
           return (
             <>
@@ -88,7 +96,7 @@ function HospitalP() {
                         </tbody>
                       </table>
                     </p>
-                    <p className="text-center">
+                    <p className="text-center"  data-testid="book-appointment">
                       <Link
                         to="/HospitalDr"
                         state={curElem}

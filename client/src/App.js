@@ -32,6 +32,7 @@ import Hos_Profile from "./Hospital/Hos_Profile";
 import Hos_edit from "./Hospital/Hos_edit";
 import HospitalDr from "./Patient/HospitalDr";
 import Patient_profile_dr from "./Doctor/Patient_profile_dr";
+
 import {
 
   Route,
@@ -40,6 +41,7 @@ import {
   BrowserRouter,
   MemoryRouter,
 } from "react-router-dom";
+import HeaderP from "./Patient/HeaderP";
 
 
 
@@ -95,6 +97,7 @@ function App() {
         <Route path="/Hos_edit" element={<Hos_edit/>}/>
         <Route path="/HospitalDr" element={<HospitalDr/>}/>
         <Route path="/Patient_profile_dr" element={<Patient_profile_dr/>}/>
+        <Route path="/HeaderP" element={<HeaderP/>}/>
           </Routes>
       </BrowserRouter>
       {/* <Dr_home/> */}

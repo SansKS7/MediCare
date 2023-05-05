@@ -1,5 +1,5 @@
 import React, {useState,useEffect}from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { Link } from "react-router-dom";
 function DoctorP() {
  
@@ -50,7 +50,7 @@ function DoctorP() {
           />
  
       </div>
-      <div className="row">
+      <div className="row" data-testid="my-div-doctor">
       {doctor.map((currElem) => {
           return (
             <>
@@ -107,7 +107,7 @@ function DoctorP() {
             <p className="text-center">
             <Link to="/Book_Appointment" state={currElem}  className="btn btn-primary hospitalbtn-card">
             Book Appointment
-          </Link>
+            </Link>
             
             </p>
           </div>

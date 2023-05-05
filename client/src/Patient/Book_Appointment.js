@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { Link, useLocation } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { useStateValue } from "../Context/StateProvider";
@@ -9,12 +9,22 @@ import "react-datepicker/dist/react-datepicker.css";
 
 function Book_Appointment(props) {
    const navigate = useNavigate();
-  const [{ PatientUser }, dispatchUser] = useStateValue();
+  const [{ PatientUser }, dispatchUser] = useStateValue() ?? [{}, () => {}];
   const state = useLocation();
 
   const [doctorData, setDoctorData] = useState(state.state);
   const getnameURL = "/api/patient?search=" + PatientUser;
   const getappointment="/api/getappointment";
+  // if(doctorData===null) {
+  //   const [formData, setForm] = useState({
+
+  //   d_id: "D101",
+  //   name: "Nandini Achugatla",
+  //   h_id: "H101",
+  //   hospitalName: "Sriram Hospital",
+  //   })
+
+  // }
 
   async function uploadingData(getappointment, data) {
     try {
@@ -120,7 +130,11 @@ function Book_Appointment(props) {
                 </b>
 
                 <div className="mb-3">
+<<<<<<< HEAD
                   <label for="disabledTextInput" className="form-label">
+=======
+                  <label for="disabledTextInput" class="form-label"   data-testid="firstname">
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                     Patient Name
                   </label>
                   <input

@@ -1,5 +1,5 @@
 import React, {useState,useEffect}from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -109,26 +109,7 @@ function HospitalDr(props)   {
       </div>
 
 
-            {/* <Card1
-          img="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg?w=2000"
-          hname="Hospital Name"
-          name={curElem.hospitalName}
-          drname={curElem.name}
-          spe="Speciality"
-          speciality={curElem.speciality}
-          mail="Mail"
-          mailid={curElem.mail}
-          add="Address"
-          address={curElem.address}
-          exp="Experience"
-          experience={curElem.experience}
-          charge="Charges"
-          charges={curElem.charges}
-          qua="Qualification"
-          qualification={curElem.qualification}
-          ph="PhoneNo"
-          phoneNo={curElem.phoneNo}
-        />  */}
+
             </>
           );
         })}
@@ -138,6 +119,7 @@ function HospitalDr(props)   {
   );
 }
 
+<<<<<<< HEAD
 function Card1(props) {
   return (
     <>
@@ -205,5 +187,7 @@ function Card1(props) {
     </>
   );
 }
+=======
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
 
 export default HospitalDr;

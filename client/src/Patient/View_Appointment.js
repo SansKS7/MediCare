@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import HeaderP from "../Home/HeaderP";
+import HeaderP from "./HeaderP";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../Context/StateProvider";
 
 function View_Appointment() {
   const navigate = useNavigate();
-  const [{ PatientUser }, dispatchUser] = useStateValue();
+  const [{ PatientUser }, dispatchUser] = useStateValue()?? [{}, () => {}];
   const URLPending =
     "/api/patientAppointment?search=" + PatientUser + "+Pending";
   const URLAccepted =
@@ -67,7 +67,7 @@ function View_Appointment() {
     <>
       <HeaderP />
 
-      <div className="table-container1">
+      <div className="table-container1"   data-testid="my-div-pending">
         <h2
           data-aos="fade-up"
           text
@@ -77,16 +77,16 @@ function View_Appointment() {
           Pending Appointments{" "}
         </h2>
 
-        <table className="table">
+        <table className="table"  data-testid="my-table-pending">
           <thead className="thead-dark1">
-            <tr>
-              <th scope="col">Sr.No</th>
-              <th scope="col">Hospital Name</th>
-              <th scope="col">Doctor Name</th>
-              <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col">Message</th>
-              <th scope="col">Appointment Status</th>
+            <tr data-testid="my-row-pending">
+              <th data-testid="my-col-pending-sr" scope="col">Sr.No</th>
+              <th data-testid="my-col-pending-hname" scope="col">Hospital Name</th>
+              <th data-testid="my-col-pending-dname" scope="col">Doctor Name</th>
+              <th data-testid="my-col-pending-date" scope="col">Date</th>
+              <th data-testid="my-col-pending-time" scope="col">Time</th>
+              <th data-testid="my-col-pending-msg"  scope="col">Message</th>
+              <th data-testid="my-col-pending-appostatus" scope="col">Appointment Status</th>
             </tr>
           </thead>
           <tbody>
@@ -94,11 +94,11 @@ function View_Appointment() {
               return (
                 <tr>
                   <th scope="row">{currElem.a_id}</th>
-                  <td>{currElem.hospitalName}</td>
-                  <td>{currElem.name}</td>
-                  <td>{getDateData(currElem.appoDateTime)}</td>
-                  <td>{getTimeData(currElem.appoDateTime)}</td>
-                  <td>{currElem.appoMessage}</td>
+                  <td >{currElem.hospitalName}</td>
+                  <td >{currElem.name}</td>
+                  <td  >{getDateData(currElem.appoDateTime)}</td>
+                  <td >{getTimeData(currElem.appoDateTime)}</td>
+                  <td >{currElem.appoMessage}</td>
 
                   <td>
                     <button className="btn btn-primary">Pending</button>
@@ -110,7 +110,7 @@ function View_Appointment() {
         </table>
       </div>
 
-      <div className="table-container1">
+      <div className="table-container1" data-testid="my-div-accepted">
         <h2
           data-aos="fade-up"
           text
@@ -120,17 +120,17 @@ function View_Appointment() {
           Accepted Appointments{" "}
         </h2>
 
-        <table className="table">
+        <table className="table" data-testid="my-table-accepted">
           <thead className="thead-dark1">
-            <tr>
-              <th scope="col">Sr.No</th>
-              <th scope="col">Hospital Name</th>
-              <th scope="col">Doctor Name</th>
+            <tr data-testid="my-row-accepted">
+              <th data-testid="my-col-accepted-sr" scope="col">Sr.No</th>
+              <th data-testid="my-col-accepted-hname" scope="col">Hospital Name</th>
+              <th data-testid="my-col-accepted-dname" scope="col">Doctor Name</th>
 
-              <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col">Message</th>
-              <th scope="col">Appointment Status</th>
+              <th data-testid="my-col-accepted-date" scope="col">Date</th>
+              <th data-testid="my-col-accepted-time" scope="col">Time</th>
+              <th data-testid="my-col-accepted-msg" scope="col">Message</th>
+              <th data-testid="my-col-accepted-appoStatus" scope="col">Appointment Status</th>
             </tr>
           </thead>
           <tbody>
@@ -154,7 +154,7 @@ function View_Appointment() {
         </table>
       </div>
 
-      <div className="table-container1">
+      <div className="table-container1"  data-testid="my-div-rejected" >
         <h2
           data-aos="fade-up"
           text
@@ -164,17 +164,17 @@ function View_Appointment() {
           Rejected Appointments{" "}
         </h2>
 
-        <table className="table">
+        <table className="table"  data-testid="my-table-rejected">
           <thead className="thead-dark1">
             <tr>
-              <th scope="col">Sr.No</th>
-              <th scope="col">Hospital Name</th>
-              <th scope="col">Doctor Name</th>
+              <th data-testid="my-col-rejected-sr" scope="col">Sr.No</th>
+              <th data-testid="my-col-rejected-hname" scope="col">Hospital Name</th>
+              <th data-testid="my-col-rejected-dname" scope="col">Doctor Name</th>
 
-              <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col">Message</th>
-              <th scope="col">Appointment Status</th>
+              <th data-testid="my-col-rejected-date" scope="col">Date</th>
+              <th data-testid="my-col-rejected-time" scope="col">Time</th>
+              <th data-testid="my-col-rejected-msg" scope="col">Message</th>
+              <th data-testid="my-col-rejected-appoStatus" scope="col">Appointment Status</th>
             </tr>
           </thead>
           <tbody>

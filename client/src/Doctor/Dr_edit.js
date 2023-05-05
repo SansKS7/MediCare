@@ -10,7 +10,7 @@ export default function () {
 
     
   const navigate = useNavigate();
-  const [{ DoctorUser }, dispatchUser] = useStateValue();
+  const [{ DoctorUser }, dispatchUser] = useStateValue() ?? [{}, () => {}];
   const URL = "/api/doctor?search=" + DoctorUser;
   const updateUrl ="/api/doctorUpdate";
   const profileURL= "/api/doctorProfileUpdate/";
@@ -228,7 +228,11 @@ export default function () {
                                     <div className="card-body">
                                     <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                                 <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Hospital-ID</h6> </label>
+=======
+                                                <label for="disabledTextInput" id="h_id-label" class="form-label"> <h6 className="mb-0">Hospital-ID</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -237,6 +241,7 @@ export default function () {
                                                     value={formData.h_id}
                                                     name="h_id"
                                                     className="form-control textbox"
+                                                    aria-labelledby="h_id-label"
                                                     disabled
                                                 />
                                             </div>
@@ -244,7 +249,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                                 <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Hospital-Name</h6> </label>
+=======
+                                                <label for="disabledTextInput" id="hospitalName-label" class="form-label"> <h6 className="mb-0">Hospital-Name</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -253,6 +262,7 @@ export default function () {
                                                     name="hospitalName"
                                                     value={formData.hospitalName}
                                                     className="form-control textbox"
+                                                    aria-labelledby="hospitalName-label"
                                                     disabled
                                                 />
                                             </div>
@@ -260,7 +270,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                                 <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Doctor-ID</h6> </label>
+=======
+                                                <label for="disabledTextInput" id="d_id-label" class="form-label"> <h6 className="mb-0">Doctor-ID</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                                 <input
@@ -268,6 +282,7 @@ export default function () {
                                                     id="d_id"
                                                     name="d_id"
                                                     className="form-control textbox"
+                                                    aria-labelledby="d_id-label"
                                                     value={formData.d_id}
                                                     disabled
                                                 />
@@ -277,7 +292,11 @@ export default function () {
 
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                                 <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Doctor Name</h6> </label>
+=======
+                                                <label for="disabledTextInput" id="name-label" class="form-label"> <h6 className="mb-0">Doctor Name</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -285,6 +304,7 @@ export default function () {
                                                     id="name"
                                                     name="name"
                                                     className="form-control textbox"
+                                                    aria-labelledby="name-label"
                                                     value={formData.name}
                                                     onChange={handleEvent}
                                                 />
@@ -293,7 +313,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Mail-ID</h6> </label>    
+=======
+                                            <label for="disabledTextInput" id="mail-label" class="form-label"> <h6 className="mb-0">Mail-ID</h6> </label>    
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -301,6 +325,7 @@ export default function () {
                                                     id="mail"
                                                     name="mail"
                                                     className="form-control textbox"
+                                                    aria-labelledby="mail-label"
                                                     value={formData.mail}
                                                     onChange={handleEvent}
                                                 />
@@ -309,7 +334,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Phone No</h6> </label>    
+=======
+                                            <label for="disabledTextInput" id="phoneNo-label" class="form-label"> <h6 className="mb-0">Phone No</h6> </label>    
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -317,6 +346,7 @@ export default function () {
                                                     id="phoneNo"
                                                     name="phoneNo"
                                                     className="form-control textbox"
+                                                    aria-labelledby="phoneNo-label"
                                                     value={formData.phoneNo}
                                                     onChange={handleEvent}
                                                 />
@@ -325,7 +355,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Address</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="address-label" class="form-label"> <h6 className="mb-0">Address</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -333,6 +367,7 @@ export default function () {
                                                     id="address"
                                                     name="address"
                                                     className="form-control textbox"
+                                                    aria-labelledby="address-label"
                                                     value={formData.address}
                                                     onChange={handleEvent}
                                                 />
@@ -341,7 +376,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Speciality</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="speciality-label" class="form-label"> <h6 className="mb-0">Speciality</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -349,6 +388,7 @@ export default function () {
                                                     id="speciality"
                                                     name="speciality"
                                                     className="form-control textbox"
+                                                    aria-labelledby="speciality-label"
                                                     value={formData.speciality}
                                                     onChange={handleEvent}
                                                 />
@@ -357,7 +397,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Experience</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="experience-label" class="form-label"> <h6 className="mb-0">Experience</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -365,6 +409,7 @@ export default function () {
                                                     id="experience"
                                                     name="experience"
                                                     className="form-control textbox"
+                                                    aria-labelledby="experience-label"
                                                     value={formData.experience}
                                                     onChange={handleEvent}
                                                 />
@@ -373,7 +418,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Charges</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="charges-label" class="form-label"> <h6 className="mb-0">Charges</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -381,6 +430,7 @@ export default function () {
                                                     id="charges"
                                                     name="charges"
                                                     className="form-control textbox"
+                                                    aria-labelledby="charges-label"
                                                     value={formData.charges}
                                                     onChange={handleEvent}
                                                 />
@@ -389,7 +439,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Qualification</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="qualification-label" class="form-label"> <h6 className="mb-0">Qualification</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -397,6 +451,7 @@ export default function () {
                                                     id="qualification"
                                                     name="qualification"
                                                     className="form-control textbox"
+                                                    aria-labelledby="qualification-label"
                                                     value={formData.qualification}
                                                     onChange={handleEvent}
                                                 />
@@ -405,7 +460,11 @@ export default function () {
                                         <hr></hr>
                                         <div className="row">
                                             <div className="col-sm-3">
+<<<<<<< HEAD
                                             <label for="disabledTextInput" className="form-label"> <h6 className="mb-0">Password</h6> </label>
+=======
+                                            <label for="disabledTextInput" id="password-label" class="form-label"> <h6 className="mb-0">Password</h6> </label>
+>>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
                                             </div>
                                             <div className="col-sm-9 text-secondary">
                                             <input
@@ -413,6 +472,7 @@ export default function () {
                                                     id="password"
                                                     name="password"
                                                     className="form-control textbox"
+                                                    aria-labelledby="password-label"
                                                     value={formData.password}
                                                     onChange={handleEvent}
                                                 />

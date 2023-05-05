@@ -44,7 +44,7 @@ function Hos_register() {
         //Login Success
         console.log("Success");
 
-        navigate("/patient_home");
+        navigate("/Hos_login");
       } else {
         //Login Invalid
         console.log("Invalid");
@@ -85,9 +85,9 @@ function Hos_register() {
       console.log(formData);
       uploadingData(URL, formData);
 
-      alert("Login Successful");
+      alert("Register Successful");
     } else {
-      alert("Login Unsuccessful");
+      alert("Register Unsuccessful");
     }
   }
   useEffect(() => {

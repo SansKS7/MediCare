@@ -107,7 +107,6 @@ function Book_Appointment(props) {
     e.preventDefault();
       console.log(formData);
      uploadingData(getappointment, formData);
-     alert('Appointment Booked Successfully')
   }
 
 

@@ -119,7 +119,6 @@ function HospitalDr(props)   {
   );
 }
 
-<<<<<<< HEAD
 function Card1(props) {
   return (
     <>
@@ -187,7 +186,5 @@ function Card1(props) {
     </>
   );
 }
-=======
->>>>>>> 0eaa8973d54e6e3954157022b5e3153cfb192b67
 
 export default HospitalDr;

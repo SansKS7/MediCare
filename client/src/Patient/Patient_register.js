@@ -75,9 +75,9 @@ function Patient_register() {
     if (fname && lname && age && phone && address && password) {
       // console.log(formData);
       uploadingData(URL, formData);
-      alert("Login Successful")
+      alert("Register Successful")
     } else {
-      alert("Login Unsuccessful");
+      alert("Register Unsuccessful");
     }
   }
 

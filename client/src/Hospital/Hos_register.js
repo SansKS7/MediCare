@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../Home/Header";
 import {isfirstName,isRating,isAddress,isPhno,isMail,isPassword,isRePassword,isSpeciality} from "./ValidationFunctions";
 
 function Hos_register() {
@@ -112,8 +113,11 @@ function Hos_register() {
   }, [hospital]);
 
   return (
+    
     <>
-      <div id="hospital_register">
+    <Header />
+    <div className="main-container">
+      <div id="patient_register">
         <div className="container">
           <form className="register">
             <fieldset>
@@ -278,20 +282,26 @@ function Hos_register() {
                 Register
               </button>
 
-              <center>
-                {" "}
-                <b> OR</b>{" "}
-              </center>
+              
 
-              <button
+              {/* <button
            
                 className="displayFlex-2  textalign-center btn btn-primary my-2  "
                 onClick={() => navigate("/Hos_login")}
               >
                 Login
-              </button>
+              </button> */}
             </fieldset>
           </form>
+        </div>
+       
+      </div>
+      <div className="hero-section-2 col-lg-6 order-1 order-lg-2 hero-img">
+          <img
+            src={require("../assets/img/register.png")}
+            className="img1 img-fluid animated"
+            alt=""
+          />
         </div>
       </div>
     </>

@@ -1138,9 +1138,14 @@ section-title h2 {
   justify-content: center;
   margin-top: 15rem;
   margin-left: 2rem;
+  height: 65%;
   width:28rem;
   border-radius: 1.5rem;
   border-color: #888;
+}
+
+.hospital_card_img{
+  height: 50%;
 }
 .hospitalbtn-card{
 

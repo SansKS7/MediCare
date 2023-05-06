@@ -8,7 +8,7 @@ import axios from "axios";
 function Edit_profile() {
   const navigate = useNavigate();
 
-  const [{ PatientUser }, dispatchUser] = useStateValue();
+  const [{ PatientUser }, dispatchUser] = useStateValue()?? [{}, () => {}];
   const URL = "/api/patient?search=" + PatientUser;
 
 
@@ -218,7 +218,7 @@ const [image, setImage] = useState('')
                 <div className="col-md-4 mb-3">
                   <div className="card card1">
                     <div className="card-body">
-                      <div className="d-flex flex-column align-items-center text-center">
+                      <div className="d-flex flex-column align-items-center text-center" data-testid="patientImg">
                         <img
                         // {require('../assets/img/home.png')}
                           src={formData.profileUrl}
@@ -227,7 +227,7 @@ const [image, setImage] = useState('')
                           width="150"
                         />
                         
-                        <div className="mt-3">
+                        <div className="mt-3" data-testid="patientFullName" >
                           <h4>
                             {formData.firstName} {formData.lastName}
                           </h4>
@@ -245,8 +245,8 @@ const [image, setImage] = useState('')
                   <div className="card card1 mb-3">
                     <div className="card-body">
                       <div className="row">
-                        <div className="col-sm-3">
-                          <label for="disabledTextInput" className="form-label">
+                        <div className="col-sm-3"  data-testid="patientID" >
+                          <label htmlfor="p_id"  id="p_id_label" className="form-label">
                             {" "}
                             <h6 className="mb-0">Patient-ID</h6>{" "}
                           </label>
@@ -263,7 +263,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientName">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Patient Name</h6>
@@ -282,7 +282,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientLastName">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -301,7 +301,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientAge">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Age</h6>
@@ -319,7 +319,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientphono">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -338,7 +338,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientGender">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -357,7 +357,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientBloodGroup">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -376,7 +376,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row"  data-testid="patientHeight">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -395,7 +395,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientWeight">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -414,7 +414,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientAddress">
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             {" "}
@@ -433,7 +433,7 @@ const [image, setImage] = useState('')
                         </div>
                       </div>
                       <hr></hr>
-                      <div className="row">
+                      <div className="row" data-testid="patientPassword"> 
                         <div className="col-sm-3">
                           <label for="disabledTextInput" className="form-label">
                             <h6 className="mb-0">Password</h6>

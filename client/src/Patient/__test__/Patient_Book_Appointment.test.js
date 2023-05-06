@@ -18,20 +18,6 @@ describe("Book Apointment Page in Patient DashBoard", () => {
       </BrowserRouter>;
     });  
 
-    // it("renders Patient Name Label is present or Not in Book Appointment", () => {
-        
-    //     render(
-    //     <BrowserRouter>
-    //   <Book_Appointment/>
-    //   </BrowserRouter>);
-    //    // const patientNameInput = screen.getByLabelText("Patient Name");
-
-       
-    //    const patientNameInput = screen.getByLabelText(/Patient Name/i);
-    //     expect(patientNameInput).toBeInTheDocument();
-
-    // })
-
 
 
   });

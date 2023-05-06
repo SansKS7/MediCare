@@ -7,7 +7,7 @@ import Dr_header from './Dr_header';
 
 export default function () {
     const navigate = useNavigate()
-    const [{ DoctorUser }, dispatchUser] = useStateValue();
+    const [{ DoctorUser }, dispatchUser] = useStateValue()?? [{}, () => {}];
     const URL = "/api/doctorAppointment?search=" + DoctorUser + "+Pending";
     const [doctor, setdoctor] = useState([]);
 
@@ -130,20 +130,20 @@ function getPatientDetails(p_id)
 
         <>
             <Dr_header />
-            <div className="table-container1">
-                <table className="table">
+            <div className="table-container1" data-testid="my-div-appo">
+                <table className="table" data-testid="my-table-appo">
                     <thead className="thead-dark1">
-                        <tr>
+                        <tr data-testid="my-table-appo-tr">
                         
-                        <th scope="col">Appointment ID </th>
+                        <th data-testid="my-table-appo-tr-aid" scope="col">Appointment ID </th>
                         
-                        <th scope="col">Patient ID</th>
-                            <th scope="col">Patient Name</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Message</th>
-                            <th scope="col">Appointment Status</th>
+                        <th data-testid="my-table-appo-tr-pid" scope="col">Patient ID</th>
+                            <th data-testid="my-table-appo-tr-pname" scope="col">Patient Name</th>
+                            <th data-testid="my-table-appo-tr-pgender" scope="col">Gender</th>
+                            <th data-testid="my-table-appo-tr-date" scope="col">Date</th>
+                            <th data-testid="my-table-appo-tr-time" scope="col">Time</th>
+                            <th data-testid="my-table-appo-tr-msg" scope="col">Message</th>
+                            <th data-testid="my-table-appo-tr-appoStatus" scope="col">Appointment Status</th>
                 
                         </tr>
                     </thead>
@@ -151,7 +151,7 @@ function getPatientDetails(p_id)
                     {doctor.map((currElem) => {
                         return(
                         <tr>
-                        <th scope="row">{currElem.a_id}</th>
+                        <th data-testid="my-appoID"scope="row">{currElem.a_id}</th>
                         <td>{currElem.p_id}</td>
 
                             <td>{currElem.firstName} {currElem.lastName}</td>

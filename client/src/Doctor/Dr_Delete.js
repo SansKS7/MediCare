@@ -5,7 +5,7 @@ import { useStateValue } from "../Context/StateProvider";
 function Dr_schedule() {
     
     const navigate = useNavigate()
-    const [{ HospitalUser }, dispatchUser] = useStateValue();
+    const [{ HospitalUser }, dispatchUser] = useStateValue()?? [{}, () => {}];
     const URL = "/api/doctor?search=" + HospitalUser;
     const deleteURL="/api/deleteDoctor";
     const [doctor, setdoctor] = useState([]);
@@ -53,14 +53,14 @@ function Dr_schedule() {
 return(
     <>
     <Hos_header/>
-    <div className="table-container">
-                <table className="table">
+    <div className="table-container" data-testid="my-div-doctor">
+                <table className="table" data-testid="my-table-doctor">
                     <thead className="thead-dark1">
-                        <tr>
-                            <th scope="col">Doctor ID</th>
-                            <th scope="col"> Name</th>
-                            <th scope="col">Speciality</th>
-                            <th scope="col">Action</th>
+                        <tr data-testid="my-div-doctor-row">
+                            <th data-testid="my-table-doctorID" scope="col">Doctor ID</th>
+                            <th  data-testid="my-table-doctorName" scope="col"> Name</th>
+                            <th  data-testid="my-table-doctorspe" scope="col">Speciality</th>
+                            <th data-testid="my-table-doctorAction" scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>

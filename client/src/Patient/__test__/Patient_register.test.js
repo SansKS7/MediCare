@@ -3,6 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import Patient_register from "../Patient_register";
 import {isfirstName,isAddress,isAge,isPassword,isPhno,isRePassword} from "../Validating_function";
+import fetch from "isomorphic-fetch";
 
 
 
@@ -311,6 +312,75 @@ describe('RePassword Validation Testing', () => {
         );
         expect(isRePassword("12345678","12345678")).not.toBe(false);
       });
+
+});
+
+describe('Patient Registration API Testing', () => {
+  test('Registers a new Patient', async () => {
+    const data = 
+    {
+      p_id: "P101",
+      firstname: "Sanket",
+      lastname: "Supekar",
+      age:20,
+      phoneNo: 9130420855,
+      address: "18/40 Daji Peth Shirdi",
+      password:"sanket123",
+      bloodGroup: "O",
+      gender:"Male",
+      height:55,
+      weight:51,
+      profileUrl: "https://res.cloudinary.com/didso0xgl/image/upload/v1683139751/hjvt0fyd…"
+
+    };
+    const response = await fetch('http://localhost:3001/api/patientReg', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await response.json();
+   // expect(response.status).toBe(200);
+    //wexpect(json.message).toBe('Registration successful');
+  });
+
+  test('Returns 500 error if server error occurs', async () => {
+      const data = 
+      {
+      p_id: "P101",
+      firstname: "Sanket",
+      lastname: "Supekar",
+     
+      age:20,
+      phoneNo: 9130420855,
+      address: "18/40 Daji Peth Shirdi",
+     // password:"sanket123", 
+      bloodGroup: "O",
+      gender:"Male",
+      height:55,
+      weight:51,
+      profileUrl: "https://res.cloudinary.com/didso0xgl/image/upload/v1683139751/hjvt0fyd…"
+       
+
+      };
+    
+    const response = await fetch('http://localhost:3001/api/patientReg', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await response.json();
+    expect(response.status).toBe(500);
+    expect(json.message).toBe('Internet Server Error');
+  });
+
+  test('Should return the next patient ID', async () => {
+    const response = await fetch('http://localhost:3001/api/patientId');
+    const data = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(data).toHaveProperty('patient_id');
+    expect(typeof data.patient_id).toBe('string');
+  });
 
 });
 

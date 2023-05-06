@@ -67,7 +67,7 @@ function DoctorP() {
               <table className="table">
                 <thead>
                   <tr>
-                    <th scope="col">Hospital Name:</th>
+                    <th scope="col">HospitalName:</th>
                     <td>{currElem.hospitalName}</td>
                   </tr>
 

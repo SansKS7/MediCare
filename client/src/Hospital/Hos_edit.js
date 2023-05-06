@@ -166,7 +166,7 @@ export default function () {
                       <img
                         src={formData.profileUrl}
                         alt="Admin"
-                        className="rounded-circle"
+                        className="rounded-circle profile_photo"
                         width="150"
                       />
 

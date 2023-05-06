@@ -42,9 +42,9 @@ export default function () {
                                 <div className="card card1">
                                     <div className="card-body">
                                         <div className="d-flex flex-column align-items-center text-center">
-                                            <img src={doctor.profileUrl} alt="Admin" className="rounded-circle" width="150" />
+                                            <img src={doctor.profileUrl} alt="Admin" className="rounded-circle profile_photo" width="150" />
                                             <div className="mt-3">
-                                                <h4> {doctor.name}</h4>
+                                                <h4>  Dr.{doctor.name}</h4>
                                                 <p className="text-secondary mb-1">{doctor.qualification}</p>
                                                 <p className="text-muted font-size-sm">{doctor.speciality}</p>
                                                 

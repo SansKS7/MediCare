@@ -95,7 +95,7 @@ function View_Appointment() {
                 <tr>
                   <th scope="row">{currElem.a_id}</th>
                   <td >{currElem.hospitalName}</td>
-                  <td >{currElem.name}</td>
+                  <td > Dr.{currElem.name}</td>
                   <td  >{getDateData(currElem.appoDateTime)}</td>
                   <td >{getTimeData(currElem.appoDateTime)}</td>
                   <td >{currElem.appoMessage}</td>
@@ -139,7 +139,7 @@ function View_Appointment() {
                 <tr>
                   <th scope="row">{currElem.a_id}</th>
                   <td>{currElem.hospitalName}</td>
-                  <td>{currElem.name}</td>
+                  <td>Dr. {currElem.name}</td>
                   <td>{getDateData(currElem.appoDateTime)}</td>
                   <td>{getTimeData(currElem.appoDateTime)}</td>
                   <td>{currElem.appoMessage}</td>
@@ -183,7 +183,7 @@ function View_Appointment() {
                 <tr>
                   <th scope="row">{currElem.a_id}</th>
                   <td>{currElem.hospitalName}</td>
-                  <td>{currElem.name}</td>
+                  <td>Dr.{currElem.name}</td>
                   <td>{getDateData(currElem.appoDateTime)}</td>
                   <td>{getTimeData(currElem.appoDateTime)}</td>{" "}
                   <td>  <span className="text-danger">{currElem.appoMessage} </span> </td>

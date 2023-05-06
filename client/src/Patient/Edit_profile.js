@@ -223,7 +223,7 @@ const [image, setImage] = useState('')
                         // {require('../assets/img/home.png')}
                           src={formData.profileUrl}
                           alt="Profile Image"
-                          className="rounded-circle"
+                          className="rounded-circle profile_photo"
                           width="150"
                         />
                         

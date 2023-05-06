@@ -284,13 +284,13 @@ function Hos_register() {
 
               
 
-              {/* <button
+              <button
            
                 className="displayFlex-2  textalign-center btn btn-primary my-2  "
                 onClick={() => navigate("/Hos_login")}
               >
                 Login
-              </button> */}
+              </button>
             </fieldset>
           </form>
         </div>

@@ -68,7 +68,7 @@ return(
                         return(
                         <tr>
                             <th scope="row">{currElem.d_id}</th>
-                            <td>{currElem.name}</td>
+                            <td> Dr.{currElem.name}</td>
                             <td>{currElem.speciality}</td>
                             <td><button className="btn btn-danger" onClick={()=>{
                             //alert("Deleting Doctor");

@@ -9,6 +9,12 @@
 }
 
 
+.profile_photo{
+  height:12rem;
+  width: 12rem;
+  border-radius: 50%;
+}
+
 /* ############################### Hospital Login ####################### */
 element.style {
   overflow-x: hidden;
@@ -1404,6 +1410,7 @@ section-title h2 {
 .designbtn{
   margin: 5%;
   margin-left: 10%;
+  background-color: white;
 }
 
 .designbtn1{

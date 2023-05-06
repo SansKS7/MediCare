@@ -61,7 +61,7 @@ function Dr_home () {
                         <br/>
                         <br/>
 
-                            <h2 data-aos="fade-up" data-aos-delay="400">Welcome   <span className="text-primary">  {doctor.name}  </span>  To..</h2>
+                            <h2 data-aos="fade-up" data-aos-delay="400">Welcome   <span className="text-primary">  Dr. {doctor.name}  </span>  To..</h2>
                             
                             <h1 data-aos="fade-up">{doctor.hospitalName}</h1>
                             <h2 data-aos="fade-up" data-aos-delay="400">Care A Million</h2>
